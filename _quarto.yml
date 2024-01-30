@@ -2,18 +2,52 @@ project:
   type: website
 
 website:
-  title: "DEV_SUPPORT"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+  title: "Support technique"
+  image: assets/img/logo.png
 
+  navbar:
+    logo: assets/img/logo.png
+    logo-alt: "BdQc logo"
+    title: false
+    collapse-below: lg
+    tools:
+      - icon: github
+        href: https://github.com/ReseauBiodiversiteQuebec
+        text: dev_support GitHub
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Les catalogues"
+        file: Catalogues_intro.qmd
+      - text: "Rweb"
+        file: Rweb_intro.qmd
+      - text: "À propos"
+        file: about.qmd
+  sidebar:
+    - title: "Home"
+      style: docked #floating
+      background: light
+      contents:
+        - index.qmd
+
+    - title: "Les catalogues"
+      contents:
+        - Catalogues_intro.qmd
+        - Catalogues_s5cmd_use.qmd
+
+    - title: "Rweb"
+      contents:
+        - Rweb_intro.qmd
+        - Rweb_connect.qmd
+        - Rweb_use.qmd
+
+    - title: "À propos"
+      contents:
+        - about.qmd
 format:
   html:
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: solar
     css: styles.css
     toc: true
-
-
-

@@ -1,0 +1,88 @@
+---
+title: Manipulation des catalogues
+---
+
+L'outil [s5cmd](https://github.com/peak/s5cmd) permet la gestion des contenus des différents catalogues utilisés par **Biodiversité Québec**. La première étape consiste à installer cet outil après avoir téléchargé le fichier nécessaire.
+
+```bash
+# Pour les utilisateurs de Linux
+# Naviguer jusque dans le dossier où se situe le fichier téléchargé
+sudo dpkg -i s5cmd_2.2.2_linux_amd64.deb
+
+s5cmd # pour accéder aux différentes commandes dispo et à l'aide
+
+```
+
+Il est nécessaire de paramétrer 3 variables environnement indispensables au bon fonctionnement de `s5cmd`. Il y a deux manières de procéder: spécifier ces variables à chaque lancement de `s5cmd`
+
+```bash
+
+AWS_ACCESS_KEY_ID=xxxxxx
+AWS_SECRET_ACCESS_KEY=xxxxxx
+S3_ENDPOINT_URL=xxxxxx
+
+s5cmd ls s3://bq-io/
+```
+
+ ou les enregistrer de façon permanente en local dans le fichier de paramétrage du terminal, par ex. `.zshrc`. 
+
+ ```bash
+export AWS_ACCESS_KEY_ID=xxxxxx
+export AWS_SECRET_ACCESS_KEY=xxxxxx
+export S3_ENDPOINT_URL=xxxxxx
+```
+
+Pour plus d'informations, contacter Guillaume Larocque (guillaume.larocque@mcgill.ca) ou Claire-Cécile Juhasz (juhc3201@usherbrooke.ca).
+
+### Parcourir les répertoires ou `buckets`
+Pour entrer et naviguer dans les catalogues, utiliser la commande:
+```bash
+s5cmd ls s3://bq-io/
+```
+Attention de ne pas oublier le slash final pour pouvoir voir le contenu du `bucket` ciblé. Dans le cas contraire, votre terminal vous dira si oui ou non le catalogue existe mais ne présentera pas son contenu.
+
+### Créer un `bucket` et uploader du contenu
+
+La création d'un nouveau `bucket` se fera automatiquement en envoyant un nouveau dossier ou fichier dans le catalogue avec la commande `cp` pour *copy object*. Par exemple, si vous souhaitez créer un nouveau `bucket` appelé **super_data** dans le catalogue **ACER** qui contiendra le fichier **super_nice_data.tif**, il vous faudra procéder de la façon suivante:
+
+```bash
+s5cmd cp -acl public-read absolute_path/super_nice_data.tif s3://bq-io/acer/super_data/
+```
+L'argument `-acl public-read` est indispensable pour permettre de rendre les données publiques et accessibles.
+
+**Attention**, si vous souhaitez stocker un fichier au format geoPackage sur lequel vous souhaitez faire des requêtes SQL par la suite, il est nécessaire de créer des **index** sur toutes les colonnes qui seront susceptibles d'être utilisées.
+
+```bash
+# Indexation
+ogrinfo -sql "CREATE INDEX index_name ON table_name (column1, column2,columnN...)" my_geopackage.gpkg
+
+```
+
+Attention de ne pas créer des index multi-colonnes sauf si nécessaire.
+
+### Retirer du contenu
+
+Si vous souhaitez retirer le `bucket` **super_data**, il vous suffit d'effacer tout son contenu à l'aide de la commande `rm`. Une fois le `bucket` vidé de son contenu, il disparaitra automatiquement de l'arborescence du catalogue.
+
+```bash
+s5cmd rm "s3://bq-io/acer/super_data/*"
+```
+
+### Retirer du contenu
+
+Vous pouvez également déplacer des fichiers d'un `bucket` à un autre en utilisant la commande `cp`. 
+
+```bash
+s5cmd cp "s3://bq-io/acer/super_data/*" s3://bq-io/acer/autre_super_data/
+```
+
+### Requête sur le fichier geoPackage
+#### url de base `https://object-arbutus.cloud.computecanada.ca/bq-io/`
+
+#### utilisation de viscurl
+
+### Ressources
+
+[Catalogue STAC IO](https://github.com/ReseauBiodiversiteQuebec/io-data)  
+[Exemples IO](https://github.com/ReseauBiodiversiteQuebec/io-data/tree/main/bqio/datasets)  
+[Exemple utilisation Rstac & gdalcubes](https://github.com/ReseauBiodiversiteQuebec/io-data/blob/main/R/example_scripts.Rmd)
