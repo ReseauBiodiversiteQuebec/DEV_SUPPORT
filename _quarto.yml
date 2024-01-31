@@ -47,6 +47,10 @@ website:
         - Rcoleo_injections.qmd
         - Rcoleo_telechargement.qmd
 
+    - title: "atlas"
+      contents:
+        - Atlas_intro.qmd
+
     - title: "Les catalogues"
       contents:
         - Catalogues_intro.qmd
