@@ -19,6 +19,16 @@ website:
         file: index.qmd
       - text: "Coleo"
         file: Coleo_intro.qmd
+      - text: "rcoleo"
+        file: Rcoleo_intro.qmd
+      - text: "Atlas"
+        file: Atlas_intro.qmd
+      - text: "ratlas"
+        file: Ratlas_intro.qmd
+      - text: "bdqc_taxa"
+        file: Bdqc_taxa_intro.qmd
+      - text: "gbif_insert"
+        file: Gbif_insert_intro.qmd
       - text: "Les catalogues"
         file: Catalogues_intro.qmd
       - text: "Rweb"
@@ -33,8 +43,6 @@ website:
         - index.qmd
 
     - title: "Coleo"
-      style: docked #floating
-      background: light
       contents:
         - Coleo_intro.qmd
         - Coleo_structure.qmd
@@ -50,6 +58,14 @@ website:
     - title: "atlas"
       contents:
         - Atlas_intro.qmd
+
+    - title: "ratlas"
+      contents:
+        - Ratlas_intro.qmd
+
+    - title: "bdqc_taxa"
+      contents:
+        - Bdqc_taxa_intro.qmd
 
     - title: "Les catalogues"
       contents:
