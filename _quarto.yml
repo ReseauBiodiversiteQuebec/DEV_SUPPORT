@@ -41,6 +41,12 @@ website:
         - Coleo_taxonomie.qmd
         - Coleo_API_endpoints.qmd
 
+    - title: "rcoleo"
+      contents:
+        - Rcoleo_intro.qmd
+        - Rcoleo_injections.qmd
+        - Rcoleo_telechargement.qmd
+
     - title: "Les catalogues"
       contents:
         - Catalogues_intro.qmd
@@ -50,7 +56,7 @@ website:
       contents:
         - Rweb_intro.qmd
         - Rweb_connect.qmd
-        - Rweb_use.qmd
+        - Rweb_shinyapp.qmd
 
     - title: "À propos"
       contents:
