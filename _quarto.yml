@@ -17,6 +17,8 @@ website:
     left:
       - text: "Home"
         file: index.qmd
+      - text: "Coleo"
+        file: Coleo_intro.qmd
       - text: "Les catalogues"
         file: Catalogues_intro.qmd
       - text: "Rweb"
@@ -29,6 +31,15 @@ website:
       background: light
       contents:
         - index.qmd
+
+    - title: "Coleo"
+      style: docked #floating
+      background: light
+      contents:
+        - Coleo_intro.qmd
+        - Coleo_structure.qmd
+        - Coleo_taxonomie.qmd
+        - Coleo_API_endpoints.qmd
 
     - title: "Les catalogues"
       contents:
