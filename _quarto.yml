@@ -17,22 +17,16 @@ website:
     left:
       - text: "Home"
         file: index.qmd
-      - text: "Coleo"
-        file: Coleo_intro.qmd
-      - text: "rcoleo"
-        file: Rcoleo_intro.qmd
-      - text: "Atlas"
-        file: Atlas_intro.qmd
-      - text: "ratlas"
-        file: Ratlas_intro.qmd
-      - text: "bdqc_taxa"
-        file: Bdqc_taxa_intro.qmd
-      - text: "gbif_insert"
-        file: Gbif_insert_intro.qmd
+      - text: "Bases de données"
+        file: Bdd_intro.qmd
+      - text: "Packages"
+        file: Packages_intro.qmd
+      - text: "Outils"
+        file: Outils_intro.qmd
       - text: "Les catalogues"
         file: Catalogues_intro.qmd
-      - text: "Rweb"
-        file: Rweb_intro.qmd
+      - text: "Serveurs"
+        file: Serveurs_intro.qmd
       - text: "À propos"
         file: about.qmd
   sidebar:
@@ -42,41 +36,67 @@ website:
       contents:
         - index.qmd
 
-    - title: "Coleo"
+    ### section BDD ###
+    - title: "Bases de données"
       contents:
-        - Coleo_intro.qmd
-        - Coleo_structure.qmd
-        - Coleo_taxonomie.qmd
-        - Coleo_API_endpoints.qmd
+        - Bdd_intro.qmd
+        - section: "Coleo"
+          contents:
+            - Coleo_intro.qmd
+            - Coleo_structure.qmd
+            - Coleo_taxonomie.qmd
+            - Coleo_API_endpoints.qmd
+        - section: "atlas"
+          contents:
+            - Atlas_intro.qmd
 
-    - title: "rcoleo"
+    ### section packages ###
+    - title: "Packages"
       contents:
-        - Rcoleo_intro.qmd
-        - Rcoleo_injections.qmd
-        - Rcoleo_telechargement.qmd
+        - Packages_intro.qmd
+        - section: "rcoleo"
+          contents:
+            - Rcoleo_intro.qmd
+            - Rcoleo_injections.qmd
+            - Rcoleo_telechargement.qmd
+        - section: "ratlas"
+          contents:
+            - Ratlas_intro.qmd
 
-    - title: "atlas"
+    ### section outils ###
+    - title: "Outils"
       contents:
-        - Atlas_intro.qmd
+        - Outils_intro.qmd
+        - section: "bdqc_taxa"
+          contents:
+            - Bdqc_taxa_intro.qmd
+        - section: "gbif_insert"
+          contents:
+            - Gbif_insert_intro.qmd
 
-    - title: "ratlas"
-      contents:
-        - Ratlas_intro.qmd
-
-    - title: "bdqc_taxa"
-      contents:
-        - Bdqc_taxa_intro.qmd
-
-    - title: "Les catalogues"
+    ### section catalogues ###
+    - title: "Catalogues"
       contents:
         - Catalogues_intro.qmd
-        - Catalogues_s5cmd_use.qmd
+        - section: "Généralités"
+          contents:
+            - Catalogues_s5cmd_use.qmd
+        - section: "IO"
+          contents:
+            - Io_intro.qmd
+        - section: "Acer"
+          contents:
+            - Acer_intro.qmd
 
-    - title: "Rweb"
+    ### section serveurs ###
+    - title: "Serveurs"
       contents:
-        - Rweb_intro.qmd
-        - Rweb_connect.qmd
-        - Rweb_shinyapp.qmd
+        - Serveurs_intro.qmd
+        - section: "Rweb"
+          contents:
+            - Rweb_intro.qmd
+            - Rweb_connect.qmd
+            - Rweb_shinyapp.qmd
 
     - title: "À propos"
       contents:
