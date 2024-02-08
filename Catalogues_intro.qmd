@@ -2,4 +2,4 @@
 title: "Les catalogues"
 ---
 
-Courte (ou pas) description
+Courte (ou pas) description. Pour Guillaume ? 
