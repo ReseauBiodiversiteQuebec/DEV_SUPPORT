@@ -23,7 +23,7 @@ website:
         file: Packages_intro.qmd
       - text: "Outils"
         file: Outils_intro.qmd
-      - text: "Les catalogues"
+      - text: "Catalogues"
         file: Catalogues_intro.qmd
       - text: "Serveurs"
         file: Serveurs_intro.qmd
