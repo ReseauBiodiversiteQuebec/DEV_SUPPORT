@@ -89,7 +89,7 @@ website:
             - Acer_intro.qmd
         - section: "Parquet et PMTiles"
           contents:
-            - Geoparquet_Atlas_intro.qmd
+            - Geoparquet_Atlas_Intro.qmd
 
     ### section serveurs ###
     - title: "Serveurs"
