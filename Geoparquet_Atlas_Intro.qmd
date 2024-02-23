@@ -4,7 +4,7 @@ title: Geoparquet pour Atlas
 
 Define functions
 
-````{r}
+```r
 library(dplyr)
 library(duckdb)
 library(duckdbfs)
@@ -27,24 +27,24 @@ atlas_remote <- function(parquet_date, tblname="atlas") {
 }
 
 atlas_dates <- read.csv(paste0(base_url,'atlas_export_dates.csv'),header=FALSE, col.names=c('dates'))
-````
+```
 
 Remote connection to parquet file
 
-````{r}
+```r
 
 atlas_rem <- atlas_remote(atlas_dates[1])
 
 mb <- atlas_rem |> group_by(valid_scientific_name) |> summarize(cnt=count()) |> collect()
-````
+```
 
 Download parquet file for faster operations
-````{r}
+```r
 
 atlas <- atlas_local(atlas_dates[1],'/home/glaroc/Downloads/')
 
 gc <- atlas |> filter(valid_scientific_name == 'Antigone canadensis') |> collect()
 
 sp_count <- atlas |> group_by(valid_scientific_name) |> summarize(cnt=count()) |> collect()
-````
+```
 
