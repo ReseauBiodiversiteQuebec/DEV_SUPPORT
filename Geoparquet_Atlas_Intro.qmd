@@ -1,0 +1,50 @@
+---
+title: Geoparquet pour Atlas 
+---
+
+Define functions
+
+````{r}
+library(dplyr)
+library(duckdb)
+library(duckdbfs)
+
+base_url<-'https://object-arbutus.cloud.computecanada.ca/bq-io/atlas/parquet/'
+
+atlas_local <- function(parquet_date, destination_folder, tblname="atlas"){
+  file_name<-paste0('atlas_',parquet_date,".parquet")
+  url <- paste0(base_url,file_name)
+  dest <- paste0(destination_folder,'/',file_name)
+  download.file(url,dest)
+  requireNamespace("duckdbfs")
+  duckdbfs::open_dataset(dest, tblname = tblname)
+}
+
+atlas_remote <- function(parquet_date, tblname="atlas") {
+  file_name<-paste0('atlas_',parquet_date,".parquet")
+  requireNamespace("duckdbfs")
+  duckdbfs::open_dataset(paste0(base_url,file_name), tblname = tblname)
+}
+
+atlas_dates <- read.csv(paste0(base_url,'atlas_export_dates.csv'),header=FALSE, col.names=c('dates'))
+````
+
+Remote connection to parquet file
+
+````{r}
+
+atlas_rem <- atlas_remote(atlas_dates[1])
+
+mb <- atlas_rem |> group_by(valid_scientific_name) |> summarize(cnt=count()) |> collect()
+````
+
+Download parquet file for faster operations
+````{r}
+
+atlas <- atlas_local(atlas_dates[1],'/home/glaroc/Downloads/')
+
+gc <- atlas |> filter(valid_scientific_name == 'Antigone canadensis') |> collect()
+
+sp_count <- atlas |> group_by(valid_scientific_name) |> summarize(cnt=count()) |> collect()
+````
+
