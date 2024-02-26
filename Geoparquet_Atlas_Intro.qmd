@@ -2,7 +2,7 @@
 title: Geoparquet pour Atlas 
 ---
 
-Define functions
+La base de données Atlas est sauvegardée de façon régulière en format Parquet. Voici les instructions pour intéragir avec le fichier parquet entreposé sur l'infonuagique de l'Alliance des ressources numériques. 
 
 ```r
 library(dplyr)
@@ -29,7 +29,9 @@ atlas_remote <- function(parquet_date, tblname="atlas") {
 atlas_dates <- read.csv(paste0(base_url,'atlas_export_dates.csv'),header=FALSE, col.names=c('dates'))
 ```
 
-Remote connection to parquet file
+Connexion à distance au fichier GeoParquet. 
+
+L'objet atlas_dates contient les dates de sauvegarde des fichiers disponibles. 
 
 ```r
 
@@ -38,7 +40,7 @@ atlas_rem <- atlas_remote(atlas_dates[1])
 mb <- atlas_rem |> group_by(valid_scientific_name) |> summarize(cnt=count()) |> collect()
 ```
 
-Download parquet file for faster operations
+Pour des opérations plus lourdes et une intéraction plus rapide avec le fichier, on peut le télécharger localement sur son ordinateur. Notez que le fichier fait environ 500MB, donc s'assurer d'avoir l'espace disque sur votre ordinateur. 
 ```r
 
 atlas <- atlas_local(atlas_dates[1],'/home/glaroc/Downloads/')
