@@ -12,7 +12,7 @@ library(duckdbfs)
 base_url<-'https://object-arbutus.cloud.computecanada.ca/bq-io/atlas/parquet/'
 
 atlas_local <- function(parquet_date, destination_folder, tblname="atlas"){
-  file_name<-paste0('atlas_',parquet_date,".parquet")
+  file_name<-paste0('atlas_public_',parquet_date,".parquet")
   url <- paste0(base_url,file_name)
   dest <- paste0(destination_folder,'/',file_name)
   download.file(url,dest)
@@ -21,7 +21,7 @@ atlas_local <- function(parquet_date, destination_folder, tblname="atlas"){
 }
 
 atlas_remote <- function(parquet_date, tblname="atlas") {
-  file_name<-paste0('atlas_',parquet_date,".parquet")
+  file_name<-paste0('atlas_public_',parquet_date,".parquet")
   requireNamespace("duckdbfs")
   duckdbfs::open_dataset(paste0(base_url,file_name), tblname = tblname)
 }
