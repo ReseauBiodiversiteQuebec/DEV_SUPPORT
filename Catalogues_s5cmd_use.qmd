@@ -68,7 +68,7 @@ Si vous souhaitez retirer le `bucket` **super_data**, il vous suffit d'effacer t
 s5cmd rm "s3://bq-io/acer/super_data/*"
 ```
 
-### Retirer du contenu
+### Déplacer du contenu
 
 Vous pouvez également déplacer des fichiers d'un `bucket` à un autre en utilisant la commande `cp`. 
 
