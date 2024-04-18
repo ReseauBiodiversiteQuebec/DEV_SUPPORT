@@ -81,7 +81,7 @@ sudo service shiny-server restart
 sudo pm2 restart shiny-hook
 ```
 
-8. Add the webhook to the GitHub repo (settings -> Webhooks) using https://coleo.biodiversite-quebec.ca/shiny-hook/ and keeping the default settings
+8. Add the webhook to the GitHub repo (settings -> Webhooks) using https://coleo.biodiversite-quebec.ca/shinyhook/ and keeping the default settings
 
 
 ## View shiny apps logs
