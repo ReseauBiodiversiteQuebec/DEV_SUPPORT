@@ -42,10 +42,10 @@ website:
         - Bdd_intro.qmd
         - section: "Coleo"
           contents:
-            - Coleo_intro.qmd
-            - Coleo_structure.qmd
-            - Coleo_taxonomie.qmd
-            - Coleo_API_endpoints.qmd
+            - coleo/Coleo_intro.qmd
+            - coleo/Coleo_structure.qmd
+            - coleo/Coleo_taxonomie.qmd
+            - coleo/Coleo_API_endpoints.qmd
         - section: "atlas"
           contents:
             - Atlas_intro.qmd
