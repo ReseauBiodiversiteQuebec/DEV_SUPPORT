@@ -1,7 +1,8 @@
 ---
 title: Base de données Atlas
 ---
+Atlas is a database for aggregation of biodiversity observations and time-series.
 
-Joli petite description de la BD par Vincent? Ben? Victor? Toutes ces réponses ?
+
 
 [site web Atlas](https://reseaubiodiversitequebec.github.io/atlas-db/)

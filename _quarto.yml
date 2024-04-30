@@ -50,7 +50,7 @@ website:
             - docs/portails/coleo/coleo_API_endpoints.qmd
         - section: "atlas"
           contents:
-            - docs/portails/atlas/atlas_intro.qmd
+            - docs/portails/atlas/atlas_description.qmd
             - docs/portails/atlas/atlas_geoparquet.qmd
 
     ### section packages ###
