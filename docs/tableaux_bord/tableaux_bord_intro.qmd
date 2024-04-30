@@ -1,6 +1,19 @@
 ---
 title: Tableaux de bord
 ---
+## Tableaux de bord en cours de développement 
+
+- Explorateur COLÉO 
+- Explorateur ATLAS
+- Explorateur IO
+- Composition des communautés 
+- Combien d'espèces au Québec ?
+- Les espèces rares du Québec
+- Indice planète vivante
+- Indice de distribution de la biodiversité 
+- La biodiversité en mouvement 
+- Phénologie des chauve-souris
+ 
 ## Tableaux de bord actuels
 Les [tableaux suivants](https://coleo.biodiversite-quebec.ca/apps/) sont actuellement déployés sur le serveur [rweb](../serveurs/rweb/rweb_intro.qmd):
 
@@ -34,3 +47,11 @@ Les [tableaux suivants](https://coleo.biodiversite-quebec.ca/apps/) sont actuell
 
 ## Anciens tableaux de bord
 Les tableaux de bords archivés sont accessibles en suivant ce [lien](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/).
+
+- [tableau-atlas](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-atlas/)
+- [tableau-composition](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-composition/)
+- [tableau-explo-sites](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-explo-sites/)
+- [tableau-lpi-bdi](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-lpi-bdi/)
+- [tableau-move](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-move/)
+- [tableau-rarefaction](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-rarefaction/)
+- [tableauatlas](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableauatlas/)

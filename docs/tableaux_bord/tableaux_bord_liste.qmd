@@ -1,22 +1,11 @@
-# Liste des tableaux de bord en cours de développement 
+---
+title: Liste des tableaux de bord
+---
+# Explorateur COLEO
 
-- Explorateur COLÉO 
-- Explorateur ATLAS
-- Explorateur IO
-- Composition des communautés 
-- Combien d'espèces au Québec ?
-- Les espèces rares du Québec
-- Indice planète vivante
-- Indice de distribution de la biodiversité 
-- La biodiversité en mouvement 
-- Phénologie des chauve-souris 
-
-================
-
-# EXPLORATEUR COLÉO
-Responsable : Guillaume Larocque
-Catégorie : COLÉO
-Prototype : https://coleo.biodiversite-quebec.ca/apps/tableauexplosites/
+Responsable : Guillaume Larocque  
+Catégorie : `COLEO`  
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableauexplosites/)  
 
 ## Objectif
 Visualisation des sites d'échantillonnage du réseau de suivi de la biodiversité du Québec avec emphase sur les informatiques descriptives de l'échantillonnage 
@@ -57,12 +46,11 @@ Le Gouvernement du Québec réalise un programme ambitieux de suivi de la biodiv
     + figure qui illustre la variation au fil de l'année des précipitations et de la température
     + figure qui illustre les projections de changement climatique pour le site 
 
-================
 
-# EXPLORATEUR ATLAS
-Responsable : Guillaume Larocque
-Catégorie : ATLAS
-Prototype : https://coleo.biodiversite-quebec.ca/apps/tableau-atlas-vue/
+# Explorateur ATLAS
+Responsable : Guillaume Larocque  
+Catégorie : `ATLAS`  
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableau-atlas-vue/)
 
 ## Objectif
 Communiquer rapidement les données accessibles par la base de données ATLAS
@@ -87,11 +75,9 @@ La distribution des observations de biodiversité est très inégale à travers 
 - Un histogramme au bas permet de sélectionner la plage temporelle couverte. 
 - Un onglet permet d'accéder à la liste des données disponibles dans ATLAS. 
 
-================
-
-# EXPLORATEUR IO
-Responsable : Vincent Beauregard
-Catégorie : IO
+# Explorateur IO
+Responsable : Vincent Beauregard  
+Catégorie : `IO`  
 Prototype : aucun
 
 ## Objectif
@@ -113,15 +99,13 @@ Comprendre les changements de biodiversité requiert une connaissance des variab
 - Une carte illustre les différentes couches stockées dans IO. Un menu déroulant permet d'illustrer la couche à illustrer. 
 - La transparence permet de superposer plusieurs couches pour apprécier l'occurrence de stresseurs multiples. 
 
-================
+# Composition des communautés
 
-# COMPOSITION DES COMMUNAUTÉS
+Responsable : Guillaume Larocque  
+Catégorie : `COLEO`  
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableaucomposition/)
 
-Responsable : Guillaume Larocque+
-Catégorie : COLEO
-Prototype : https://coleo.biodiversite-quebec.ca/apps/tableaucomposition/
-
-+ Ce tableau de bord est la principale vitrine vers COLÉO et les données du réseau de suivi du Gouvernement du Québec. La diversité des informations qui peuvent être représentée est immense et il peut être décliné en plusieurs tableaux de bord, plus spéciques aux indicateurs étudiés. Les données comprennent : végétation, oiseaux, chauve-souris, poissons, libellules, papillons, arthropodes du sol, mammifères, indice de décomposition des sols. Chacun de ces indicateurs peut apporter une information unique. L'exemple présenté ici n'est qu'une synthèse de l'information disponible. 
+Ce tableau de bord est la principale vitrine vers COLÉO et les données du réseau de suivi du Gouvernement du Québec. La diversité des informations qui peuvent être représentée est immense et il peut être décliné en plusieurs tableaux de bord, plus spéciques aux indicateurs étudiés. Les données comprennent : végétation, oiseaux, chauve-souris, poissons, libellules, papillons, arthropodes du sol, mammifères, indice de décomposition des sols. Chacun de ces indicateurs peut apporter une information unique. L'exemple présenté ici n'est qu'une synthèse de l'information disponible. 
 
 ## Objectif
 Accéder rapidement à une description simplifiée de la richesse en espèces au sein du réseau de suivi du Gouvernement du Québec.
@@ -147,12 +131,10 @@ Découvrir la diversité des espèces échantillonnées par le programme.
 - La sélection d'un site fait apparaître une fenêtre où est résumé le nombre d'espèces par campagne / indicateur. Des images des espèces les plus abondantes apparaissent pour illustrer cette diversité. 
 - Certains partenaires du projet ont exprimé le souhait de comparer plusieurs sites. 
 
-================
-
-# INDICE PLANÈTE VIVANTE
-Responsable : Katherine Hébert
-Catégorie : ATLAS
-Prototype : https://coleo.biodiversite-quebec.ca/apps/tableaulpi/
+# Indice planète vivante (LPI)
+Responsable : Katherine Hébert  
+Catégorie : `ATLAS`  
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableaulpi/)
 
 ## Objectif
 Illuster le changement dans l'indice planète vivante pour des populations qui font l'objet d'un suivi à long terme au Québec. 
@@ -179,12 +161,10 @@ L'indice planète vivante est un standard établit par le World Wildlife Fund po
 - Sélectionner une population sur la carte permet d'illustrer la tendance temporelle 
 - Un bouton dans la marge de gauche permet d'illuster l'indice pour l'ensemble du territoire. Des options permettent d'afficher la moyenne ou les courbes individuelles. Des filtres permettent de distinguer les différents groupes d'espèces
 
-================
-
-# QUEL RÔLE POUR LES ESPÈCES RARES
-Responsable : Dominique Gravel / Guillaume Larocque
-Catégorie : COLEO
-Prototype : https://coleo.biodiversite-quebec.ca/apps/tableau-composition/
+# Quel rôle pour les espèces rares
+Responsable : Dominique Gravel / Guillaume Larocque  
+Catégorie : `COLEO`  
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableau-composition/)
 
 ## Objectif
 Mettre en valeur les espèces les plus rares échantillonnées dans le réseau de suivi. 
@@ -215,12 +195,10 @@ Les espèces emblématiques attirent d'abord notre attention, alors que les esp�
     + Possibilité d'ajouter des images pour illustrer ces espèces 
     + Une figure représente les préférences des espèces trouvées à ce site pour le climat (de chaud à froid) et pour les perturbations anthropiques (indice empreinte humaine)
 
-================
-
 # Combien d'espèces au Québec ?
-Responsable : Dominique Gravel / Guillaume Larocque
-Catégorie : COLÉO et ATLAS 
-Prototype : https://coleo.biodiversite-quebec.ca/apps/tableaurarefaction/
+Responsable : Dominique Gravel / Guillaume Larocque  
+Catégorie : `COLEO` `ATLAS`    
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableaurarefaction/)
 
 ## Objectif
 Comptabiliser le nombre d'espèces qui se trouvent au Québec, par région et ainsi que pour les sites du réseau de suivi. 
@@ -230,12 +208,12 @@ Le nombre d'espèces qui se trouve dans une région peut être difficile à éva
 
 ## Données 
 - Distribution des espèces dans ATLAS
-- Distribution des espèces dans COLÉO
+- Distribution des espèces dans COLEO
 - Localisation des sites du suivi
 - Fond de carte avec les régions écologiques du Québec 
 
 ## Accessibilité des données 
-- Toutes les données sont accessibles par les APIs de ATLAS et COLÉO
+- Toutes les données sont accessibles par les APIs de ATLAS et COLEO
 
 ## Traitement des données
 - Une librairie de R est utilisée pour comptabiliser le nombre d'espèces observées à partir d'une liste d'espèces observées, le nombre d'espèces au total et l'incertiture de cette estimation. 
@@ -247,12 +225,10 @@ Le nombre d'espèces qui se trouve dans une région peut être difficile à éva
 - La sélection d'une région ou d'une site fait apparaître une fenêtre où est illustrée la richesse en espèce par groupe taxonomique pour la sélection. 
 - Un onglet permet d'obtenir la liste des espèces observées pour la sélection. 
 
-================
-
-# PHÉNOLOGIE DES CHAUVES-SOURIS
-Responsable : Andrew MacDonald
-Catégorie : COLÉO
-Prototype : https://coleo.biodiversite-quebec.ca/apps/tableauchangementstemporels/
+# Phénologie des chauves-souris
+Responsable : Andrew MacDonald  
+Catégorie : `COLEO`   
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableauchangementstemporels/)
 
 ## Objectif
 Présenter la succession temporelle des chauves-souris sur les sites d'échantillonnage. 
@@ -278,11 +254,9 @@ Le changement des saisons provoque une succession d'événements marquants pour 
 - La sélection d'un site permet d'illustrer la séquence d'arrivée et de départ des différentes espèces documentées 
 - Il serait possible d'ajouter une série temporelle des conditions météorologiques pour illustrer les conditions d'arrivées et de départ des différentes espèces. 
 
-================
-
-# LES ESPÈCES EN MOUVEMENT 
-Responsable : Dominique Gravel
-Catégorie : ATLAS 
+# Espèces en mouvement 
+Responsable : Dominique Gravel  
+Catégorie : `ATLAS`    
 Prototype : aucun 
 
 ## Objectif
@@ -312,12 +286,10 @@ Certaines espèces peinent à suivre le rythme des changements climatiques et so
     + Le calcul d'un indice de "maladaptation" sur une grille qui peut être représentée sur la carte. Cet indice rapporte le nombre d'espèces susceptible de disparaître dans un horizon spécifié par l'utilisateur sous le changement climatique 
     + Une animation peut être réalisée pour illustrer le déplacement possible sur une carte des aires de répartition d'une espèce sélectionnée dans le menu déroulant. 
 
-================
-
-# INDICE DE LA DISTRIBUTION DE LA BIODIVERSITÉ DES OISEAUX ET PAPILLONS
-Responsable : Vincent Bellavance et Clara Casabona
-Catégorie : ATLAS
-Prototype : https://coleo.biodiversite-quebec.ca/apps/tableaubdi/
+# Indice de la distribution de la biodiversité des oiseaux et des papillons
+Responsable : Vincent Bellavance et Clara Casabona  
+Catégorie : `ATLAS`   
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableaubdi/)
 
 ## Objectif
 Illuster le changement dans l'indice de la distribution de la biodiversité pour les oiseaux et les papillons. 
@@ -339,4 +311,39 @@ L'indice de distribution de biodiversité est un nouvel indicateur de changement
 - L'indice est illustré par défaut, un filtre permet d'illustrer les extinctions locales ou les colonisations. 
 - Un bouton dans la marge de gauche permet d'accéder à la tendance globale de l'indice sur l'ensemble du territoire. Un filtre permet de distinguer les groupes (e.g. rapaces, passeraux, sauvagine, limicoles)
 
-================
+# Tendances à long terme
+Responsable : Vincent Bellavance et Katherine Hébert  
+Catégorie : `ATLAS`   
+Prototype : aucun
+
+## Message à communiquer
+Les changements de biodiversité ne sont pas seulement la diminution d'abondance et la perte d'espèce indigène et l'arrivée d'espèce exotique, c'est aussi les changements (positifs et négatifs).
+
+## Données
+- Séries temporelles de population dans Living Planet Database
+- Séries temporelles de population dans BioTIME
+- Les modèles de distribution d'espèces (SDM) provenant des données d'Atlas
+
+## Assemblage du tableau de bord
+<img src="/../assets/img/logo3.png" width="100%" height="100%" align="center"/>
+
+<img src="/../../assets/img/tableaux_bord_tendances_long_terme2.png" width="100%" height="100%" align="center"/>
+Onglet de sélection: chaque groupe taxonomique (plantes, mammifères, vue d'ensemble)
+
+**Panneau 1** : Carte illustrant les extinctions et les colonisations sur l'ensemble du Québec au fil des années depuis l'année de référence du BDI. Ces extinctions et colonisations peuvent être visualisées par espèces (e.g. érable à sucre), par groupe d'espèce (e.g. oiseaux), par région ou pour l'ensemble du Québec.
+
+**Panneau 2** : Tendance moyenne du Biodiversity Distribution Index (BDI), animée pour montrer la tendance progressivement (voir panneau 3)
+
+**Panneau 3** : Tendance moyenne de l'indice Planète Vivante*, animée pour montrer la tendance progressivement (e.g. <https://www.r-graph-gallery.com/287-smooth-animation-with-tweenr.html>)
+
+**Panneau 4** : Diagramme waffle interactif avec 1 case par espèce, où chaque case est colorée selon un gradient vert-blanc-rouge: populations en croissance sont en vert, les populations stables sont en blanc, et les populations en déclin sont en rouge. En passant sur chaque case avec le curseur, un pop-up montre le nom de l'espèce, une photo, et un graphique de la tendance de son indice Planète Vivante en fonction du temps. Au-dessus du graphique, on affichera les pourcentages de populations en croissance / stables / en déclin, et la tendance moyenne de ces sous-groupes (e.g. 5% en déclin, et sont maintenant 20% plus petits qu'en xxxx (l'année de référence)).
+
+## Amélioration visuelle possible
+Les animations des panneaux 1, 2, et 3 mettraient l'emphase sur la progression des tendances avec le temps.
+
+## Histoire de biodiversité associée
+1. Pour le BDI, parler d'une espèce qui a colonisé un endroit quelconque et parler des facteurs qui semblent expliquer cette colonisation. Même chose pour l'extinction. Idéalement, ce serait des espèces que les gens connaissent bien ou à lesquelles les gens ont peut-être un attachement (e.g.oiseau charismatique, l'érable à sucre)
+
+2. Pour le mêmes espèces qu'en 1, il pourrait y avoir des projections pour voir à quoi ressemblera l'aire de répartition de celles-ci dans le futur selon différents scénarios.
+
+3. Pour le LPI, parler d'une espèce en croissance et d'une espèce en déclin, et expliquer pourquoi elles montrent cette tendance. Idéalement, les espèces devraient être charismatiques.
