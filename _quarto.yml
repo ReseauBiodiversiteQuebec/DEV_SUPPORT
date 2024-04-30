@@ -13,7 +13,7 @@ website:
     collapse-below: lg
     tools:
       - icon: github
-        href: https://github.com/ReseauBiodiversiteQuebec
+        href: https://github.com/BiodiversiteQuebec
         text: dev_support GitHub
     left:
       - text: "Accueil"

@@ -5,4 +5,4 @@ title: Base de données Coleo
 Petit speech de Victor pour nous expliquer qu'est-ce qu'est Coleo ?
 
 Liste des repos Github associés: 
-[Coleo_DB](https://github.com/ReseauBiodiversiteQuebec/Coleo_DB)
+[Coleo_DB](https://github.com/BiodiversiteQuebec/Coleo_DB)

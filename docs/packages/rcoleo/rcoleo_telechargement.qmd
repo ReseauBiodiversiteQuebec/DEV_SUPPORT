@@ -3,7 +3,7 @@ title: Téléchargement
 ---
 
 
-[Repo Github](https://github.com/ReseauBiodiversiteQuebec/rcoleo/blob/master/docs/telecharge-donnees.md)
+[Repo Github](https://github.com/BiodiversiteQuebec/rcoleo/blob/master/docs/telecharge-donnees.md)
 
 
 Il est possible de télécharger les données de coleo directement depuis R. Pour cela, il faut utiliser la fonction `coleo_request_general`.

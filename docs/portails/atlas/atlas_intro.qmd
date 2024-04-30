@@ -4,4 +4,4 @@ title: Base de données Atlas
 
 Joli petite description de la BD par Vincent? Ben? Victor? Toutes ces réponses ?
 
-[site web Atlas](https://reseaubiodiversitequebec.github.io/atlas-db/)
+[site web Atlas](https://BiodiversiteQuebec.github.io/atlas-db/)
