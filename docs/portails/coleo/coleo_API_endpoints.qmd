@@ -1,7 +1,7 @@
 ---
 title: Endpoints & CRON jobs
 ---
-[Repo Github](https://github.com/ReseauBiodiversiteQuebec/Coleo_DB)
+[Repo Github](https://github.com/BiodiversiteQuebec/Coleo_DB)
 
 
 ## API endpoints

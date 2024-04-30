@@ -2,7 +2,7 @@
 title: gbif_insert
 ---
 
-[Repo Github](https://github.com/ReseauBiodiversiteQuebec/gbif_insert)
+[Repo Github](https://github.com/BiodiversiteQuebec/gbif_insert)
 
 
 gbif_insert is a Python tool used to download occurrences data from www.gbif.org and inject it into atlas postgres database.
@@ -11,7 +11,7 @@ gbif_insert is a Python tool used to download occurrences data from www.gbif.org
 
 ### New installation
 ```bash
-pip3 install git+https://github.com/ReseauBiodiversiteQuebec/gbif_insert#egg=gbif_insert
+pip3 install git+https://github.com/BiodiversiteQuebec/gbif_insert#egg=gbif_insert
 
 ```
 

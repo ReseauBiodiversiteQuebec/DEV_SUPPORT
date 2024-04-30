@@ -2,7 +2,7 @@
 title: bdqc_taxa
 ---
 
-[Repo Github](https://github.com/ReseauBiodiversiteQuebec/bdqc_taxa)
+[Repo Github](https://github.com/BiodiversiteQuebec/bdqc_taxa)
 
 
 `bdqc_taxa` is a python package that interface with *Biodiversité Québec*'s database to query reference taxa sources, parse their return and generate records.
@@ -22,12 +22,12 @@ pip install ...
 For a new installation
 
 ```bash
-pip install git+https://github.com/ReseauBiodiversiteQuebec/bdqc_taxa#egg=bdqc_taxa
+pip install git+https://github.com/BiodiversiteQuebec/bdqc_taxa#egg=bdqc_taxa
 ```
 
 For an upgrade
 ```bash
-pip install --upgrade git+https://github.com/ReseauBiodiversiteQuebec/bdqc_taxa#egg=bdqc_taxa
+pip install --upgrade git+https://github.com/BiodiversiteQuebec/bdqc_taxa#egg=bdqc_taxa
 ```
 
 ## Usage

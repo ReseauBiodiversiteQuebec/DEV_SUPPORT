@@ -1,6 +1,7 @@
 project:
   type: website
-
+  preview:
+    port: 6066
 website:
   title: "Support technique"
   image: assets/img/logo3.png
@@ -12,7 +13,7 @@ website:
     collapse-below: lg
     tools:
       - icon: github
-        href: https://github.com/ReseauBiodiversiteQuebec
+        href: https://github.com/BiodiversiteQuebec
         text: dev_support GitHub
     left:
       - text: "Accueil"
@@ -85,6 +86,9 @@ website:
         - section: "Acer"
           contents:
             - docs/catalogues/acer/acer_intro.qmd
+        - section: "GEOIO"
+          contents:
+            - docs/catalogues/geoio/geoio_intro.qmd
 
     ### section serveurs ###
     - title: "Serveurs"

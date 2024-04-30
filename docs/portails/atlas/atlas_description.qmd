@@ -5,4 +5,4 @@ Atlas is a database for aggregation of biodiversity observations and time-series
 
 
 
-[site web Atlas](https://reseaubiodiversitequebec.github.io/atlas-db/)
+[site web Atlas](https://BiodiversiteQuebec.github.io/atlas-db/)
