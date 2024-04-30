@@ -3,10 +3,10 @@ project:
 
 website:
   title: "Support technique"
-  image: assets/img/logo.png
+  image: assets/img/logo3.png
 
   navbar:
-    logo: assets/img/logo.png
+    logo: assets/img/logo3.png
     logo-alt: "BdQc logo"
     title: false
     collapse-below: lg
@@ -15,7 +15,7 @@ website:
         href: https://github.com/ReseauBiodiversiteQuebec
         text: dev_support GitHub
     left:
-      - text: "Home"
+      - text: "Accueil"
         file: index.qmd
       - text: "Bases de données"
         file: Bdd_intro.qmd
