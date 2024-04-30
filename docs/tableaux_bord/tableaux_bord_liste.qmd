@@ -324,9 +324,9 @@ Les changements de biodiversité ne sont pas seulement la diminution d'abondance
 - Séries temporelles de population dans BioTIME
 - Les modèles de distribution d'espèces (SDM) provenant des données d'Atlas
 
-## Assemblage du tableau de bord
-<img src="/../assets/img/logo3.png" width="100%" height="100%" align="center"/>
+## Assemblage du tableau de bord  
 
+<img src="/../../assets/img/tableaux_bord_tendances_long_terme1.png" width="100%" height="100%" align="center"/>
 <img src="/../../assets/img/tableaux_bord_tendances_long_terme2.png" width="100%" height="100%" align="center"/>
 Onglet de sélection: chaque groupe taxonomique (plantes, mammifères, vue d'ensemble)
 
