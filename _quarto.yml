@@ -7,7 +7,7 @@ website:
 
   navbar:
     logo: assets/img/logo3.png
-    logo-alt: "BdQc logo"
+    logo-alt: "BQ logo"
     title: false
     collapse-below: lg
     tools:
@@ -17,16 +17,16 @@ website:
     left:
       - text: "Accueil"
         file: index.qmd
-      - text: "Bases de données"
-        file: Bdd_intro.qmd
+      - text: "Portails"
+        file: portails/portails_intro.qmd
       - text: "Packages"
-        file: Packages_intro.qmd
-      - text: "Outils"
-        file: Outils_intro.qmd
+        file: packages/packages_intro.qmd
+      - text: "Analyses"
+        file: analyses/analyses_intro.qmd
       - text: "Catalogues"
-        file: Catalogues_intro.qmd
+        file: catalogues/catalogues_intro.qmd
       - text: "Serveurs"
-        file: Serveurs_intro.qmd
+        file: serveurs/serveurs_intro.qmd
       - text: "À propos"
         file: about.qmd
   sidebar:
@@ -36,70 +36,68 @@ website:
       contents:
         - index.qmd
 
-    ### section BDD ###
-    - title: "Bases de données"
+    ### section portails ###
+    - title: "Portails"
       contents:
-        - Bdd_intro.qmd
+        - portails/portails_intro.qmd
         - section: "Coleo"
           contents:
-            - coleo/Coleo_intro.qmd
-            - coleo/Coleo_structure.qmd
-            - coleo/Coleo_taxonomie.qmd
-            - coleo/Coleo_API_endpoints.qmd
+            - portails/coleo/coleo_intro.qmd
+            - portails/coleo/coleo_structure.qmd
+            - portails/coleo/coleo_taxonomie.qmd
+            - portails/coleo/coleo_API_endpoints.qmd
         - section: "atlas"
           contents:
-            - Atlas_intro.qmd
+            - portails/atlas/atlas_intro.qmd
+            - portails/atlas/atlas_geoparquet.qmd
 
     ### section packages ###
     - title: "Packages"
       contents:
-        - Packages_intro.qmd
+        - packages/packages_intro.qmd
         - section: "rcoleo"
           contents:
-            - Rcoleo_intro.qmd
-            - Rcoleo_injections.qmd
-            - Rcoleo_telechargement.qmd
+            - packages/rcoleo/rcoleo_intro.qmd
+            - packages/rcoleo/rcoleo_injections.qmd
+            - packages/rcoleo/rcoleo_telechargement.qmd
         - section: "ratlas"
           contents:
-            - Ratlas_intro.qmd
-
-    ### section outils ###
-    - title: "Outils"
-      contents:
-        - Outils_intro.qmd
+            - packages/ratlas/ratlas_intro.qmd
         - section: "bdqc_taxa"
           contents:
-            - Bdqc_taxa_intro.qmd
+            - packages/bdqctaxa/bdqc_taxa_intro.qmd
         - section: "gbif_insert"
           contents:
-            - Gbif_insert_intro.qmd
+            - packages/gbifinsert/gbif_insert_intro.qmd
+
+    ### section outils ###
+    - title: "Analyses"
+      contents:
+        - analyses/analyses_intro.qmd
 
     ### section catalogues ###
     - title: "Catalogues"
       contents:
-        - Catalogues_intro.qmd
+        - catalogues/catalogues_intro.qmd
         - section: "Généralités"
           contents:
-            - Catalogues_s5cmd_use.qmd
+            - catalogues/catalogues_s5cmd_use.qmd
         - section: "IO"
           contents:
-            - Io_intro.qmd
+            - catalogues/io/io_intro.qmd
         - section: "Acer"
           contents:
-            - Acer_intro.qmd
-        - section: "Parquet et PMTiles"
-          contents:
-            - Geoparquet_Atlas_Intro.qmd
+            - catalogues/acer/acer_intro.qmd
 
     ### section serveurs ###
     - title: "Serveurs"
       contents:
-        - Serveurs_intro.qmd
+        - serveurs/serveurs_intro.qmd
         - section: "Rweb"
           contents:
-            - Rweb_intro.qmd
-            - Rweb_connect.qmd
-            - Rweb_shinyapp.qmd
+            - serveurs/rweb/rweb_intro.qmd
+            - serveurs/rweb/rweb_connect.qmd
+            - serveurs/rweb/rweb_shinyapp.qmd
 
     - title: "À propos"
       contents:
