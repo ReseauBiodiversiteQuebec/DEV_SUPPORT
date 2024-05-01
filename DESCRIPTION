@@ -1,3 +1,5 @@
 Title: Documentation BQ
 Version: 0.1
-Imports: rmarkdown
+Imports: 
+    rmarkdown,
+    knitr
