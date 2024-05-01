@@ -85,7 +85,7 @@ website:
           contents:
             - docs/catalogues/io/io_intro.qmd
             - docs/catalogues/io/stacsfastapi.qmd
-            - docs/catalogues/io/rstac-gdalcubes.Rmd
+            - docs/catalogues/io/rstac-gdalcubes.qmd
         - section: "Acer"
           contents:
             - docs/catalogues/acer/acer_intro.qmd
