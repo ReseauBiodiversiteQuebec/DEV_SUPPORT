@@ -28,8 +28,10 @@ website:
         file: docs/serveurs/serveurs_intro.qmd
       - text: "Tableaux de bord"
         file: docs/tableaux_bord/tableaux_bord_intro.qmd
-      - text: "Analyses"
-        file: docs/analyses/analyses_intro.qmd
+      - text: "Recherche"
+        file: docs/recherche/recherche_intro.qmd
+      - text: "Design"
+        file: docs/design/design_intro.qmd
       - text: "À propos"
         file: about.qmd
   sidebar:
