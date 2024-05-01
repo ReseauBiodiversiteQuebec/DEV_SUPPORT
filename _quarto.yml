@@ -33,7 +33,7 @@ website:
       - text: "À propos"
         file: about.qmd
   sidebar:
-    - title: "Home"
+    - title: "Accueil"
       style: docked #floating
       background: light
       contents:
@@ -80,9 +80,12 @@ website:
         - section: "Généralités"
           contents:
             - docs/catalogues/catalogues_s5cmd_use.qmd
+            - docs/catalogues/titiler.qmd
         - section: "IO"
           contents:
             - docs/catalogues/io/io_intro.qmd
+            - docs/catalogues/io/stacsfastapi.qmd
+            - docs/catalogues/io/rstac-gdalcubes.Rmd
         - section: "Acer"
           contents:
             - docs/catalogues/acer/acer_intro.qmd
