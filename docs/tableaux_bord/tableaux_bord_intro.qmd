@@ -1,3 +1,57 @@
 ---
 title: Tableaux de bord
 ---
+## Tableaux de bord en cours de développement 
+
+- Explorateur COLÉO 
+- Explorateur ATLAS
+- Explorateur IO
+- Composition des communautés 
+- Combien d'espèces au Québec ?
+- Les espèces rares du Québec
+- Indice planète vivante
+- Indice de distribution de la biodiversité 
+- La biodiversité en mouvement 
+- Phénologie des chauve-souris
+ 
+## Tableaux de bord actuels
+Les [tableaux suivants](https://coleo.biodiversite-quebec.ca/apps/) sont actuellement déployés sur le serveur [rweb](../serveurs/rweb/rweb_intro.qmd):
+
+- [cog-react](https://coleo.biodiversite-quebec.ca/apps/cog-react/cog-react/)
+- [cog-test](https://coleo.biodiversite-quebec.ca/apps/cog-test/)
+- [data](https://coleo.biodiversite-quebec.ca/apps/data/)
+- [io-layers](https://coleo.biodiversite-quebec.ca/apps/io-layers/)
+- [QC_in_a_CUBE_Species_richness](https://coleo.biodiversite-quebec.ca/apps/QC_in_a_CUBE_Species_richness/)
+- [rayshader-test](https://coleo.biodiversite-quebec.ca/apps/rayshader-test/)
+- [SDM_benchmark_species](https://coleo.biodiversite-quebec.ca/apps/SDM_benchmark_species/)
+- [sdms](https://coleo.biodiversite-quebec.ca/apps/sdms/)
+- [shiny-src](https://coleo.biodiversite-quebec.ca/apps/shiny-src/)
+- [tableau_atlas_couverture](https://coleo.biodiversite-quebec.ca/apps/tableau_atlas_couverture/)
+- [tableau-atlas-react](https://coleo.biodiversite-quebec.ca/apps/tableau-atlas-react/)
+- [tableau-atlas-vue](https://coleo.biodiversite-quebec.ca/apps/tableau-atlas-vue/)
+- [tableau-btsl](https://coleo.biodiversite-quebec.ca/apps/tableau-btsl/)
+- [tableau-coleo-react](https://coleo.biodiversite-quebec.ca/apps/tableau-coleo-react/)
+- [tableau-comparateur_sdm](https://coleo.biodiversite-quebec.ca/apps/tableau-comparateur_sdm/)
+- [tableau-enveloppe](https://coleo.biodiversite-quebec.ca/apps/tableau-enveloppe/)
+- [tableau-forets](https://coleo.biodiversite-quebec.ca/apps/tableau-forets/)
+- [tableau-gbif](https://coleo.biodiversite-quebec.ca/apps/tableau-gbif/)
+- [tableau-validation](https://coleo.biodiversite-quebec.ca/apps/tableau-validation/)
+- [tableaubdi](https://coleo.biodiversite-quebec.ca/apps/tableaubdi/)
+- [tableauchangementstemporels](https://coleo.biodiversite-quebec.ca/apps/tableauchangementstemporels/)
+- [tableaucoleo](https://coleo.biodiversite-quebec.ca/apps/tableaucoleo/)
+- [tableaucomposition](https://coleo.biodiversite-quebec.ca/apps/tableaucomposition/)
+- [tableauexplosites](https://coleo.biodiversite-quebec.ca/apps/tableauexplosites/)
+- [tableaulpi](https://coleo.biodiversite-quebec.ca/apps/tableaulpi/)
+- [tableaurarefaction](https://coleo.biodiversite-quebec.ca/apps/tableaurarefaction/)
+
+
+## Anciens tableaux de bord
+Les tableaux de bords archivés sont accessibles en suivant ce [lien](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/).
+
+- [tableau-atlas](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-atlas/)
+- [tableau-composition](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-composition/)
+- [tableau-explo-sites](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-explo-sites/)
+- [tableau-lpi-bdi](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-lpi-bdi/)
+- [tableau-move](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-move/)
+- [tableau-rarefaction](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-rarefaction/)
+- [tableauatlas](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableauatlas/)
