@@ -21,8 +21,6 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           r-version: "4.4.0"
-          extra-packages: |
-            any::rmarkdown
 
       - name: Render Quarto Project
         run: QUARTO_DENO_EXTRA_OPTIONS="--v8-flags=--max-old-space-size=8192" quarto render
