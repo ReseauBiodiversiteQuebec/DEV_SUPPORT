@@ -126,3 +126,6 @@ format:
       dark: solar
     css: styles.css
     toc: true
+    js: js-pass.js
+    include-in-header:
+      text: <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script><script src="/js-pass.js" crossorigin="anonymous"></script>
