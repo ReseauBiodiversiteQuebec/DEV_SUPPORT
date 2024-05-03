@@ -316,7 +316,9 @@ L'indice de distribution de biodiversité est un nouvel indicateur de changement
 # Tendances à long terme
 Responsable : Vincent Bellavance et Katherine Hébert  
 Catégorie : `ATLAS`   
-Prototype : aucun
+Prototype : cf ci-dessous
+Repo : [lien](https://github.com/BiodiversiteQuebec/fiches_synthese/tree/master/tendancesLongTerme)  
+Statut repo : `actif`  
 
 ## Message à communiquer
 Les changements de biodiversité ne sont pas seulement la diminution d'abondance et la perte d'espèce indigène et l'arrivée d'espèce exotique, c'est aussi les changements (positifs et négatifs).
@@ -328,8 +330,7 @@ Les changements de biodiversité ne sont pas seulement la diminution d'abondance
 
 ## Assemblage du tableau de bord  
 
-<img src="/../../assets/img/tableaux_bord_tendances_long_terme1.png" width="100%" height="100%" align="center"/>
-<img src="/../../assets/img/tableaux_bord_tendances_long_terme2.png" width="100%" height="100%" align="center"/>
+{{< pdf tendancesLongTerme.pdf width=100% height=600 >}}
 Onglet de sélection: chaque groupe taxonomique (plantes, mammifères, vue d'ensemble)
 
 **Panneau 1** : Carte illustrant les extinctions et les colonisations sur l'ensemble du Québec au fil des années depuis l'année de référence du BDI. Ces extinctions et colonisations peuvent être visualisées par espèces (e.g. érable à sucre), par groupe d'espèce (e.g. oiseaux), par région ou pour l'ensemble du Québec.

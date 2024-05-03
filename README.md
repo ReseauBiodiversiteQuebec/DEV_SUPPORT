@@ -18,3 +18,7 @@ date: "`r Sys.Date()`"
 
 La structure du site est représenté sous la forme d'un diagramme visible dans la section à [propos](https://biodiversitequebec.github.io/bq_docs/about.html). N'ayant actuellement pas de méthode automatisée pour le faire, il est nécessaire de mettre à jour ce diagramme à la main :sob:.
 Pour ce faire, télécharger et ouvrez le fichier `diagramme_site/bq_docs_structure_site.drawio` via le site [diagrams.net](https://app.diagrams.net/). Faites les modifications nécessaires puis sauvegardez la nouvelle version du diagramme au format XML (extension .drawio).
+
+## Badges
+
+Les badges sont générés à partir du site [Shields.io](https://shields.io/badges).

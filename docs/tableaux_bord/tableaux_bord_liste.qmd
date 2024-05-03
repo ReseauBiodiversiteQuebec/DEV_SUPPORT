@@ -4,13 +4,46 @@ author: "Claire-Cécile Juhasz"
 date: "`r Sys.Date()`"
 ---
 
+# cog-react
+Responsable :  
+
+<a href="https://github.com/BiodiversiteQuebec/tableaulpi"><img src="https://img.shields.io/badge/Status-final-FF9933"></a>  
+<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>  
+<a href="https://coleo.biodiversite-quebec.ca/apps/tableaulpi/"><img src=https://img.shields.io/badge/View-TableauLPI-brightgreen.svg?colorA=grey></a>  
+<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
+- [cog-react](https://coleo.biodiversite-quebec.ca/apps/cog-react/cog-react/)
+- [cog-test](https://coleo.biodiversite-quebec.ca/apps/cog-test/)
+- [data](https://coleo.biodiversite-quebec.ca/apps/data/)
+- [io-layers](https://coleo.biodiversite-quebec.ca/apps/io-layers/)
+- [QC_in_a_CUBE_Species_richness](https://coleo.biodiversite-quebec.ca/apps/QC_in_a_CUBE_Species_richness/)
+- [rayshader-test](https://coleo.biodiversite-quebec.ca/apps/rayshader-test/)
+- [SDM_benchmark_species](https://coleo.biodiversite-quebec.ca/apps/SDM_benchmark_species/)
+- [sdms](https://coleo.biodiversite-quebec.ca/apps/sdms/)
+- [shiny-src](https://coleo.biodiversite-quebec.ca/apps/shiny-src/)
+- [tableau_atlas_couverture](https://coleo.biodiversite-quebec.ca/apps/tableau_atlas_couverture/)
+- [tableau-atlas-react](https://coleo.biodiversite-quebec.ca/apps/tableau-atlas-react/)
+- [tableau-atlas-vue](https://coleo.biodiversite-quebec.ca/apps/tableau-atlas-vue/)
+- [tableau-btsl](https://coleo.biodiversite-quebec.ca/apps/tableau-btsl/)
+- [tableau-coleo-react](https://coleo.biodiversite-quebec.ca/apps/tableau-coleo-react/)
+- [tableau-comparateur_sdm](https://coleo.biodiversite-quebec.ca/apps/tableau-comparateur_sdm/)
+- [tableau-enveloppe](https://coleo.biodiversite-quebec.ca/apps/tableau-enveloppe/)
+- [tableau-forets](https://coleo.biodiversite-quebec.ca/apps/tableau-forets/)
+- [tableau-gbif](https://coleo.biodiversite-quebec.ca/apps/tableau-gbif/)
+- [tableau-validation](https://coleo.biodiversite-quebec.ca/apps/tableau-validation/)
+- [tableaubdi](https://coleo.biodiversite-quebec.ca/apps/tableaubdi/)
+- [tableauchangementstemporels](https://coleo.biodiversite-quebec.ca/apps/tableauchangementstemporels/)
+- [tableaucoleo](https://coleo.biodiversite-quebec.ca/apps/tableaucoleo/)
+- [tableaucomposition](https://coleo.biodiversite-quebec.ca/apps/tableaucomposition/)
+- [tableauexplosites](https://coleo.biodiversite-quebec.ca/apps/tableauexplosites/)
+- [tableaurarefaction](https://coleo.biodiversite-quebec.ca/apps/tableaurarefaction/)
+
 # Tableau LPI
-  <a href="https://coleo.biodiversite-quebec.ca/apps/tableaulpi/"><img src=https://img.shields.io/badge/View-TableauLPI-brightgreen.svg?colorA=grey></a>
-  <a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>  
-  
 Responsable : Katherine Hébert 
-Catégorie : `ATLAS`  
-Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableaulpi/)  
+
+<a href="https://github.com/BiodiversiteQuebec/tableaulpi"><img src="https://img.shields.io/badge/Status-final-FF9933"></a>  
+<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>  
+<a href="https://coleo.biodiversite-quebec.ca/apps/tableaulpi/"><img src=https://img.shields.io/badge/View-TableauLPI-brightgreen.svg?colorA=grey></a>  
+<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>  
 
 Un tableau de bord Shiny pour visualiser les tendances de populations animales au Québec avec l'Indice Planète Vivante.
 <br> 
