@@ -30,3 +30,7 @@
   background-color: #21343c !important;
   color: #ccc !important;
 }
+
+#quarto-document-content {
+  display: none;
+}
