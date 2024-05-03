@@ -1,0 +1,373 @@
+---
+title: Liste des tableaux de bord archivés
+author: "Claire-Cécile Juhasz"
+date: "`r Sys.Date()`"
+---
+# Explorateur COLEO
+
+Responsable : Guillaume Larocque  
+Catégorie : `COLEO`  
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableauexplosites/)  
+
+## Objectif
+Visualisation des sites d'échantillonnage du réseau de suivi de la biodiversité du Québec avec emphase sur les informatiques descriptives de l'échantillonnage 
+
+## Message à communiquer
+Le Gouvernement du Québec réalise un programme ambitieux de suivi de la biodiversité sur un territoire qui est vaste et extrêmement hétérogène. 
+
+## Données 
+- Coordonnées de localisation des sites
+- Catégories d'organismes inventoriés (indicateurs)
+- Informations sur le protocole d'échantillonnage (e.g. nom du partenaire, propriétaire du terrain, type de milieu)
+- Date de visite
+- Données météorologiques
+- Donnée de température de l'eau (aquatique)
+- Utilisation du territoire (e.g. agricole, forestier, urbain)*
+- Projections de changements climatiques* 
+- Indice d'empreinte humaine*
+- Densité de routes*
+- Densité de population*
+- Photos par les camera traps* 
+- Enregistrements sonores d'oiseaux*
+- Image des organismes inventoriés
+
+## Accessibilité des données 
+- Accès direct par API Coléo
+- Données environnementales à suppléer 
+- Accès à des images d'espèces à partir de l'API iNaturalist
+* marque les données qui pourraient être accessibles mais qui ne le sont pas pour le moment
+
+## Traitement des données
+- Les données brutes sont présentées 
+
+## Description sommaire de la représentation
+- Carte de visualisation des sites avec pictogrammes décrivant les différentes campagnes d'inventaire
+- Liste de "fun facts" sur le dispositif dans la marge de gauche du tableau de bord
+- Cliquer sur un site fait apparaître une boite avec des onglets qui illustrent 
+    + liste des indicateurs qui ont été inventoriés ainsi que les informations descriptives du site 
+    + figure qui illustre la variation au fil de l'année des précipitations et de la température
+    + figure qui illustre les projections de changement climatique pour le site 
+
+
+# Explorateur ATLAS
+Responsable : Guillaume Larocque  
+Catégorie : `ATLAS`  
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableau-atlas-vue/)
+
+## Objectif
+Communiquer rapidement les données accessibles par la base de données ATLAS
+
+## Message à communiquer
+La distribution des observations de biodiversité est très inégale à travers le Québec. Certaines régions sont plus diversifiées que d'autres, certains organismes sont mieux documentés que d'autres. La plupart des observations sont réalisées au sud du Québec là où la population est la plus dense et très peu d'observations sont faites dans l'extrême nord du Québec. 
+
+## Données 
+- Extraction de ATLAS qui permet d'avoir, pour une grille avec un maillage mobile, une densité d'observations et un nombre d'espèces. 
+- Extraction de ATLAS qui permet d'avoir la liste des données disponibles dans ATLAS
+
+## Accessibilité des données 
+- Accès direct par l'API ATLAS
+
+## Traitement des données
+- Les données sont pré-traitées dans l'API pour maximiser la performance des requêtes
+
+## Description sommaire de la représentation
+- Une carte illustre les observations disponibles dans ATLAS. 
+- Le menu permet de sélectionner le type d'organisme d'intérêt
+- Un compteur en haut à droite résume les données
+- Un histogramme au bas permet de sélectionner la plage temporelle couverte. 
+- Un onglet permet d'accéder à la liste des données disponibles dans ATLAS. 
+
+# Explorateur IO
+Responsable : Vincent Beauregard  
+Catégorie : `IO`  
+Prototype : aucun
+
+## Objectif
+Communiquer rapidement les données accessibles par la base de données IO. Cette base de données rassemble les couches géomatiques de données environnementales (e.g. climat, qualité des sols, productivité primaire), utilisation du territoire (e.g. empreinte humaine, densité de population, densité des routes) et scénarios de changements climatiques. 
+
+## Message à communiquer
+Comprendre les changements de biodiversité requiert une connaissance des variables susceptibles de l'affecter. Les représentations au sein des différents tableaux de bord sollicitent pour la plupart des données qui sont synthétisées dans la base de données IO et représentées au moyen de ce tableau de bord. 
+
+## Données 
+- Extraction de IO qui permet d'avoir de l'information cartographique pour des couches de toutes natures. 
+
+## Accessibilité des données 
+- Accès direct par l'API IO
+
+## Traitement des données
+- Les données sont pré-traitées dans l'API pour maximiser la performance des requêtes
+
+## Description sommaire de la représentation
+- Une carte illustre les différentes couches stockées dans IO. Un menu déroulant permet d'illustrer la couche à illustrer. 
+- La transparence permet de superposer plusieurs couches pour apprécier l'occurrence de stresseurs multiples. 
+
+# Composition des communautés
+
+Responsable : Guillaume Larocque  
+Catégorie : `COLEO`  
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableaucomposition/)
+
+Ce tableau de bord est la principale vitrine vers COLÉO et les données du réseau de suivi du Gouvernement du Québec. La diversité des informations qui peuvent être représentée est immense et il peut être décliné en plusieurs tableaux de bord, plus spéciques aux indicateurs étudiés. Les données comprennent : végétation, oiseaux, chauve-souris, poissons, libellules, papillons, arthropodes du sol, mammifères, indice de décomposition des sols. Chacun de ces indicateurs peut apporter une information unique. L'exemple présenté ici n'est qu'une synthèse de l'information disponible. 
+
+## Objectif
+Accéder rapidement à une description simplifiée de la richesse en espèces au sein du réseau de suivi du Gouvernement du Québec.
+
+## Message à communiquer
+Découvrir la diversité des espèces échantillonnées par le programme. 
+
+## Données 
+- Les données sont regroupées par campagne / indicateur. Pour chaque site, une liste des espèces observées
+- Localisation des sites d'échantillonnage
+- Image des organismes inventoriés
+
+## Accessibilité des données 
+- Accès direct par API Coléo
+- Données environnementales à suppléer 
+- Accès à des images d'espèces à partir de l'API iNaturalist
+
+## Traitement des données
+- Un décompte du nombre d'espèces par campagne / indicateur est réalisé 
+
+## Description sommaire de la représentation
+- Une carte donne accès aux différents sites échantillonnés. On peut filtrer les sites par catégorie d'échantillonnage. La sélection du type d'icone permet de visualiser la richesse en espèces. 
+- La sélection d'un site fait apparaître une fenêtre où est résumé le nombre d'espèces par campagne / indicateur. Des images des espèces les plus abondantes apparaissent pour illustrer cette diversité. 
+- Certains partenaires du projet ont exprimé le souhait de comparer plusieurs sites. 
+
+# Indice planète vivante (LPI)
+Responsable : Katherine Hébert  
+Catégorie : `ATLAS`  
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableaulpi/)
+
+## Objectif
+Illuster le changement dans l'indice planète vivante pour des populations qui font l'objet d'un suivi à long terme au Québec. 
+
+## Message à communiquer
+L'indice planète vivante est un standard établit par le World Wildlife Fund pour rapporter les tendances dans les populations animales et végétales. Découvrez l'indice et ses variantes dans cette première étude pour le Québec. 
+
+## Données 
+- Séries temporelles de populations stockées dans ATLAS
+- Coordonnées spatiales des populations
+- Image des organismes inventoriés
+- Séries temporelles du climat pour chaque site
+
+## Accessibilité des données 
+- Accès direct par API Coléo
+- Données environnementales à suppléer 
+- Accès à des images d'espèces à partir de l'API iNaturalist
+
+## Traitement des données
+- L'indice planète vivant est le résultat d'un calcul assez complexe qui transforme les données et aggrège plusieurs modèles
+
+## Description sommaire de la représentation envisagée ou réalisée
+- Une carte localise les populations étudiées 
+- Sélectionner une population sur la carte permet d'illustrer la tendance temporelle 
+- Un bouton dans la marge de gauche permet d'illuster l'indice pour l'ensemble du territoire. Des options permettent d'afficher la moyenne ou les courbes individuelles. Des filtres permettent de distinguer les différents groupes d'espèces
+
+# Quel rôle pour les espèces rares
+Responsable : Dominique Gravel / Guillaume Larocque  
+Catégorie : `COLEO`  
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableau-composition/)
+
+## Objectif
+Mettre en valeur les espèces les plus rares échantillonnées dans le réseau de suivi. 
+
+## Message à communiquer
+Les espèces emblématiques attirent d'abord notre attention, alors que les espèces rares contribuent davantage à la biodiversité. Découvrez dans ce module le rôle que ces espèces peuvent avoir pour comprendre les changements climatiques. Les écosystèmes sont habituellement composés d'une série d'espèces abondates, communes, mais aussi d'espèces rares que l'on ne retrouve que très occasionnellement. Ces espèces contribuent exceptionnellement à la diversité avec des caractéristiques exceptionnelles et une histoire évolutive unique. 
+
+## Données 
+- Les données sont regroupées par campagne / indicateur. Pour chaque site, une liste des espèces observées
+- Localisation des sites d'échantillonnage
+- Image des organismes inventoriés
+
+## Accessibilité des données 
+- Accès direct par API Coléo
+- Données environnementales à suppléer (climat, indice empreinte humaine)
+- Accès à des images d'espèces à partir de l'API iNaturalist
+- Arborescence taxonomique pour chaque espèce 
+ 
+## Traitement des données
+- Analyse de l'abondance régionale des espèces
+- Analyse de la position phylogénétique des espèces
+
+## Description sommaire de la représentation
+- Une carte donne accès aux différents sites échantillonnés. On peut filtrer les sites par catégorie d'échantillonnage. La sélection du type d'icone permet de visualiser la richesse en espèces. 
+- La sélection d'un site fait apparaître une fenêtre où se trouvent plusieurs onglets qui soulignent les observations exceptionnelles : 
+    + Distribution d'abondance des espèces sur l'ensemble des données avec identification des espèces pour le site en particulier 
+    + Présentation d'une rosette taxonomique qui décrit l'originalité phylogénétique des espèces observées sur le site
+    + Possibilité d'ajouter des images pour illustrer ces espèces 
+    + Une figure représente les préférences des espèces trouvées à ce site pour le climat (de chaud à froid) et pour les perturbations anthropiques (indice empreinte humaine)
+
+# Combien d'espèces au Québec ?
+Responsable : Dominique Gravel / Guillaume Larocque  
+Catégorie : `COLEO` `ATLAS`    
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableaurarefaction/)
+
+## Objectif
+Comptabiliser le nombre d'espèces qui se trouvent au Québec, par région et ainsi que pour les sites du réseau de suivi. 
+
+## Message à communiquer
+Le nombre d'espèces qui se trouve dans une région peut être difficile à évaluer. Des inventaires sont réalisés et on peut aisément calculer le nombre d'espèces observées. Certaines espèces sont cependant rares, cryptiques, et elles échappent à l'inventaire. Les scientifiques font appel à une technique dite de "raréfaction" pour estimer la diversité en espèces d'une région et procurer un degré de confiance dans cette estimation. 
+
+## Données 
+- Distribution des espèces dans ATLAS
+- Distribution des espèces dans COLEO
+- Localisation des sites du suivi
+- Fond de carte avec les régions écologiques du Québec 
+
+## Accessibilité des données 
+- Toutes les données sont accessibles par les APIs de ATLAS et COLEO
+
+## Traitement des données
+- Une librairie de R est utilisée pour comptabiliser le nombre d'espèces observées à partir d'une liste d'espèces observées, le nombre d'espèces au total et l'incertiture de cette estimation. 
+
+## Description sommaire de la représentation
+- Une carte principale offre la possibilité d'illustrer le nombre d'espèces observées dans ATLAS par région écologique ou la localisation des sites d'échantillonnage dans COLÉO. 
+- Le menu de la marge de gauche permet de sélectionner le groupe taxonomique d'intérêt. 
+- Les onglets de la carte permettent de consulter la diversité totale par groupe taxonomique. 
+- La sélection d'une région ou d'une site fait apparaître une fenêtre où est illustrée la richesse en espèce par groupe taxonomique pour la sélection. 
+- Un onglet permet d'obtenir la liste des espèces observées pour la sélection. 
+
+# Phénologie des chauves-souris
+Responsable : Andrew MacDonald  
+Catégorie : `COLEO`   
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableauchangementstemporels/)
+
+## Objectif
+Présenter la succession temporelle des chauves-souris sur les sites d'échantillonnage. 
+
+## Message à communiquer
+Le changement des saisons provoque une succession d'événements marquants pour la biodiversité, comme le développement de la végétation, l'arrivée des premiers passereaux ou encore le chant des grillons. Explorez comment les changements de biodiversité affecteront la phénologie des espèces et en particulier des chauves-souris. 
+
+## Données
+- Données d'observation des chauves souris à chaque site du réseau de suivi. La donnée est constituée du nombre d'observation par espèce par jour, pour chaque site d'échantillonnage
+- Données météorologiques à suppléer
+
+## Accessibilité des données 
+- Accès direct par API Coléo
+- Données environnementales à suppléer
+
+## Traitement des données
+- Aucun traitement n'est nécessaire 
+- Possibilité d'ajouter un modèle qui décrit les conditions d'arrivée et de départ 
+
+## Description sommaire de la représentation
+- La carte permet de représenter les sites du réseau de suivi
+- Possibilité d'ajouter un onglet pour présenter la variation de la séquence temporelle pour l'ensemble du  territoire
+- La sélection d'un site permet d'illustrer la séquence d'arrivée et de départ des différentes espèces documentées 
+- Il serait possible d'ajouter une série temporelle des conditions météorologiques pour illustrer les conditions d'arrivées et de départ des différentes espèces. 
+
+# Espèces en mouvement 
+Responsable : Dominique Gravel  
+Catégorie : `ATLAS`    
+Prototype : aucun 
+
+## Objectif
+Communiquer l'impact des changements climatiques sur la distribution des espèces et leur capacité à soutenir les changements climatiques. 
+
+## Message à communiquer
+Certaines espèces peinent à suivre le rythme des changements climatiques et sont déjà maladaptées avec le climat actuel. D'autres le seront dans un futur proche. Explorer cet indice qui illustre la difficulté de certaines espèces à suivre les conditions climatiques qui leurs sont favorables. 
+
+## Données 
+- Données de distribution de ATLAS 
+- Données environnementales*
+- Données de pression humaine
+- Scénarios de changements climatiques 
+
+## Accessibilité des données
+- Accès direct par API ATLAS
+- Données environnementales à suppléer
+
+## Traitement des données
+- Les données d'observations seront analysées par une librairie spécialisée appelée mapSpecies. 
+- Les modèles seront utilisés pour créer des cartes, une par espèce, de la localisation actuelle de l'espèce. 
+- Les modèles pourront également être interrogés pour évaluer si pour chaque endroit l'impact du changement climatique sur la performance des espèces
+- Les modèles pourront également être interrogés pour projeter la répartition future de chaque espèce
+
+## Description sommaire de la représentation
+- La conceptualisation de ce tableau de bord doit être refaite. Plusieurs options sont envisagées 
+    + Le calcul d'un indice de "maladaptation" sur une grille qui peut être représentée sur la carte. Cet indice rapporte le nombre d'espèces susceptible de disparaître dans un horizon spécifié par l'utilisateur sous le changement climatique 
+    + Une animation peut être réalisée pour illustrer le déplacement possible sur une carte des aires de répartition d'une espèce sélectionnée dans le menu déroulant. 
+
+# Indice de la distribution de la biodiversité des oiseaux et des papillons
+Responsable : Vincent Bellavance et Clara Casabona  
+Catégorie : `ATLAS`   
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableaubdi/)
+
+## Objectif
+Illuster le changement dans l'indice de la distribution de la biodiversité pour les oiseaux et les papillons. 
+
+## Message à communiquer
+L'indice de distribution de biodiversité est un nouvel indicateur de changements de biodiveristé utilisé pour rapporter les changements d'aire de répartition, les extinctions et les introductions de nouvelles espèces. Similaire au LPI, il rapporte le bilan des accroissements et diminutions d'aires de répartition au fil du temps. 
+
+## Données 
+- Données de distribution de ATLAS. 
+
+## Accessibilité des données 
+- Accès direct par API ATLAS
+
+## Traitement des données
+- Les données d'observations seront analysées par une librairie spécialisée appelée mapSpecies. 
+
+## Description sommaire de la représentation envisagée ou réalisée
+- Une carte représente le résultat sommaire des changements de diversité pour l'ensemble du Québec.
+- L'indice est illustré par défaut, un filtre permet d'illustrer les extinctions locales ou les colonisations. 
+- Un bouton dans la marge de gauche permet d'accéder à la tendance globale de l'indice sur l'ensemble du territoire. Un filtre permet de distinguer les groupes (e.g. rapaces, passeraux, sauvagine, limicoles)
+
+# Tendances à long terme
+Responsable : Vincent Bellavance et Katherine Hébert  
+Catégorie : `ATLAS`   
+Prototype : aucun
+
+## Message à communiquer
+Les changements de biodiversité ne sont pas seulement la diminution d'abondance et la perte d'espèce indigène et l'arrivée d'espèce exotique, c'est aussi les changements (positifs et négatifs).
+
+## Données
+- Séries temporelles de population dans Living Planet Database
+- Séries temporelles de population dans BioTIME
+- Les modèles de distribution d'espèces (SDM) provenant des données d'Atlas
+
+## Assemblage du tableau de bord  
+
+<img src="/../../assets/img/tableaux_bord_tendances_long_terme1.png" width="100%" height="100%" align="center"/>
+<img src="/../../assets/img/tableaux_bord_tendances_long_terme2.png" width="100%" height="100%" align="center"/>
+Onglet de sélection: chaque groupe taxonomique (plantes, mammifères, vue d'ensemble)
+
+**Panneau 1** : Carte illustrant les extinctions et les colonisations sur l'ensemble du Québec au fil des années depuis l'année de référence du BDI. Ces extinctions et colonisations peuvent être visualisées par espèces (e.g. érable à sucre), par groupe d'espèce (e.g. oiseaux), par région ou pour l'ensemble du Québec.
+
+**Panneau 2** : Tendance moyenne du Biodiversity Distribution Index (BDI), animée pour montrer la tendance progressivement (voir panneau 3)
+
+**Panneau 3** : Tendance moyenne de l'indice Planète Vivante*, animée pour montrer la tendance progressivement (e.g. <https://www.r-graph-gallery.com/287-smooth-animation-with-tweenr.html>)
+
+**Panneau 4** : Diagramme waffle interactif avec 1 case par espèce, où chaque case est colorée selon un gradient vert-blanc-rouge: populations en croissance sont en vert, les populations stables sont en blanc, et les populations en déclin sont en rouge. En passant sur chaque case avec le curseur, un pop-up montre le nom de l'espèce, une photo, et un graphique de la tendance de son indice Planète Vivante en fonction du temps. Au-dessus du graphique, on affichera les pourcentages de populations en croissance / stables / en déclin, et la tendance moyenne de ces sous-groupes (e.g. 5% en déclin, et sont maintenant 20% plus petits qu'en xxxx (l'année de référence)).
+
+## Amélioration visuelle possible
+Les animations des panneaux 1, 2, et 3 mettraient l'emphase sur la progression des tendances avec le temps.
+
+## Histoire de biodiversité associée
+1. Pour le BDI, parler d'une espèce qui a colonisé un endroit quelconque et parler des facteurs qui semblent expliquer cette colonisation. Même chose pour l'extinction. Idéalement, ce serait des espèces que les gens connaissent bien ou à lesquelles les gens ont peut-être un attachement (e.g.oiseau charismatique, l'érable à sucre)
+
+2. Pour le mêmes espèces qu'en 1, il pourrait y avoir des projections pour voir à quoi ressemblera l'aire de répartition de celles-ci dans le futur selon différents scénarios.
+
+3. Pour le LPI, parler d'une espèce en croissance et d'une espèce en déclin, et expliquer pourquoi elles montrent cette tendance. Idéalement, les espèces devraient être charismatiques.
+
+# Raréfaction
+Responsable : Claire-Cécile Juhasz 
+Catégorie : `ATLAS`    
+Prototype : [lien](https://coleo.biodiversite-quebec.ca/apps/tableaurarefaction/) 
+
+## Description
+
+Tableau de bord qui illustre la richesse spécifique par groupe taxonomique et par région au Québec
+
+## Les données incluent
+- Occurences des espèces issues d'`ATLAS`
+- Analyses de raréfaction (logiciel R; package `iNEXT`)
+- Provinces naturelles définies selon https://www.donneesquebec.ca/recherche/fr/dataset/cadre-ecologique-de-reference
+
+## Description des scripts
+
+La ségrégation des occurences par régions québécoises et les analyses de raréfaction sont exécutées par le script `make_local_data.R`.  
+
+L'application Shiny est lancée avec le script `app.R`. Plusieurs dépendances sont chargées automatiquement.  
+
+L'exécution du script requiert plusieurs librairies R, celles-ci peuvent être installées avec le lancement de `script_installation.r`.  
