@@ -1,5 +1,7 @@
 ---
 title: Tableaux de bord
+author: "Claire-Cécile Juhasz"
+date: "`r Sys.Date()`"
 ---
 ## Tableaux de bord en cours de développement 
 

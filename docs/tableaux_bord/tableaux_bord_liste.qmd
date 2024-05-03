@@ -1,5 +1,7 @@
 ---
 title: Liste des tableaux de bord
+author: "Claire-Cécile Juhasz"
+date: "`r Sys.Date()`"
 ---
 # Explorateur COLEO
 
