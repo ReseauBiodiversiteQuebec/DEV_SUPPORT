@@ -2,6 +2,22 @@
 title: Base de données Atlas
 ---
 
-Joli petite description de la BD par Vincent? Ben? Victor? Toutes ces réponses ?
 
 [site web Atlas](https://BiodiversiteQuebec.github.io/atlas-db/)
+
+### Connexion à la BD Atlas
+
+Sur le serveur coleo-api, dans le répertoire 
+```bash
+/var/www/bq-db-container
+```
+
+On peut se connecter ne tant que utilisateur "coleo" (sudo su coleo) et ensuite taper ces commandes: 
+
+```bash
+make build-atlas (Mettre à jour le serveur)
+make stop-atlas  (Stopper serveur)
+make start-atlas  (Démarrer le serveur)
+make bash-atlas (Se connecter à bash sur le serveur)
+make psql-atlas (Se connecter à la bd Atlas en tant que user postgres)
+```
