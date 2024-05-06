@@ -3,6 +3,8 @@ title: Taxonomie
 ---
   [Repo Github](https://github.com/BiodiversiteQuebec/Coleo_DB/blob/master/taxa_README.md)
 
+![Taxonomie](assets/img/coleo_taxonomy.png)
+
 ## Features
 
 * **Raw observed taxonomic entry stored as-is**. Minimal maintenance of stored taxon database and taxon entries overhead operation (validation, correction) is allowed by storing raw taxon values as-is. All corrected and validated referenced taxonomic entries are found through fuzzy matching and stored independently.

@@ -3,6 +3,8 @@ title: Structure
 ---
 [Repo Github](https://github.com/BiodiversiteQuebec/Coleo_DB/blob/master/API-coleo.md)
 
+![Public](assets/img/coleo_public.png)
+
 
 ## Champs communs à la plupart des tables
 
