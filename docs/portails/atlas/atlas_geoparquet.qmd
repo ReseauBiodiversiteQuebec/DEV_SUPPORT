@@ -1,9 +1,6 @@
----
-title: Geoparquet pour Atlas 
----
+La base de données Atlas est sauvegardée de façon régulière en format [GeoParquet](https://geoparquet.org/). Ce format de fichier, combiné à [DuckDB](https://duckdb.org/) permet la connexion efficace à un jeu de données à distance sans avoir à télécharger toutes les données. Il est égale possible de télécharger le fichier Geoparquet contenant toutes les données publiques de l'Atlas pour effectuer des requêtes plus rapidement.  
 
-La base de données Atlas est sauvegardée de façon régulière en format Parquet. Voici les instructions pour intéragir avec le fichier parquet entreposé sur l'infonuagique de l'Alliance des ressources numériques. 
-
+Voici les instructions pour intéragir avec le fichier GeoParquet entreposé sur l'infonuagique depuis R avec les packages duckdb et dplyr. 
 
 Avant de continuer, veuillez installer les packages suivant. 
 ```r
@@ -28,20 +25,25 @@ atlas_dates
 atlas_rem <- atlas_remote(tail(atlas_dates$dates,n=1))
 ```
 
+Voir le nom des différents champs dans le fichier Parquet.
+```r
+colnames(atlas_rem)
+```
+
+Charger seulement les observations d'harfang des neiges dans un data frame. 
+```r
+bubo <- atlas_rem |> filter(valid_scientific_name == 'Bubo scandiacus') |> collect()
+```
+
 Obtenir le nombre d'observations de chacune des espèces présentes dans Atlas et trier par nombre d'observations décroissant. Notez que cette requête ne chargera pas les données Atlas sur votre ordinateur. Le calcul se fera à distance grâce à DuckDB et au format GeoParquet. 
 ```r
-mb <- atlas_rem |> group_by(valid_scientific_name) |> summarize(cnt=count()) |> arrange(desc(cnt)) |> collect()
+sp_count <- atlas_rem |> group_by(valid_scientific_name) |> summarize(cnt=count()) |> arrange(desc(cnt)) |> collect()
 ```
 
 Pour des opérations plus lourdes et une intéraction plus rapide avec le fichier, on peut le télécharger localement sur son ordinateur. Notez que le fichier fait environ 600MB, donc s'assurer d'avoir l'espace disque sur votre ordinateur. 
 ```r
 # Changer le répertoire ~/Downloads pour le répertoire de votre choix sur votre ordinateur
 atlas <- atlas_local(tail(atlas_dates$dates,n=1),'~/Downloads/')
-```
-
-Charger les observations d'harfang des neiges
-```r
-bubo <- atlas |> filter(valid_scientific_name == 'Bubo scandiacus') |> collect()
 ```
 
 Refaire le décompte d'observations par espèce avec le fichier local. Vous verrez que ça se fera plus rapidement qu'avec le fichier à distance. 
