@@ -40,6 +40,8 @@ Obtenir le nombre d'observations de chacune des espèces présentes dans Atlas e
 sp_count <- atlas_rem |> group_by(valid_scientific_name) |> summarize(cnt=count()) |> arrange(desc(cnt)) |> collect()
 ```
 
+### Télécharger le fichier GeoParquet localement.
+
 Pour des opérations plus lourdes et une intéraction plus rapide avec le fichier, on peut le télécharger localement sur son ordinateur. Notez que le fichier fait environ 600MB, donc s'assurer d'avoir l'espace disque sur votre ordinateur. 
 ```r
 # Changer le répertoire ~/Downloads pour le répertoire de votre choix sur votre ordinateur
