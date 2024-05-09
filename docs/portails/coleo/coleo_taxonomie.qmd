@@ -1,9 +1,12 @@
 ---
-title: Taxonomie
+title: "Taxonomie"
+author: "Vincent Beauregard & Victor Cameron"
+date: "`r Sys.Date()`"
 ---
+
   [Repo Github](https://github.com/BiodiversiteQuebec/Coleo_DB/blob/master/taxa_README.md)
 
-![Taxonomie](assets/img/coleo_taxonomy.png)
+<img src="../../../assets/img/coleo_taxonomy.png" width="100%" height="100%" align="center"/>
 
 ## Features
 
