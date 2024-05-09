@@ -6,7 +6,7 @@ date: "`r Sys.Date()`"
 
 [Repo Github](https://github.com/BiodiversiteQuebec/Coleo_DB/blob/master/API-coleo.md)
 
-<img src="assets/img/coleo_public.png" width="100%" height="100%" align="center"/>
+<img src="../../../assets/img/coleo_public.png" width="100%" height="100%" align="center"/>
 
 
 ## Champs communs à la plupart des tables
