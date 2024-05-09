@@ -12,7 +12,7 @@ install.packages(c('dplyr','duckdb','duckdbfs'))
 
 Ensuite, à chaque fois que vous voulez accéder aux données, vous devez d'abord executer la ligne suivante pour charger les fonctions nécessaires. 
 ```r
-source("https://object-arbutus.cloud.computecanada.ca/bq-io/atlas/parquet/bq-atlas-parquet.R")
+source("http://atlas.biodiversite-quebec.ca/bq-atlas-parquet.R")
 ```
 
 ### Connexion à distance au fichier GeoParquet. 
