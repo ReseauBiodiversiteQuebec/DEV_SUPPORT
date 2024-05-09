@@ -1,10 +1,12 @@
 ---
 title: Base de données Coleo
+author: Victor Cameron
+date: 2014-05-09
 ---
 
 COLEO c'est la base de données du Suivi de la biodiversité du Québec. On y stock les données collectées par le MELCCFP et ses partenaires.
 
-L'injection des données se fait via des [gabarits d'injection] et le package R `rcoleo`. Les gabarits sont sauvées sur le SharePoint de l'équipe technique alors que le processus d'injection est décrit dans la [documentation](https://github.com/BiodiversiteQuebec/rcoleo/blob/master/docs/injection-donnees.md).
+L'injection des données se fait via des gabarits d'injection et le package R `rcoleo`. Les gabarits sont sauvés sur le SharePoint de l'équipe technique alors que le processus d'injection est décrit dans la [documentation](https://github.com/BiodiversiteQuebec/rcoleo/blob/master/docs/injection-donnees.md).
 
 Liste des repos Github associés: 
 [Coleo_DB](https://github.com/BiodiversiteQuebec/Coleo_DB)
