@@ -1,5 +1,5 @@
 ---
-title: "Example Rstac and gdalcubes scripts"
+title: "Exemples de scripts utilisant RStac et GDALCUBES"
 author: "Guillaume Larocque"
 date: "`r Sys.Date()`"
 output: html_document
