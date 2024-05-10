@@ -1,4 +1,4 @@
-La base de données Atlas est sauvegardée de façon régulière en format [GeoParquet](https://geoparquet.org/). Ce format de fichier, combiné à [DuckDB](https://duckdb.org/) permet la connexion efficace à un jeu de données à distance sans avoir à télécharger toutes les données. Il est égale possible de télécharger le fichier Geoparquet contenant toutes les données publiques de l'Atlas pour effectuer des requêtes plus rapidement.  
+La base de données Atlas est sauvegardée de façon régulière en format [GeoParquet](https://geoparquet.org/). Ce format de fichier, combiné à [DuckDB](https://duckdb.org/) permet la connexion efficace à un jeu de données à distance sans avoir à télécharger toutes les données. Il est également possible de télécharger le fichier Geoparquet contenant toutes les données publiques de l'Atlas pour effectuer des requêtes plus rapidement.  
 
 Voici les instructions pour intéragir avec le fichier GeoParquet entreposé sur l'infonuagique depuis R avec les packages duckdb et dplyr. 
 
@@ -30,10 +30,23 @@ Voir le nom des différents champs dans le fichier Parquet.
 colnames(atlas_rem)
 ```
 
-Charger seulement les observations d'harfang des neiges dans un data frame. 
+Charger seulement les observations d'harfang des neiges dans un data frame. Cette requête peut prendre quelques minutes selon la vitesse de votre connexion internet. 
 ```r
 bubo <- atlas_rem |> filter(valid_scientific_name == 'Bubo scandiacus') |> collect()
 ```
+
+Charger seulement les observations d'iris versicolor dans un objet spatial sf. 
+```r
+iris <- atlas_rem |> filter(valid_scientific_name == 'Iris versicolor') |> 
+        mutate(geom = ST_Point(as.numeric(longitude), as.numeric(latitude))) |> 
+        to_sf() |> collect()
+```
+
+Visualiser les données sur une carte
+```r
+plot(iris['year_obs'])
+```
+
 
 Obtenir le nombre d'observations de chacune des espèces présentes dans Atlas et trier par nombre d'observations décroissant. Notez que cette requête ne chargera pas les données Atlas sur votre ordinateur. Le calcul se fera à distance grâce à DuckDB et au format GeoParquet. 
 ```r
@@ -50,6 +63,7 @@ atlas <- atlas_local(tail(atlas_dates$dates,n=1),'~/Downloads/')
 
 Refaire le décompte d'observations par espèce avec le fichier local. Vous verrez que ça se fera plus rapidement qu'avec le fichier à distance. 
 ```r
-sp_count <- atlas |> group_by(valid_scientific_name) |> summarize(cnt=count()) |> arrange(desc(cnt)) |> collect()
+sp_count <- atlas |> group_by(valid_scientific_name) |> 
+                summarize(cnt=count()) |> arrange(desc(cnt)) |> collect()
 ```
 
