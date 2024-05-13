@@ -75,7 +75,7 @@ sp_count <- atlas |> group_by(valid_scientific_name) |>
 
 ### Requêtes SQL
 
-Si vous préférez faire des requêtes SQL au lieu d'utiliser le package dplyr, l'objet atlas_con établit une connexion à DuckDB et la fonction atlas_dbi() va établir une connexion au fichier parquet et créer une VIEW qui s'appelle atlas. 
+Si vous préférez faire des requêtes SQL au lieu d'utiliser le package dplyr, l'objet atlas_con établit une connexion à DuckDB et la fonction atlas_dbi() va établir une connexion au fichier parquet et créer une VIEW nommée atlas. 
 
 ```r
 atlas_dbi(tail(atlas_dates$dates,n=1))
