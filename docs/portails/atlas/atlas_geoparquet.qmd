@@ -30,9 +30,15 @@ Voir le nom des différents champs dans le fichier Parquet.
 colnames(atlas_rem)
 ```
 
-Charger seulement les observations d'harfang des neiges dans un data frame. Cette requête peut prendre quelques minutes selon la vitesse de votre connexion internet. 
+
+Voir les différentes sources de données ainsi que le nombre d'observations dans chacune
 ```r
-bubo <- atlas_rem |> filter(valid_scientific_name == 'Bubo scandiacus') |> collect()
+datasets <- atlas_rem |> group_by(dataset_name) |> summarize(cnt=count()) |> arrange(desc(cnt))
+```
+
+Charger seulement les observations d'harfang des neiges dans un data frame et ne sélectionner que quelques colonnes. Cette requête peut prendre quelques minutes selon la vitesse de votre connexion internet. 
+```r
+bubo <- atlas_rem |> filter(valid_scientific_name == 'Bubo scandiacus') |> select(latitude, longitude, dataset_name, year_obs, day_obs) |> collect()
 ```
 
 Charger seulement les observations d'iris versicolor dans un objet spatial sf. 
@@ -67,3 +73,11 @@ sp_count <- atlas |> group_by(valid_scientific_name) |>
                 summarize(cnt=count()) |> arrange(desc(cnt)) |> collect()
 ```
 
+### Requêtes SQL
+
+Si vous préférez faire des requêtes SQL au lieu d'utiliser le package dplyr, l'objet atlas_con établit une connexion à DuckDB et la fonction atlas_dbi() va établir une connexion au fichier parquet et créer une VIEW qui s'appelle atlas. 
+
+```r
+atlas_dbi(tail(atlas_dates$dates,n=1))
+acci <- dbGetQuery(atlas_con,"SELECT * FROM atlas WHERE valid_scientific_name = 'Iris versicolor'")
+```
