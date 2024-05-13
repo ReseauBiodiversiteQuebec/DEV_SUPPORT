@@ -1,5 +1,0 @@
----
-title: "Catalogues"
----
-
-Courte (ou pas) description. Pour Guillaume ? 

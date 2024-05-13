@@ -1,0 +1,30 @@
+---
+title: Catalogue GEOIO 
+---
+
+[Lien vers le dépot Github](https://github.com/BiodiversiteQuebec/geoio-fastapi)
+
+Cette API FastAPI est utilisée pour faire des requêtes sur des données géospatiales en format vectoriel ou en format de colonnes. Des fichiers en format GeoParquet, GeoPackage, FlatGeoBuf ou autre sont entreposés dans le répertoire /data du Docker. Ensuite, les requêtes sont créées avec GDAL ou DuckDB pour accepter les paramètres GET ou POST et retourner des réponses en format GEOJSON. 
+
+Certaines requêtes font également appel au catalogue IO. Par exemple, on peut voir la liste des pays selon Natural Earth ici: 
+
+[https://geoio.biodiversite-quebec.ca/country_list](https://geoio.biodiversite-quebec.ca/country_list)
+
+Et ensuite, avec le endpoint /country_stats, on peut spécifier le nom du pays et le lien vers un fichier COG sur IO (ou ailleurs), et obtenir les statistiques du fichier COG pour ce pays, en utilisant le serveur TiTiler. 
+
+
+
+## Démarrage du serveur ##
+
+```bash
+docker compose up -d 
+```
+
+## Accès à la documentation des endpoints 
+
+[https://geoio.biodiversite-quebec.ca/docs](https://geoio.biodiversite-quebec.ca/docs)
+
+## Jeux de données disponibles
+
+- [Pays et états selon Natural Earth - Format FlatGeoBuf](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/)
+- [WDPA protected areas - Format GPKG](https://www.protectedplanet.net/en/thematic-areas/wdpa?tab=WDPA)

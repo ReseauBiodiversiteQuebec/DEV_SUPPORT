@@ -1,0 +1,83 @@
+La base de données Atlas est sauvegardée de façon régulière en format [GeoParquet](https://geoparquet.org/). Ce format de fichier, combiné à [DuckDB](https://duckdb.org/) permet la connexion efficace à un jeu de données à distance sans avoir à télécharger toutes les données. Il est également possible de télécharger le fichier Geoparquet contenant toutes les données publiques de l'Atlas pour effectuer des requêtes plus rapidement.  
+
+Voici les instructions pour intéragir avec le fichier GeoParquet entreposé sur l'infonuagique depuis R avec les packages duckdb et dplyr. 
+
+Avant de continuer, veuillez installer les packages suivant. 
+```r
+install.packages(c('dplyr','duckdb','duckdbfs'))
+```
+
+Ensuite, à chaque fois que vous voulez accéder aux données, vous devez d'abord executer la ligne suivante pour charger les fonctions nécessaires. 
+```r
+source("http://atlas.biodiversite-quebec.ca/bq-atlas-parquet.R")
+```
+
+### Connexion à distance au fichier GeoParquet. 
+
+L'objet atlas_dates contient les dates de sauvegarde des fichiers disponibles. 
+
+```r
+atlas_dates
+```
+
+Établir la connexion à la version la plus récente des données Atlas. 
+```r
+atlas_rem <- atlas_remote(tail(atlas_dates$dates,n=1))
+```
+
+Voir le nom des différents champs dans le fichier Parquet.
+```r
+colnames(atlas_rem)
+```
+
+
+Voir les différentes sources de données ainsi que le nombre d'observations dans chacune
+```r
+datasets <- atlas_rem |> group_by(dataset_name) |> summarize(cnt=count()) |> arrange(desc(cnt))
+```
+
+Charger seulement les observations d'harfang des neiges dans un data frame et ne sélectionner que quelques colonnes. Cette requête peut prendre quelques minutes selon la vitesse de votre connexion internet. 
+```r
+bubo <- atlas_rem |> filter(valid_scientific_name == 'Bubo scandiacus') |> select(latitude, longitude, dataset_name, year_obs, day_obs) |> collect()
+```
+
+Charger seulement les observations d'iris versicolor dans un objet spatial sf. 
+```r
+iris <- atlas_rem |> filter(valid_scientific_name == 'Iris versicolor') |> 
+        mutate(geom = ST_Point(as.numeric(longitude), as.numeric(latitude))) |> 
+        to_sf() |> collect()
+```
+
+Visualiser les données sur une carte
+```r
+plot(iris['year_obs'])
+```
+
+
+Obtenir le nombre d'observations de chacune des espèces présentes dans Atlas et trier par nombre d'observations décroissant. Notez que cette requête ne chargera pas les données Atlas sur votre ordinateur. Le calcul se fera à distance grâce à DuckDB et au format GeoParquet. 
+```r
+sp_count <- atlas_rem |> group_by(valid_scientific_name) |> summarize(cnt=count()) |> arrange(desc(cnt)) |> collect()
+```
+
+### Télécharger le fichier GeoParquet localement.
+
+Pour des opérations plus lourdes et une intéraction plus rapide avec le fichier, on peut le télécharger localement sur son ordinateur. Notez que le fichier fait environ 600MB, donc s'assurer d'avoir l'espace disque sur votre ordinateur. 
+```r
+# Changer le répertoire ~/Downloads pour le répertoire de votre choix sur votre ordinateur
+atlas <- atlas_local(tail(atlas_dates$dates,n=1),'~/Downloads/')
+```
+
+Refaire le décompte d'observations par espèce avec le fichier local. Vous verrez que ça se fera plus rapidement qu'avec le fichier à distance. 
+```r
+sp_count <- atlas |> group_by(valid_scientific_name) |> 
+                summarize(cnt=count()) |> arrange(desc(cnt)) |> collect()
+```
+
+### Requêtes SQL
+
+Si vous préférez faire des requêtes SQL au lieu d'utiliser le package dplyr, l'objet atlas_con établit une connexion à DuckDB et la fonction atlas_dbi() va établir une connexion au fichier parquet et créer une VIEW nommée atlas. 
+
+```r
+atlas_dbi(tail(atlas_dates$dates,n=1))
+acci <- dbGetQuery(atlas_con,"SELECT * FROM atlas WHERE valid_scientific_name = 'Iris versicolor'")
+```
