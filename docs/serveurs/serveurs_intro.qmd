@@ -62,3 +62,12 @@ web apps in staging:
 - [_Atlas_](https://staging.biodiversite-quebec.ca/fr/atlas): (ReactJs, styled-components, Material UI, tailwind)
 
 ![Image](img/infrastructure.png)
+
+
+## S3
+
+[s3cmd](https://s3tools.org/s3cmd) is used in our servers to communicate with our S3 server.
+
+Installation and config: https://tecadmin.net/install-s3cmd-manage-amazon-s3-buckets/
+
+Please contact dev team so they provide you the information you need to connect to the server S3.

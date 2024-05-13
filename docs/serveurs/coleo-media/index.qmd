@@ -1,0 +1,13 @@
+---
+title: Coleo-media
+
+---
+
+# Coleo-media
+
+Host the media api. This is an api used to store and process images and audio.
+Coleo-app [repository](https://github.com/ReseauBiodiversiteQuebec/coleo-media)
+
+to connect via ssh `ssh <your_user>@coleo-media.vhost33`
+
+

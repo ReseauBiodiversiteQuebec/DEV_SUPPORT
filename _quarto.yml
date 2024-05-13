@@ -99,6 +99,12 @@ website:
     - title: "Serveurs"
       contents:
         - docs/serveurs/serveurs_intro.qmd
+        - docs/serveurs/coleo-api/index.qmd
+        - docs/serveurs/coleo-app/index.qmd
+        - docs/serveurs/coleo-media/index.qmd
+        - docs/serveurs/obs-web/index.qmd
+        - docs/serveurs/pose/index.qmd
+        - docs/serveurs/postgres01/index.qmd
         - section: "Rweb"
           contents:
             - docs/serveurs/rweb/rweb_intro.qmd

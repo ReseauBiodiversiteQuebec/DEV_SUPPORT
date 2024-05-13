@@ -1,0 +1,9 @@
+---
+title: Coleo-app
+
+---
+
+Host the coleo web app developed in AngularJs. 
+Coleo-app [repository](https://github.com/ReseauBiodiversiteQuebec/coleo-app):
+
+to connect via ssh `ssh <your_user>@coleo-app.vhost33`
