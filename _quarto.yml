@@ -51,10 +51,15 @@ website:
             - docs/portails/coleo/coleo_structure.qmd
             - docs/portails/coleo/coleo_taxonomie.qmd
             - docs/portails/coleo/coleo_API_endpoints.qmd
-        - section: "atlas"
+        - section: "Atlas"
           contents:
             - docs/portails/atlas/atlas_intro.qmd
             - docs/portails/atlas/atlas_geoparquet.qmd
+        - section: "Strapi"
+          contents:
+            - docs/portails/strapi/article.qmd
+            - docs/portails/strapi/media.qmd
+            - docs/portails/strapi/webhooks.qmd
 
     ### section packages ###
     - title: "Packages"

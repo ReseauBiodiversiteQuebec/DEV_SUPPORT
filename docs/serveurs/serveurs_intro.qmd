@@ -41,9 +41,19 @@ APIs:
 - _coleo-api_: Used to have access to coleo database (will be migrated to postgRest soon).
 - _postgRest Atlas_: built-in api to access to atlas database
 - _postgRest Coleo_: built-in api to access to atlas database
+- _postgRest CNC_: built-in api to access to atlas database
 - _plumber_: R api library
-- stac-fast-api: python api used to expose our STAC catalog
-- strapi: Headless CMS used as a backend for our web portal so team members can create and update content for our web portal.
+- _stac-fast-api_: python api used to expose our STAC catalog
+- _strapi_: Headless CMS used as a backend for our web portal so team members can create and update content for our web portal.
+- _swagger doc / api testing_: web allowing us to document and test our APIs. [swagger ATLAS](https://atlas.biodiversite-quebec.ca/api/v4/docs/), [swagger GEOIO](https://geoio.biodiversite-quebec.ca/docs)
+  
+
+Databases:
+
+- _atlas database (docker)_: Used to have access to coleo database (will be migrated to postgRest soon).
+- _cnc database (docker)_: built-in api to access to atlas database
+
+
 
 web apps in production:
 
