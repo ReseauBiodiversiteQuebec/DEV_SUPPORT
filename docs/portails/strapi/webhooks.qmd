@@ -50,3 +50,5 @@ module.exports = lifecycleCalls("decouverte", "dynamic");
 
  In case someone wants to override a webhook, a module like the one shown in the first code snippets must be created.
 
+ [Strapi webhook documentation](https://strapi.io/blog/strapi-webhooks)
+
