@@ -2,3 +2,51 @@
 title: Webhooks
 ---
 
+Webhooks are functions that allow strapi to notify any Content-type or collection changes. The following example explains how to set up a webhook. 
+
+Let's say you create a Content-type called Artcile. Strapi will create a folder for this component behind scene. The folder will be localted in `<StrapiProjectRootFolder>/src/api/article`. This folder will contain a folder called `content-types/article`.
+
+ ![Image](img/content-type.png)
+
+ Inside this folder create file called `lifecycles.js` with the following code:
+
+ ```js
+ module.exports = {
+  // trigger after  an element is created
+  afterCreate(event) {
+    // do something to the result;
+  },
+
+  // trigger before  an element is updated
+  async beforeUpdate(event) {
+    // do something to the result;
+  },
+
+  // trigger after  an element is updated
+  afterUpdate(event) {
+    // do something to the result;
+  },
+
+  // trigger after  an element is deleted
+  afterDelete(event) {
+    // do something to the result;
+  },
+};
+ ```
+
+ each function is called upon the corresponding action (create, update or delete). Inside the functions you could make http calls to notify other apps that a change has been done in the system.
+
+ In our case we created  module that is reused each time that want to update our web portal. The function is locatad in the folder `<RootPath>/config/functions/lifecyclesCalls.js`. The function has a param the tells the web portal what page need to be updated. 
+
+ Here is how we use the function:
+
+`<StrapiProjectRootFolder>/src/api/article/lifecycles.js`:
+
+ ```js
+ const lifecycleCalls = require("../../../../../config/functions/lifecycleCalls");
+
+module.exports = lifecycleCalls("decouverte", "dynamic");
+```
+
+ In case someone wants to override a webhook, a module like the one shown in the first code snippets must be created.
+
