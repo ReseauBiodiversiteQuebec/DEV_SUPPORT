@@ -1,0 +1,258 @@
+---
+title: Structure
+---
+
+<!-- Section observations -->
+## Table: Observations
+
+### Description
+
+The `observations` table is central in the Atlas database to recording ecological observations. It is is designed to support different observation types, such as abundances, occurrences, and presence/absence data of various units. The type of observation is specified by the `id_variables` column, which references the `variables` table. See the `variables` table documentation for more details.
+
+It encompasses a wide range of data including geographical coordinates, observation times, taxa details, and associated variables, relying on foreign keys to other tables to store this information. See the `Dependencies` section below for more details and relevant tables documentation.
+
+Partitions are used to store observations that are within or outside of Quebec. This allows for faster queries on observations that are within Quebec, which are the most commonly used. See the `partitions` section below for more details.
+
+Triggers are used to automatically update the `within_quebec`, `modified_at`, `dwc_event_date` columns on insert or update. See the `triggers` section below for more details.
+
+### Dependencies
+
+- Foreign Keys: 
+  - `id_datasets` references `public.datasets (id)`
+  - `id_taxa_obs` references `public.taxa_obs (id)`
+  - `id_variables` references `public.variables (id)`
+- Partitions:
+  - `observations_partitions.outside_quebec`
+  - `observations_partitions.within_quebec`
+- Sequence: `observations_partitions.observations_id_seq`
+
+### Columns
+
+| **Column Name**        | **Type**                  | **Description**                                         | **Constraints**                               |
+|------------------------|---------------------------|---------------------------------------------------------|-----------------------------------------------|
+| **id**                 | Bigint                    | A unique identifier for each observation.               | Primary key (part of), Not Null, Default: nextval('observations_partitions.observations_id_seq'::regclass) |
+| **org_parent_event**   | Character Varying         | *Optional*. Identifier of the parent event in the original source. | - |
+| **org_event**          | Character Varying         | *Optional*. Identifier of the event in the original source. | - |
+| **org_id_obs**         | Character Varying         | *Optional*. Original identifier of the observation in the original source.     | - |
+| **id_datasets**        | Integer                   | The identifier of the dataset to which the observation belongs. | Not Null, Foreign key |
+| **id_taxa_obs**        | Integer                   | Identifier for the observed taxon.                      | Not Null, Foreign key |
+| **geom**               | Geometry(Point, 4326)     | The geometry of the coordinates of the observation.        | Not Null |
+| **year_obs**           | Integer                   | The year of the observation.                            | Not Null |
+| **month_obs**          | Integer                   | The month of the observation.                           | - |
+| **day_obs**            | Integer                   | The day of the observation.                             | - |
+| **time_obs**           | Time                      | The time of the observation.                            | - |
+| **id_variables**       | Integer                   | The identifier of the variable observed. Whether of type `abundance`, `occurrence`, etc. is stored in table `variables`                | Not Null, Foreign key |
+| **obs_value**          | Numeric                   | The observed value for the variable. Might be integer or float in the case of abundance, or 0 or 1 in case of presence/absence                    | Not Null |
+| **id_taxa (deprecated)**            | Integer      | *Deprecated*. The identifier of the taxa observed. From `taxa` table. Only to maintain compatibility. | Foreign key |
+| **issue**              | Character Varying         | *Optional*. Any issues or remarks related to the observation. | - |
+| **created_by**         | Character Varying         | *Auto on insert*. The user who inserted the observation record within Atlas DB. | Default: CURRENT_USER |
+| **modified_at**        | Timestamp with time zone  | *Auto on insert/update*. The timestamp when the observation was last modified.   | Not Null, Default: CURRENT_TIMESTAMP |
+| **modified_by**        | Character Varying         | *Auto on insert/update*. The user who last modified the observation within Atlas DB.   | Default: CURRENT_USER |
+| **within_quebec**      | Boolean                   | *Auto on insert/update*. Indicates whether the observation was within Quebec.    | Part of primary key, Not Null, Default: false |
+| **dwc_event_date**     | Text                      | *Auto on insert/update*. The Darwin Core (DwC) formatted event date of the observation. | Not Null, Default: '' (empty string) |
+
+### Additional Constraints
+
+- **Primary Key Constraint**: The combination of `id` and `within_quebec` serves as a unique identifier for each observation record.
+- **Foreign Key Constraints**: Links to `datasets` and `taxa_obs` tables ensure referential integrity.
+- **Unique Constraint**: The combination of `geom`, `dwc_event_date`, `id_taxa_obs`, `obs_value`, `id_variables`, `within_quebec` ensures that each observation is uniquely identifiable and retrievable. This is used to prevent duplicates using the index `observations_unique_rows`.
+
+### Indexes
+
+- `dwc_event_date_idx` on `dwc_event_date`
+- `observations_geom_date_time_idx` on `geom`, `year_obs`, `month_obs`, `day_obs`, `time_obs`
+- `observations_geom_idx` on `geom`
+- `observations_id_datasets_id_taxa_idx` on `id_datasets`, `id_taxa`
+- `observations_id_datasets_idx` on `id_datasets`
+- `observations_id_idx` on `id`
+- `observations_id_taxa_obs_dwc_event_date_geom_idx` on `id_taxa_obs`, `dwc_event_date`, `geom`
+- `observations_id_taxa_obs_idx` on `id_taxa_obs`
+- `observations_unique_rows` on `geom`, `dwc_event_date`, `id_taxa_obs`, `obs_value`, `id_variables`, `within_quebec`
+- `observations_year_obs_idx` on `year_obs`
+- Specific indexes on partitions (`within_quebec_year_obs_idx`, `observations_id_taxa_obs_idx` in `observations_partitions.within_quebec`)
+
+### Triggers
+
+- `set_dwc_event_date_trggr`: Before insert, sets the DwC event date.
+- `update_modified_at`: Before update, updates the `modified_at` timestamp.
+- `action_user_logger`: In partition `observations_partitions.outside_quebec`, logs user actions before insert or update.
+
+### Rationale
+
+#### Use of Partitions for Performance
+
+The use of table partitions in the observations table, particularly with the within_quebec column, is a strategic decision aimed at enhancing database performance. Partitioning is a highly effective method for managing large tables by splitting them into smaller, more manageable pieces. In this case, the observations_partitions schema segregates observation data into distinct partitions based on whether the observations occurred within Quebec (within_quebec = true) or outside it (within_quebec = false). This approach significantly improves query performance by allowing the database engine to quickly locate and retrieve data from a smaller subset of the table. Additionally, it simplifies maintenance tasks such as backups and data purges, as operations can be performed on individual partitions without affecting the entire dataset.
+
+Partition tables `observations_partitions.within_quebec` and `observations_partitions.outside_quebec` are created within the `observations_partitions` schema. 
+
+#### Temporal Columns
+
+The inclusion of year_obs, month_obs, day_obs, and time_obs columns in the observations table is intentionally designed to accommodate observations with varying levels of temporal resolution. This flexibility is crucial in ecological data collection, where the exact time of an observation may range from a specific moment to a broader time frame. By breaking down the observation timestamp into separate components, the database can store and process data that is only accurate to a certain level (e.g., year, month, day, or time). This structure not only caters to the diverse nature of ecological observations but also enhances the ability to perform time-based queries and analyses with varying granularities.
+
+#### Duplicates and DwC Event Date
+
+Duplicates are possible through the process of adding data from various sources, such as GBIF and eBird. Duplicates are limited through the use of a unique constraint on the combination of `geom`, `dwc_event_date`, `id_taxa_obs`, `obs_value`, `id_variables`, `within_quebec`. 
+
+The `dwc_event_date` column values are generated automatically using a trigger function. It is a formatted string that reflects a standardized approach to recording event dates in biodiversity data. The use of this column is required to ensure each observation is distinctly identifiable and retrievable. It also facilitates data interoperability, making it easier to share and compare ecological data across different platforms and studies.
+
+<!-- Section datasets -->
+## Table: Datasets
+
+### Description
+
+The datasets table stores comprehensive metadata about ecological observation datasets. This includes information about the source, creator, type of data, and publication details. It serves as a central repository for tracking various datasets related to ecological observations.
+
+### Dependencies
+
+*None*
+
+### Columns
+
+| **Column Name**     | **Type**                  | **Description**                                                                                       | **Constraints**       |
+|---------------------|---------------------------|-------------------------------------------------------------------------------------------------------|-----------------------|
+| **id**              | Integer                   | A unique identifier for each dataset.                                                                 | Primary key, Not Null |
+| **original_source** | Character Varying         | The original source of the dataset. Where was it obtained from (e.g., 'GBIF', 'eBird', 'MELCCFP').    | Not Null              |
+| **org_dataset_id**  | Character Varying         | *Optional*. An identifier used by the `original_source` or `publisher` for the dataset.               | -                     |
+| **creator**         | Character Varying         | *Optional*. The creator of the dataset (e.g., individual researcher or institution).                  | -                     |
+| **title**           | Character Varying         | The title of the dataset.                                                                             | Not Null              |
+| **publisher**       | Character Varying         | *Optional*. The publisher of the dataset (e.g., 'Nature Publishing Group', 'Elsevier', 'GBIF', 'Données Québec'). | -                     |
+| **modified**        | Date                      | The date when the dataset was last modified.                                                          | Not Null              |
+| **keywords**        | Character Varying[]       | *Optional*. An array of keywords associated with the dataset.                                         | -                     |
+| **abstract**        | Text                      | *Optional*. A brief abstract or summary of the dataset.                                               | -                     |
+| **type_sampling**   | Character Varying         | *Optional*. The type of sampling method used in the dataset.                                          | -                     |
+| **type_obs**        | public.type_observation   | *Optional*. The type of observation (Enum values: 'living specimen', 'preserved specimen', 'fossil specimen', 'human observation', 'machine observation', 'literature', 'material sample', 'others'). | - |
+| **intellectual_rights** | Character Varying     | *Optional*. Information about the intellectual rights of the dataset.                                 | -                     |
+| **license**         | Character Varying         | *Optional*. The license under which the dataset is released (e.g., 'CC BY 4.0', 'GPL', 'Entente de partage').     | -                     |
+| **owner**           | Character Varying         | *Optional*. The owner of the dataset (e.g., a university, research institution, or individual researcher).        | -                     |
+| **methods**         | Text                      | *Optional*. A detailed description of the methods used in the dataset.                                | -                     |
+| **open_data**       | Boolean                   | A boolean indicating whether the dataset is open data.                                                | Not Null              |
+| **exhaustive**      | Boolean                   | A boolean indicating whether the dataset is exhaustive, meaning obtained from a checklist survey.     | Not Null              |
+| **direct_obs**      | Boolean                   | A boolean indicating whether the dataset contains direct observations.                                | Not Null              |
+| **centroid**        | Boolean                   | *Optional*. A boolean indicating whether the dataset contains centroid data.                          | Default: False        |
+| **doi**             | Text                      | *Optional*. The Digital Object Identifier for the dataset. (e.g. https://doi.org/10.15468/ykxm8x)     | Default: Empty String |
+| **citation**        | Text                      | *Optional*. The recommended citation for the dataset.                                                 | Default: Empty String |
+
+<!-- Section taxa_obs -->
+## Table: Taxa_Obs
+
+### Description
+
+The `taxa_obs` table is structured to record raw taxonomic information directly from source data. This table is essential for capturing a wide range of taxonomic details, including scientific names, authorship, and taxonomic rank. It is designed to accommodate taxa of any rank, such as species, genus, complexes, etc., without requiring corrections for grammatical accuracy or valid taxonomy. These aspects are managed by other resources within the database, like the `taxa_ref` table.
+
+### Dependencies
+
+- Sequence: `taxa_obs_id_seq`
+
+### Columns
+
+| **Column Name**          | **Type**                   | **Description**                                         | **Constraints**                               |
+|--------------------------|----------------------------|---------------------------------------------------------|-----------------------------------------------|
+| **id**                   | Integer                    | A unique identifier for each taxonomic observation.     | Primary key, Not Null, Default: nextval('taxa_obs_id_seq'::regclass), Using Index Tablespace ssdpool |
+| **scientific_name**      | Text                       | *Optional*. The scientific name of the taxon observed. This includes taxa at any rank, such as species or genus. | Not Null, Part of Unique Constraint |
+| **authorship**           | Text                       | *Optional*. The authorship of the scientific name. Defaults to an empty string if not provided. | Not Null, Default: '' (empty string), Part of Unique Constraint |
+| **rank**                 | Text                       | *Optional*. The taxonomic rank of the observation. Defaults to an empty string if not provided. | Default: '' (empty string), Part of Unique Constraint |
+| **parent_scientific_name** | Text                    | *Optional*. The scientific name of the parent taxon. Used to resolve conflicts where a scientific name corresponds to different organisms in different branches of the tree of life. Optional; if not specified, all results for the given scientific name are returned. | - |
+| **created_at**           | Timestamp with time zone   | *Auto on insert/update*. The timestamp when the taxonomic observation was created. | Not Null, Default: CURRENT_TIMESTAMP |
+| **modified_at**          | Timestamp with time zone   | *Auto on insert/update*. The timestamp when the taxonomic observation was last modified. | Not Null, Default: CURRENT_TIMESTAMP |
+| **modified_by**          | Text                       | *Auto on insert/update*. The user who last modified the taxonomic observation record. | Not Null, Default: CURRENT_USER |
+
+### Additional Constraints
+
+- **Unique Constraint**: `taxa_obs_unique_rows` ensures that each combination of `scientific_name`, `authorship`, `rank`, `parent_scientific_name` is unique within the table.
+
+### Indexes
+
+- `taxa_obs_scientific_name_idx` on `scientific_name`
+
+### Triggers
+
+- `update_modified_at`: Before update, updates the `modified_at` timestamp.
+
+### Conflicts and Parent Taxa
+
+The design of the `taxa_obs` table accounts for the potential conflicts in scientific naming. For instance, the same scientific name may correspond to different organisms in separate branches of the tree of life (e.g., `Salix` as a genus of willows in plants and a genus of tunicates in animals). To resolve such conflicts, the `parent_scientific_name` column allows users to specify a parent taxa name, thus restricting results to a specific branch. This feature is particularly useful for accurate data retrieval and association in cases of nomenclatural ambiguity.
+
+<!-- Section  -->
+## Table: Variables
+
+### Description
+
+The `variables` table in the database is crafted to support a diverse array of observation types and units. This versatility is key to accommodating various ecological data formats, such as counts of individuals, weight, density, occurrences, and presence/absence data, among others. Each of these observation types can be associated with different units of measurement. The table facilitates the recording and categorization of these different types and units, making it a pivotal component for data analysis and interpretation in ecological studies. The `id_variables` column, found in other related tables like `observations`, references the `variables` table to specify the type of observation, providing a clear link to the detailed description and unit of the variable being observed.
+
+### Dependencies
+
+- Sequence: `variables_id_seq`
+
+### Columns
+
+| **Column Name** | **Type**            | **Description**                                                                   | **Constraints**                 |
+|-----------------|---------------------|-----------------------------------------------------------------------------------|---------------------------------|
+| **id**          | Integer             | A unique identifier for each variable.                                            | Primary key, Not Null, Default: nextval('variables_id_seq'::regclass) |
+| **name**        | Character Varying   | The name of the variable, indicating the type of observation (e.g., count, weight, density). | Not Null, Part of Unique Constraint |
+| **unit**        | Character Varying   | *Optional*. The unit of measurement for the variable, which may vary based on the observation type. | Not Null, Default: '', Part of Unique Constraint |
+| **description** | Text                | *Optional*. A detailed description of the variable, explaining its significance and use in observations. | - |
+
+### Additional Constraints
+
+- **Unique Constraint**: `variables_name_unit_key` ensures that each combination of `name` and `unit` is unique within the table.
+
+<!-- Section efforts and lookup table -->
+## Table: Efforts
+
+### Description
+
+The `efforts` table is specifically designed to record the efforts associated with ecological observations. This table plays a crucial role in quantifying and categorizing the effort invested in obtaining various observations. The efforts could be in various forms like time spent, area covered, traps used, etc., and are quantified as numeric values. The link to the `variables` table through `id_variables` specifies the type of effort being recorded, ensuring a standardized and coherent approach to effort recording across different observation types.
+
+#### Relationship with Observations
+
+The efforts table is intricately linked to the observations table through the obs_efforts lookup table. This table acts as a relational bridge, establishing a connection between individual observations and the corresponding efforts involved in their acquisition. The obs_efforts table essentially serves as a many-to-many relationship facilitator, allowing each observation to be associated with one or more effort entries, and vice versa. See the `obs_efforts` table documentation for more details.
+
+### Dependencies
+
+- Sequence: `efforts_id_seq`
+- Foreign Key: 
+  - `id_variables` references `public.variables (id)`
+
+### Columns
+
+| **Column Name**   | **Type**    | **Description**                                              | **Constraints**                                      |
+|-------------------|-------------|--------------------------------------------------------------|------------------------------------------------------|
+| **id**            | Integer     | A unique identifier for each effort entry.                   | Primary key, Not Null, Default: nextval('efforts_id_seq'::regclass) |
+| **id_variables**  | Integer     | The identifier of the variable associated with the effort.   | Not Null, Foreign key                                |
+| **effort_value**  | Numeric     | The quantitative value representing the effort.              | Not Null, Part of Unique Constraint                   |
+
+### Additional Constraints
+
+- **Unique Constraint**: `efforts_id_variables_effort_value_key` ensures that each combination of `id_variables` and `effort_value` is unique within the table, preventing redundancy in effort recording.
+
+### Foreign Key Constraints
+
+- `efforts_id_variables_fkey`: Links to the `variables` table, ensuring that each effort is associated with a valid variable type, providing context and meaning to the effort value recorded.
+
+
+## Table: Obs_Efforts
+
+### Description
+
+The `obs_efforts` table serves as a linking mechanism between ecological observations and the efforts associated with them. It is a junction table designed to create a many-to-many relationship, capturing which efforts are related to specific observations. This design is essential for providing a comprehensive understanding of the resources and efforts expended in gathering each observation, such as the time, distance covered, or equipment used. By establishing a clear connection between observations and their corresponding efforts, this table enhances the granularity and context of ecological data analysis.
+
+### Dependencies
+
+- Foreign Keys: 
+  - `id_obs` references an observation table (to be specified).
+  - `id_efforts` references `public.efforts (id)`
+
+### Columns
+
+| **Column Name** | **Type** | **Description**                                                                                     | **Constraints** |
+|-----------------|----------|-----------------------------------------------------------------------------------------------------|-----------------|
+| **id_obs**      | Bigint   | The identifier of the observation. Represents a link to a specific observation record.              | Not Null, Part of Unique Constraint |
+| **id_efforts**  | Integer  | The identifier of the effort. Links to a specific effort record in the `efforts` table.             | Not Null, Foreign key, Part of Unique Constraint |
+
+### Additional Constraints
+
+- **Unique Constraint**: `obs_efforts_id_obs_id_efforts_key` ensures that each combination of `id_obs` and `id_efforts` is unique within the table, preventing duplication in the linking of observations and efforts.
+
+### Foreign Key Constraints
+
+- `obs_efforts_id_efforts_fkey`: Ensures the integrity of the link between the `obs_efforts` and `efforts` tables, confirming that every effort associated with an observation is valid and exists in the `efforts` table.
