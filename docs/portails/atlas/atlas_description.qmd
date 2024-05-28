@@ -6,7 +6,7 @@ title: Description schéma public
 
 Ecological observations are managed through a star schema, where the core table is `observations` and the dimension tables are `datasets`, `taxa_obs`, `variables` and `efforts`. The `observations` table contains the foreign keys to the dimension tables, as well as the observation value and the observation geometry. The dimension tables contain the metadata for the observations.
 
-It is is designed to support different observation types, such as abundances, occurrences, and presence/absence data of various units.
+It is designed to support different observation types, such as abundances, occurrences, and presence/absence data of various units.
 
 ![Observations Entity relationship diagram](../../../assets/img/observations_er_diagram.png)
 <!-- caption --><br>
@@ -51,4 +51,4 @@ Below is a brief description of each table. See the [Schema Reference section](a
 
 **Partitions**: Partitions are used to store observations that are within or outside of Quebec. This allows for faster queries on observations that are within Quebec, which are the most commonly used. See the `partitions` section in the [observations schema reference](atlas_schema.qmd) for more details.
 
-**Taxonomic information**: Only raw taxonomic information is stored in the `taxa_obs` table. The valid taxonomy, references, and other information are managed by `taxa_ref`, `taxa_vernacular`, `taxa_groups` tables and related ressources. This is managged automatically with periodic updates. See the `managing_taxonomy` article for more details.
+**Taxonomic information**: Only raw taxonomic information is stored in the `taxa_obs` table. The valid taxonomy, references, and other information are managed by `taxa_ref`, `taxa_vernacular`, `taxa_groups` tables and related ressources. This is managed automatically with periodic updates. See the `managing_taxonomy` article for more details.
