@@ -1,0 +1,53 @@
+---
+title: Base de données Atlas
+---
+
+Atlas is a database for aggregation of biodiversity observations and time-series from multiple sources (codebase available [here](https://github.com/BiodiversiteQuebec/atlas-db))<br>
+The database is dockerized in the coleo-api server.
+
+## Setting environment
+
+File `.env` must be configured with the following recommended environment variables.
+
+```
+TODO
+```
+
+## Python package dependencies
+
+Some taxonomic features depend on the `bdqc_taxa` package, which is not available on PyPI. It can be installed from the git repository using the following command... TODO (in the docker?):
+
+```bash
+sudo su coleo
+# Enter the docker
+docker compose -f compose-atlas.yml --env-file .atlas.env exec db bash
+
+pip install --upgrade git+https://github.com/ReseauBiodiversiteQuebec/bdqc_taxa#egg=bdqc_taxa
+```
+
+The database must be restarted after installing the package.
+TODO confirmer avec Guillaume
+```bash
+docker compose -f compose-atlas.yml --env-file .atlas.env build
+docker compose -f compose-atlas.yml --env-file .atlas.env stop
+docker compose -f compose-atlas.yml --env-file .atlas.env up -d
+```
+
+## Database schemas overview
+
+The database is organized in the following schemas:
+
+*  `public`: contains the tables and views used to store biodiversity data
+*  `api`: contains the tables, views and functions used to store and retrieve joined data from the `public` schema. This schema is used by the API.
+* `data_transfer`: contains the tables and views used to store temporary data. This schema may be used by users with `read_write_all` role.
+* `atlas_api`: contains the tables, views and functions used to store and retrieve joined data from the `public` schema. These objects are used by the API for the web atlas portal.
+* `observations_partitions`: contains partitionned tables used to store observations. Observations are partitionned by column `within_quebec`.
+* Deprecated. `public_api`: This schema is deprecated and will be removed in a future version and should not be used anymore. It contains the tables, views and functions used to store and retrieve joined data from the `public` schema. These objects are used by the API for the web atlas portal.
+
+## Roles & permissions
+
+The database is organized in the following roles:
+
+- `read_only_public`: can only read unrestricted data from the `public`, `api` and `atlas_api` schemas. This role is used by the API for general public access.
+- `read_only_all`: can only read all data, restricted or not, from the `public`, `api` and `atlas_api` schemas. This role is used by the API for restricted access, such as for researchers and biodiversity quebec members.
+- `read_write_all`: can read and write all data, restricted or not, from the `public`, `api` and `atlas_api` schemas. This role is used by biodiversity quebec members to update the database.
