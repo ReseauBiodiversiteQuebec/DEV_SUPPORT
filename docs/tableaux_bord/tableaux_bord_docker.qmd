@@ -13,7 +13,7 @@ docker pull rocker/geospatial
 Par la suite, vous pouvez entrer dans l'image pour vérifier ce qui s'y trouve et tester de façon interactive l'installation des différentes dépendences qui sont nécessaires à votre application.
 
 ``` bash
-docker run -it rocker/geospatial sh
+docker run -it --rm rocker/geospatial sh
 ```
 
 Une fois que vous connaissez les différentes dépendences nécessaires, ajoutez un fichier `Dockerfile` (sans extension) dans le répertoire de votre application (`app.R`) avec les instructions suivantes et les différents packages à installer.
@@ -61,6 +61,12 @@ Lancez et testez votre application à partir du docker.
 
 ``` bash
 docker run -p 8180:8180 nomdevotreapp
+```
+
+Alternativement, lorsqu'il y a un fichier `compose.yml` dans votre repo, vous pouvez simplement faire ceci pour lancer l'application.
+
+``` bash
+docker compose up
 ```
 
 Au besoin, listez ou supprimez les images à partir de leur ID avec les commandes suivantes.
