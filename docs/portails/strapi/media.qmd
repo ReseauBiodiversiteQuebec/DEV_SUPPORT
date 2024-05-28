@@ -1,0 +1,20 @@
+---
+title: Media files
+---
+
+Strapi allows us to upload images which are resized to diferent formats. In this section shows how to upload images so it could be served by strapi API.
+
+1 - Login to your strapi [account](https://portail.biodiversite-quebec.ca/admin/auth/login)
+
+2 - Go to Media Library (Menu at Top Left). There you will find a list of folder where you can search or storage images. You could also create new folders if you need.
+
+![Image](img/media_1.png)
+
+3 - To add new image click in Add new asset button (Top Right). Inf you want to add a new folder then click in the Add new folder.
+
+4 - After clicking Add new assets button a popup will appear asking for the source of the image. You must select browse files if the image is in your computer or add the url of the image in case you go to the tab FROM URL. 
+
+![Image](img/media_2.png)
+
+![Image](img/media_3.png)
+

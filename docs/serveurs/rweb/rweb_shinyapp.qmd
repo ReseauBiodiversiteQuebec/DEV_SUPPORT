@@ -88,8 +88,38 @@ sudo pm2 restart shiny-hook
 
 All logs are stored in the `var log` directory
 
-```
+```bash
 sudo tail /var/log/shiny-server/
 ```
 
 Associated [Github repository](https://github.com/BiodiversiteQuebec/shiny_hooks_node)
+
+
+## Add or update a package used by a shiny app
+
+**1. Connect as the shiny user**
+
+```bash
+cd home/shiny
+sudo su shiny
+```
+
+**2. Install the package with the following command (for example `shiny`)** 
+
+```bash
+R -e "install.packages('shiny')"
+```
+
+or
+
+```bash
+R -e "devtools::install_github("ReseauBiodiversiteQuebec/ratlas@httr_v1")"
+```
+
+**3. Restart the shiny server**
+
+```bash
+sudo service shiny-server restart
+```
+
+4. Test the package in the shiny app

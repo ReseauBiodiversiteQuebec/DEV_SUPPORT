@@ -1,0 +1,12 @@
+---
+title: obs-web
+
+---
+
+# obs-web
+
+It was used to host our portal web (Our portal now runs in `coleo-api`). Not used in this moment.
+
+to connect via ssh `ssh <your_user>@obs-web.vhost33`
+
+
