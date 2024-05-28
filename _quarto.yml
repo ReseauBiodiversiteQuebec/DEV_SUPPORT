@@ -28,12 +28,14 @@ website:
         file: docs/serveurs/serveurs_intro.qmd
       - text: "Tableaux de bord"
         file: docs/tableaux_bord/tableaux_bord_intro.qmd
-      - text: "Analyses"
-        file: docs/analyses/analyses_intro.qmd
+      - text: "Recherche"
+        file: docs/recherche/recherche_intro.qmd
+      - text: "Design"
+        file: docs/design/design_intro.qmd
       - text: "À propos"
         file: about.qmd
   sidebar:
-    - title: "Home"
+    - title: "Accueil"
       style: docked #floating
       background: light
       contents:
@@ -55,6 +57,11 @@ website:
             - docs/portails/atlas/atlas_description.qmd
             - docs/portails/atlas/atlas_schema.qmd
             - docs/portails/atlas/atlas_geoparquet.qmd
+        - section: "Strapi"
+          contents:
+            - docs/portails/strapi/article.qmd
+            - docs/portails/strapi/media.qmd
+            - docs/portails/strapi/webhooks.qmd
 
     ### section packages ###
     - title: "Packages"
@@ -82,9 +89,12 @@ website:
         - section: "Généralités"
           contents:
             - docs/catalogues/catalogues_s5cmd_use.qmd
+            - docs/catalogues/titiler.qmd
         - section: "IO"
           contents:
             - docs/catalogues/io/io_intro.qmd
+            - docs/catalogues/io/stacsfastapi.qmd
+            - docs/catalogues/io/rstac-gdalcubes.qmd
         - section: "Acer"
           contents:
             - docs/catalogues/acer/acer_intro.qmd
@@ -96,16 +106,23 @@ website:
     - title: "Serveurs"
       contents:
         - docs/serveurs/serveurs_intro.qmd
+        - docs/serveurs/coleo-api/index.qmd
+        - docs/serveurs/coleo-app/index.qmd
+        - docs/serveurs/coleo-media/index.qmd
+        - docs/serveurs/obs-web/index.qmd
+        - docs/serveurs/pose/index.qmd
+        - docs/serveurs/postgres01/index.qmd
         - section: "Rweb"
           contents:
             - docs/serveurs/rweb/rweb_intro.qmd
-            - docs/serveurs/rweb/rweb_connect.qmd
             - docs/serveurs/rweb/rweb_shinyapp.qmd
 
     ### section tableaux bord ###
     - title: "Tableaux de bord"
       contents:
         - docs/tableaux_bord/tableaux_bord_intro.qmd
+        - docs/tableaux_bord/tableaux_bord_liste.qmd
+        - docs/tableaux_bord/tableaux_bord_liste_archive.qmd
 
     ### section analyses ###
     - title: "Analyses"
@@ -122,3 +139,6 @@ format:
       dark: solar
     css: styles.css
     toc: true
+    js: js-pass.js
+    include-in-header:
+      text: <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script><script src="/js-pass.js" crossorigin="anonymous"></script>

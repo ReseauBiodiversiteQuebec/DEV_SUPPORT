@@ -24,3 +24,13 @@
 .quarto-dark .quarto-margin-sidebar {
   background: transparent;
 }
+
+.quarto-dark p code,
+.quarto-dark code {
+  background-color: #21343c !important;
+  color: #ccc !important;
+}
+
+#quarto-document-content {
+  display: none;
+}

@@ -1,0 +1,5 @@
+# Pose
+
+This server has a powerfull hardware that is used to perform high comptation demanding task.
+
+to connect via ssh `ssh <your_user>@pose.vhost33`

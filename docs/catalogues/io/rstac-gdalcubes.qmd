@@ -1,0 +1,181 @@
+---
+title: "Exemples de scripts utilisant RStac et GDALCUBES"
+author: "Guillaume Larocque"
+date: "`r Sys.Date()`"
+output: html_document
+eval: false
+---
+IO est un catalogue de couches de données environnementales en format raster pouvant servir dans le contexte de modélisations en lien avec la biodiversité. Cette ressource est sous forme de catalogue [STAC](https://stacspec.org/), qui est accessible via différentes méthodes, notamment sous R grâce aux packages `rstac` et `gdalcubes`. 
+
+Les couches disponibles dans le catalogue peuvent être [visualisées ici](https://coleo.biodiversite-quebec.ca/apps/io-layers/). 
+
+Les couches de données dans IO sont sous format COG (Cloud Optimized Geotiff), qui est un format permettant un accès optimal avec des requêtes à distance. Par exemple, il est possible d'extraire seulement une petite région d'un fichier global et de transformer sa résolution et son système de coordonnées de référence, sans jamais avoir à le télécharger en entier. 
+
+Voici quelques exemples de requêtes permettant d'intéragir avec le catalogue STAC IO et les fichiers COG. 
+
+```{r}
+library(gdalcubes)
+library(rstac)
+```
+<br/>
+
+Connexion au catalogue STAC
+
+```{r}
+s_obj <- stac("https://io.biodiversite-quebec.ca/stac/")
+```
+
+
+Lister les collections
+```{r}
+collections <- s_obj |> collections() |> get_request()
+```
+Voir les collections et leurs descriptions
+
+```{r}
+library(knitr)
+df<-data.frame(id=character(),title=character(),description=character())
+for (c in collections[['collections']]){
+  df<-rbind(df,data.frame(id=c$id,title=c$title,description=c$description))
+}
+kable(df)
+```
+
+Chercher une collection spécifique (earthen_landcover)
+```{r}
+
+it_obj <- s_obj |>
+  stac_search(collections = "earthenv_landcover") |>
+  post_request() |> items_fetch()
+it_obj
+```
+
+
+Voir les couches disponibles dans cette collection
+```{r}
+it_obj <- s_obj |>
+  collections("earthenv_landcover") |> items() |>
+  get_request() |> items_fetch()
+it_obj
+```
+
+
+Voir les propriétés du premier item (couche)
+```{r}
+it_obj[['features']][[1]]$properties
+```
+Résumé des items
+```{r}
+df<-data.frame(id=character(),datetime=character(), description=character())
+for (f in it_obj[['features']]){
+  df<-rbind(df,data.frame(id=f$id,datetime=f$properties$datetime,description=f$properties$description))
+}
+kable(df)
+```
+
+Accéder au premier item avec le package STARS. Ce package permet d'accéder à des fichiers COG à distance de façon rapide et efficace. Ici, nous allons sélectionner la couche qui représente le pourcentage de "Evergreen/Deciduous Needleleaf Trees". 
+
+```{r}
+library(stars)
+lc1<-read_stars(paste0('/vsicurl/',it_obj[['features']][[12]]$assets$data$href), proxy = TRUE)
+plot(lc1)
+```
+Sélectionner seulement une partie du raster
+```{r}
+bbox<-st_bbox(c(xmin = -76, xmax = -70, ymax = 54, ymin = 50), crs = st_crs(4326))
+lc2 <- lc1 |> st_crop(bbox)
+```
+
+La visualiser
+```{r}
+pal <- colorRampPalette(c("black","darkblue","red","yellow","white"))
+plot(lc2,breaks=seq(0,100,10),col=pal(10))
+```
+Sauvegarder sur votre ordinateur en format Cloud Optimized GeoTiff.
+```{r}
+write_stars(lc2,'~/lc3.tif',driver='COG',options=c('COMPRESS=DEFLATE'))
+```
+
+Notez que pour une variable avec des valeurs catégoriques, la sauvegarde est un peu plus complexe.  
+```{r}
+lc1 |> st_crop(bbox) |> write_stars('~/lc1.tif',driver='COG',RasterIO=c('resampling'='mode'),options=c('COMPRESS=DEFLATE','OVERVIEW_RESAMPLING=MODE','LEVEL=6','OVERVIEW_COUNT=8','RESAMPLING=MODE','WARP_RESAMPLING=MODE','OVERVIEWS=IGNORE_EXISTING'))
+```
+
+## Utlisation de GDALCUBES
+
+Ceci est une étape nécessaire pour que GDALCUBES fonctionne avec les données IO
+```{r}
+for (i in 1:length(it_obj$features)){
+  it_obj$features[[i]]$assets$data$roles='data'
+}
+```
+
+Filtrer en fonction des propriétés des items et créer une collection
+```{r}
+st <- stac_image_collection(it_obj$features, asset_names=c('data'), property_filter = function(f){f[['class']] %in% c('1','2','3','4')},srs='EPSG:4326')
+st
+```
+
+
+Construire un cube pour traiter ou visualiser les données. Notez que ce cube peut être dans un SCR et une résolution différents de ceux des éléments/fichiers d'origine. Cependant, la dimension temporelle doit capturer le cadre temporel de l'élément. dt est exprimé en tant que période de temps. P1D est une période d'un jour, P1M est une période d'un mois, P1Y est une période d'un an. Les méthodes de rééchantillonnage doivent être adaptées au type de données. Pour les données catégorielles, utilisez "mode" ou "nearest". Pour les données continues, utilisez "bilinear". L'agrégation n'est pertinente que lorsque plusieurs rasters se chevauchent. 
+
+Ici, on va additionner les quatre catégories de forêts en utilisant aggregation="sum". On va aussi changer le système de référence des données pour utiliser Quebec Lambert (EPSG:32198) et mettre la résolution à 1km. 
+
+```{r}
+bbox<-st_bbox(c(xmin = -483695, xmax = -84643, ymin = 112704 , ymax = 684311), crs = st_crs(32198))
+
+v <- cube_view(srs = "EPSG:32198", extent = list(t0 = "2000-01-01", t1 = "2000-01-01",
+                                                left = bbox$xmin, right =bbox$xmax, top = bbox$ymax, bottom = bbox$ymin), dx=1000, dy=1000, dt="P1D", aggregation = "sum", resampling = "mean")
+```
+
+Jumeler la collection et le cube_view pour créer un raster cube. 
+```{r}
+lc_cube <- raster_cube(st, v)
+```
+
+Sauvegarder le fichier résultant sur votre ordinateur
+```{r}
+lc_cube |> write_tif('~/',prefix='lc2',creation_options=list('COMPRESS'='DEFLATE'))
+```
+
+```{r}
+lc_cube |> plot(zlim=c(0,100),col=pal(10))
+```
+Utiliser le jeu de données "Accessibility from cities", en gardant le même SCR et étendue. 
+```{r}
+it_obj <- s_obj |>
+  collections("accessibility_to_cities") |> items() |>
+  get_request() |> items_fetch()
+v <- cube_view(srs = "EPSG:32198", extent = list(t0 = "2015-01-01", t1 = "2015-01-01",
+                                                left = bbox$xmin, right =bbox$xmax, top = bbox$ymax, bottom = bbox$ymin), dx=1000, dy=1000, dt="P1D", aggregation = "mean", resampling = "bilinear")
+for (i in 1:length(it_obj$features)){
+  it_obj$features[[i]]$assets$data$roles='data'
+}
+st <- stac_image_collection(it_obj$features)
+lc_cube <- raster_cube(st, v)
+lc_cube |> plot(col=heat.colors)
+```
+
+
+Utilisez le jeu de données CHELSA sur les climatologies et créez une carte des moyennes pour les mois de juin, juillet et août 2010 à 2019
+```{r}
+it_obj <- s_obj |>
+  stac_search(collections = "chelsa-monthly", datetime="2010-06-01T00:00:00Z/2019-08-01T00:00:00Z") |> get_request() |> items_fetch()
+
+v <- cube_view(srs = "EPSG:32198", extent = list(t0 = "2010-06-01", t1 = "2019-08-31",
+                                                left = bbox$xmin, right =bbox$xmax, top = bbox$ymax, bottom = bbox$ymin),
+               dx=1000, dy=1000, dt="P10Y",
+               aggregation = "mean",
+               resampling = "bilinear")
+
+for (i in 1:length(it_obj$features)){
+  names(it_obj$features[[i]]$assets)='data'
+  it_obj$features[[i]]$assets$data$roles='data'
+}
+anames=unlist(lapply(it_obj$features,function(f){f['id']}))
+st <- stac_image_collection(it_obj$features, asset_names = 'data',  property_filter = function(f){f[['variable']] == 'tas' & (f[['month']] %in% c(6,7,8)) })
+c_cube <- raster_cube(st, v)
+c_cube |> plot(col=heat.colors)
+
+c_cube |> write_tif('~/',prefix='chelsa-monthly',creation_options=list('COMPRESS'='DEFLATE'))
+```

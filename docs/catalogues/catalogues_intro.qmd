@@ -2,4 +2,6 @@
 title: "Catalogues"
 ---
 
-Courte (ou pas) description. Pour Guillaume ? 
+Il y a actuellement trois catalogues principaux dans Biodiversité Québec. Le catalogue IO consiste en un catalogue et API STAC pour la gestion des couches environnementales en format raster Cloud Optimized GeoTIFF. Ce catalogue est partagé avec le projet Bon-in-a-Box de GEO BON. Le catalogue Acer est un catalogue et API équivalents pour stocker et rendre disponible les résultats de modélisation. Le catalogue GEOIO est une API FastAPI pour faire des requêtes géospatiales sur des fichiers vectoriels ou des requêtes impliquant des données vectorielles et les catalogues Acer et IO. 
+
+Ces catalogues sont tous hébergés sur le cloud Arbutus de l'Alliance. 

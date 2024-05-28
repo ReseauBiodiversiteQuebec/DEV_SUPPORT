@@ -1,5 +1,5 @@
 ---
-title: Manipulation des catalogues
+title: Utilisation de l'entreposage objet sur Arbutus
 ---
 
 L'outil [s5cmd](https://github.com/peak/s5cmd) permet la gestion des contenus des différents catalogues utilisés par **Biodiversité Québec**. La première étape consiste à installer cet outil après avoir téléchargé le fichier nécessaire.

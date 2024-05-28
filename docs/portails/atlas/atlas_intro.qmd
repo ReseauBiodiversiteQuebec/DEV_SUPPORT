@@ -2,15 +2,25 @@
 title: Base de données Atlas
 ---
 
+
 Atlas is a database for aggregation of biodiversity observations and time-series from multiple sources (codebase available [here](https://github.com/BiodiversiteQuebec/atlas-db))<br>
 The database is dockerized in the coleo-api server.
 
-## Setting environment
+### Connexion à la BD Atlas
 
-File `.env` must be configured with the following recommended environment variables.
-
+Sur le serveur coleo-api, dans le répertoire 
+```bash
+/var/www/bq-db-container
 ```
-TODO
+
+On peut se connecter ne tant que utilisateur "coleo" (sudo su coleo) et ensuite taper ces commandes: 
+
+```bash
+make build-atlas (Mettre à jour le serveur)
+make stop-atlas  (Stopper serveur)
+make start-atlas  (Démarrer le serveur)
+make bash-atlas (Se connecter à bash sur le serveur)
+make psql-atlas (Se connecter à la bd Atlas en tant que user postgres)
 ```
 
 ## Python package dependencies
