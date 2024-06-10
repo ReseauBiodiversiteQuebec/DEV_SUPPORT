@@ -26,6 +26,12 @@ In this section we show how to create an article using strapi step by step.
 
 7 - when you finish the article, click on save and then publish (at Top Right).
 
+8 - Once the article is created, you need to go to the ArticlesPage and add the new article. This step will make sure that the article will show in the Discovery page as another card.
+
+9 - In the ArticlesPage page select the section where you want to place your article. Lets say: `#Indispensable`, 
+    click `Add an entry` and search the article in the list. Afterwards, click on save so the API notifies the web portal. 
+
+![Image](img/articles-pages-item.png)
 
 
 
