@@ -1,0 +1,79 @@
+---
+title: Mettre un tableau dans un docker
+author: "François Rousseu"
+date: "`r Sys.Date()`"
+---
+
+Ce document décrit les étapes pour encapsuler une application Shiny dans un docker. La première étape est de télécharger une image appropriée pour votre application (en assumant que Docker est installé sur votre ordinateur). L'idéal est de trouver une image dans laquelle plusieurs de vos dépendences sont déjà installées.
+
+``` bash
+docker pull rocker/geospatial
+```
+
+Par la suite, vous pouvez entrer dans l'image pour vérifier ce qui s'y trouve et tester de façon interactive l'installation des différentes dépendences qui sont nécessaires à votre application.
+
+``` bash
+docker run -it --rm rocker/geospatial sh
+```
+
+Une fois que vous connaissez les différentes dépendences nécessaires, ajoutez un fichier `Dockerfile` (sans extension) dans le répertoire de votre application (`app.R`) avec les instructions suivantes et les différents packages à installer.
+
+``` text
+# Base R Shiny image
+FROM rocker/geospatial
+
+# Make a directory in the container
+RUN mkdir /home/shiny-app
+
+# Install R dependencies
+RUN R -e "options(repos = c( \
+             INLA = 'https://inla.r-inla-download.org/R/testing', \
+             CRAN = 'https://cloud.r-project.org' \
+          )); \
+          install.packages(c('shinyjs', 'sn', 'INLA', 'inlabru')); \
+          remotes::install_github('daattali/shinycssloaders')"
+
+# Copy the Shiny app code
+COPY app.R /home/shiny-app/app.R
+
+# Expose the application port
+EXPOSE 8180
+
+# Run the R Shiny app
+CMD Rscript /home/shiny-app/app.R
+```
+
+Au début du script R de votre application, ajoutez les instructions suivantes:
+
+``` r
+# Specify the application port
+options(shiny.host = "0.0.0.0")
+options(shiny.port = 8180)
+```
+
+Maintenant, construisez l'image pour votre application (à partir du dossier où est située votre application (à noter que le nom de l'image doit être en minuscule).
+
+``` bash
+docker build -t nomdevotreapp . 
+```
+
+Lancez et testez votre application à partir du docker.
+
+``` bash
+docker run -p 8180:8180 nomdevotreapp
+```
+
+Alternativement, lorsqu'il y a un fichier `compose.yml` dans votre repo, vous pouvez simplement faire ceci pour lancer l'application.
+
+``` bash
+docker compose up
+```
+
+Au besoin, listez ou supprimez les images à partir de leur ID avec les commandes suivantes.
+
+``` bash
+docker images
+docker image rm -f 812a84f022b2 
+```
+
+Une fois votre application fonctionnelle à partir de docker, demandez à Guillaume comment la déployer sur un serveur...

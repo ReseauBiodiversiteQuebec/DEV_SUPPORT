@@ -54,6 +54,8 @@ website:
         - section: "Atlas"
           contents:
             - docs/portails/atlas/atlas_intro.qmd
+            - docs/portails/atlas/atlas_description.qmd
+            - docs/portails/atlas/atlas_schema.qmd
             - docs/portails/atlas/atlas_geoparquet.qmd
         - section: "Strapi"
           contents:
@@ -120,6 +122,7 @@ website:
       contents:
         - docs/tableaux_bord/tableaux_bord_intro.qmd
         - docs/tableaux_bord/tableaux_bord_liste.qmd
+        - docs/tableaux_bord/tableaux_bord_docker.qmd
         - docs/tableaux_bord/tableaux_bord_liste_archive.qmd
 
     ### section analyses ###
