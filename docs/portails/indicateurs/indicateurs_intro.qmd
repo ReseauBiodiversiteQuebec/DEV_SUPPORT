@@ -1,0 +1,63 @@
+---
+title: "Indicateurs"
+author: "Victor Cameron"
+date: "`r Sys.Date()`"
+---
+
+Toute l'information concernant les indicateurs est contenue dans le répertoire [bdqc_indicators](https://github.com/BiodiversiteQuebec/bdqc_indicators).
+
+# Biodiversité Québec's Indicators
+
+This repository contains the scripts necessary to compute the indicators featured on [Biodiversité Québec's web portal](https://biodiversite-quebec.ca/indicateurs). Only the production version of the indicators are stored here. Other repositories may contain the development scripts of indicators.
+
+## Repository Structure
+
+The repository is organized as follows:
+
+- Each indicator has its own subdirectory containing the documentation and scripts specific to that indicator.
+- The instructions for connecting to data stores, formatting the data, and running analyses are centralized in the `README.md` files within each indicator's subdirectory.
+
+## Data Storage
+
+To ensure data integrity and security, no data should be stored directly in this repository, with rare exceptions. Instead, data should be stored in Biodiversité Québec's designated data stores and accessed automatically through requests within the scripts.
+
+*Important: All data should be accessed within scripts by making requests to the appropriate data stores.*
+
+## Updating Indicators
+
+To update or compute an indicator:
+
+1. Connect to `pose.vhost33` vm. Scripts may require important resources and are designed to run from pose.
+2. Git clone this repository to your home directory within `pose` VM.
+3. Navigate to the indicator's subdirectory.
+4. Refer to the `README.md` file within the subdirectory for specific instructions on how to compute the indicator. All data should be accessed, formated, ploted and metrics should all be computed from the `README.md` file.
+
+## Setting Up Data Store Connections
+
+To enable connection to the data stores:
+
+1. Access `pose.vhost33` VM. Scripts and connections to data stores are designed to run from pose.
+2. Create a `.Renviron` file in the root directory of this repository.
+3. Add the necessary environment variables to the `.Renviron` file to facilitate connection to the data stores.
+   - Refer to the `README.md` file of each indicator for any specific instructions or requirements for connecting to the data stores.
+4. Ensure that the `.Renviron` file is not pushed to the repository by including it in the `.gitignore` file.
+
+*Note: The `.Renviron` file should not be tracked by version control and should be kept local to your machine.*
+
+Required environmental variables :
+
+*ATLAS*
+
+- `ATLAS_DATABASE="ATLAS"`
+- `ATLAS_HOSTNAME="coleo-api"`
+- `ATLAS_PORT="5435"`
+- `ATLAS_USER` username
+- `ATLAS_PASSWORD` mot de passe
+
+*STAC CATALOG IO*
+
+- `IO_STAC_CATALOG_URL=http://coleo-api.vhost33:8082/`
+
+---
+
+Please refer to the individual indicator directories for more detailed information on each indicator and how to compute them.
