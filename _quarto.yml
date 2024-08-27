@@ -58,6 +58,7 @@ website:
             - docs/portails/atlas/atlas_schema.qmd
             - docs/portails/atlas/atlas_datasets.qmd
             - docs/portails/atlas/atlas_geoparquet.qmd
+            - docs/portails/atlas/atlas_injection.qmd
         - section: "Indicateurs"
           contents:
             - docs/portails/indicateurs/indicateurs_intro.qmd

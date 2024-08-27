@@ -1,0 +1,29 @@
+---
+title: Injection Atlas
+---
+
+## Step for injection
+
+1. Create dataset and inject in table `datasets` (if not already existing)
+2. Format taxonomy and inject in table `taxa_obs` (if not already existing)
+3. Create/format observations variables (occurrence/abundance) and inject in table `variables` (if not already existing)
+4. Proceed to general validation of the data (see below section)
+5. Retrieve datasets, taxa_obs and variables id (foreign keys) and inject observations data in table `observations`
+6. Create effort sampling variables and the effort itself and inject in table `efforts` and `variables` (if not already existing)
+7. Retrieve observations id and link them to the id_efforts of effort sampling for injection in table `obs_efforts`
+
+## Validation of data
+
+1. Convert coordinates to WGS84 first and to WKT (Well-Known Text) and drop rows where coordinates information is missing
+2. Verify that the observations are within the Quebec bounding box (either manually or retrieve the polygon from Atlas)
+3. Make sure that we at least have a value for year_obs and that month_obs <= 12 and day_obs <= 31
+4. If there is time information (time_obs), convert it to 00:00:00 format (H%M%S%)
+5. Can check for whitespaces within strings values
+
+## Question to clarify with data providers
+
+1. Clarify the type of data if unclear (occurrence, absence, abundance etc.)
+2. Clarify the projection and SRID of coordinates if not provided
+3. Clarify if there is any precision data on coordinates
+4. Clarify if there is any effort sampling information
+5. Clarify all the required datasets fields if they are not provided
