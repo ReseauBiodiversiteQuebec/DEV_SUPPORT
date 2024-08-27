@@ -2,6 +2,8 @@
 title: Injection Atlas
 ---
 
+*See repo atlas-injection[https://github.com/BiodiversiteQuebec/atlas-injection] for examples*
+
 ## Step for injection
 
 1. Create dataset and inject in table `datasets` (if not already existing)
