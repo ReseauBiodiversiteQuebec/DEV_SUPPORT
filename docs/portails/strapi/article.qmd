@@ -1,0 +1,38 @@
+---
+title: Create Articles
+---
+
+Strapi allows our team to create content and feed our web portals such as [Biodiversité Québec](https://biodiversite-quebec.ca/), [Inventaire](https://biodiversite-quebec.ca/fr/inventaires/), [Atlas](https://biodiversite-quebec.ca/fr/atlas), etc.
+
+In this section we show how to create an article using strapi step by step.
+
+1 - Login to your strapi [account](https://portail.biodiversite-quebec.ca/admin/auth/login)
+
+2 - Go to Content Manager (Menu at Top Left)
+
+3 - Go to Article
+
+4 - Click on Create new entry 
+ ![Image](img/img1.png)
+
+5 - Fill the form with fields such Title, suffixe_addresse_url (mandatory since is the link of the article), author, article type, keywords, etc.
+![Image](img/fill_header_info.png)
+
+6 - The fields shown in the previous step are the header of the article. In order to add more content like text, images, quoted text, spotify balados , you must click the button Add a component to the body and select a component.
+![Image](img/add_component.png)
+
+![Image](img/add_component_1.png)
+
+
+7 - when you finish the article, click on save and then publish (at Top Right).
+
+8 - Once the article is created, you need to go to the ArticlesPage and add the new article. This step will make sure that the article will show in the Discovery page as another card.
+
+9 - In the ArticlesPage page select the section where you want to place your article. Lets say: `#Indispensable`, 
+    click `Add an entry` and search the article in the list. Afterwards, click on save so the API notifies the web portal. 
+
+![Image](img/articles-pages-item.png)
+
+
+
+

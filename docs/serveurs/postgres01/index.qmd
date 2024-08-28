@@ -1,0 +1,38 @@
+---
+title: Postgres01
+
+---
+
+# Postgres server
+
+Host all databases.
+
+to connect via ssh `ssh <your_user>@postgres.vhost33`
+Runs postgres 13.
+
+User `postgres` is used to run commands. All the config and backup scripts are located in the home directory of `postgres` user. `sudo su - postgres`.
+
+The configuration file is located: `/etc/postgresql/13/main/`
+
+### backup
+
+In order to backup up our database Atlas a librcd .ary called `pgbackrest`. [Here](https://pgbackrest.org/user-guide.html) you can find the documantation of the librarby.
+
+you can find our pbackrest config file here: `sudo cat /etc/pgbackrest.conf`
+
+A set of cronjobs are setup to backup Atlas database (our bigger DB), to refresh the materialized view and the strapi databse.
+
+`sudo su - postgres && contrab -e` to see the crontab.
+
+The backups are sent to the S3 server.
+
+We perform an **_Incremental Backup_**. This allows us to optimize space since it does a full backup only the first time `pgbackrest --stanza=main --type=full  --log-level-console=info backup --repo1-s3-uri-style=path`, `s3FullBackup.sh` script. Then, it will save only what is different from on week to another (we perfom a backup once at the end of the week) `pgbackrest --stanza=main --type=incr  --log-level-console=info backup --repo1-s3-uri-style=path`, `s3Backup.sh` script.
+
+### important config settup
+
+`postgresql.conf`:
+
+![Image](img/config1.png)
+![Image](img/config2.png)
+
+The config files for postgres and pgbackrest will be saved in our backup server (S3) (`postgresql_config_files/` and `pgbackrest_config_files/`).

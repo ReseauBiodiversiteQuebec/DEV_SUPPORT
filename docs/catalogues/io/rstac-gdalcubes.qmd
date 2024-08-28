@@ -1,11 +1,11 @@
 ---
-title: "Example Rstac and gdalcubes scripts"
+title: "Exemples de scripts utilisant RStac et GDALCUBES"
 author: "Guillaume Larocque"
 date: "`r Sys.Date()`"
 output: html_document
 eval: false
 ---
-IO est un catalogue de couches de données environnementales en format raster pouvant servir dans le contexte de modélisations en lien avec la biodiversité. Cette ressource est sous forme de catalogue [STAC](https://stacspec.org/), qui est accessible via différentes méthodes, notamment sous R grâce aux packages rstac et gdalcubes. 
+IO est un catalogue de couches de données environnementales en format raster pouvant servir dans le contexte de modélisations en lien avec la biodiversité. Cette ressource est sous forme de catalogue [STAC](https://stacspec.org/), qui est accessible via différentes méthodes, notamment sous R grâce aux packages `rstac` et `gdalcubes`. 
 
 Les couches disponibles dans le catalogue peuvent être [visualisées ici](https://coleo.biodiversite-quebec.ca/apps/io-layers/). 
 
@@ -92,12 +92,12 @@ pal <- colorRampPalette(c("black","darkblue","red","yellow","white"))
 plot(lc2,breaks=seq(0,100,10),col=pal(10))
 ```
 Sauvegarder sur votre ordinateur en format Cloud Optimized GeoTiff.
-```{r echo=FALSE}
+```{r}
 write_stars(lc2,'~/lc3.tif',driver='COG',options=c('COMPRESS=DEFLATE'))
 ```
 
 Notez que pour une variable avec des valeurs catégoriques, la sauvegarde est un peu plus complexe.  
-```{r echo=FALSE}
+```{r}
 lc1 |> st_crop(bbox) |> write_stars('~/lc1.tif',driver='COG',RasterIO=c('resampling'='mode'),options=c('COMPRESS=DEFLATE','OVERVIEW_RESAMPLING=MODE','LEVEL=6','OVERVIEW_COUNT=8','RESAMPLING=MODE','WARP_RESAMPLING=MODE','OVERVIEWS=IGNORE_EXISTING'))
 ```
 
@@ -111,7 +111,7 @@ for (i in 1:length(it_obj$features)){
 ```
 
 Filtrer en fonction des propriétés des items et créer une collection
-```{r echo=FALSE}
+```{r}
 st <- stac_image_collection(it_obj$features, asset_names=c('data'), property_filter = function(f){f[['class']] %in% c('1','2','3','4')},srs='EPSG:4326')
 st
 ```
