@@ -1,0 +1,18 @@
+---
+title: Login in the Web Portal
+---
+
+
+In this section we show how to login in the [web portal](https://biodiversite-quebec.ca/) so you could access to restricted information.
+
+1 - Go to the [login page](https://biodiversite-quebec.ca/fr/login)
+
+2 - Enter the user and password. Note: The user and password  store in the coleo database. (used to access to coleo App) 
+
+ ![Image](img/login.png)
+
+
+
+
+
+
