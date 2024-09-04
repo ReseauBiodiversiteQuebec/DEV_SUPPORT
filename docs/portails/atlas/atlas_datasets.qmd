@@ -1,0 +1,28 @@
+---
+title: Jeu de données Atlas
+---
+
+# Liste des jeux de données dans l'Atlas
+
+- Atlas des Oiseaux Nicheurs du Québec
+- Biotime
+- Coleo
+- eBird (EOD)
+- eButterfly
+- GBIF
+- Living Planet Index (LPI)
+- Observatoire Global du Saint-Laurent (OGSL)
+- Patrice Bourgault - Tortues (UDeS)
+- Patrice Bourgault - Micromammifères (UDeS)
+- MELCCFP:
+  - ESPECES (Frederic Poisson ?)
+  - Inventaire de la Flore Nordique du Québec (Frederic Poisson ?)
+  - Suivi du Benthos
+  - Espèces exotiques envahissantes (EEE)
+  - Atlas des micromammifères et des chiroptères du Québec (MMACH)
+  - Banque de données sur les reptiles et amphibiens du Québec (BORAQ)
+  - Données de localisation des grands mammifères
+  - Points d'observations écologiques
+  - Placettes-échantillons permanentes
+  - Placettes-échantillons temporaires (2, 3, 4 et 5e inventaire)
+  - Système d'Information sur la Faune Aquatique (IFA)

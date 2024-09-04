@@ -56,7 +56,12 @@ website:
             - docs/portails/atlas/atlas_intro.qmd
             - docs/portails/atlas/atlas_description.qmd
             - docs/portails/atlas/atlas_schema.qmd
+            - docs/portails/atlas/atlas_datasets.qmd
             - docs/portails/atlas/atlas_geoparquet.qmd
+            - docs/portails/atlas/atlas_injection.qmd
+        - section: "Indicateurs"
+          contents:
+            - docs/portails/indicateurs/indicateurs_intro.qmd
         - section: "Strapi"
           contents:
             - docs/portails/strapi/article.qmd
