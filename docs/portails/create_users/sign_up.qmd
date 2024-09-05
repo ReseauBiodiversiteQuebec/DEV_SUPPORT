@@ -11,7 +11,7 @@ title: Sign up in the Web Portal
 
 3 - Go to the [signup page](https://biodiversite-quebec.ca/fr/signup)
 
-![Image](img/login.png)
+![Image](img/signup.png)
 
 4 - Fill all the fields and click create user button. 
 
