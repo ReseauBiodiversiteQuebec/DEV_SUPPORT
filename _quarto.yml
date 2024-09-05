@@ -67,6 +67,10 @@ website:
             - docs/portails/strapi/article.qmd
             - docs/portails/strapi/media.qmd
             - docs/portails/strapi/webhooks.qmd
+        - section: "Create user accounts"
+          contents:
+            - docs/portails/create_users/login.qmd
+            - docs/portails/create_users/sign_up.qmd
 
     ### section packages ###
     - title: "Packages"
