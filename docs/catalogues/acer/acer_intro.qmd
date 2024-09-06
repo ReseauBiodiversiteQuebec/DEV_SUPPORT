@@ -4,5 +4,6 @@ title: Catalogue ACER
 
 Acer est un catalogue de couches de données issues des modélisations et analyses effectuées par Biodiversité Québec en format raster. Cette ressource est sous forme de catalogue [STAC](https://stacspec.org/), qui est accessible via différentes méthodes, notamment sous R grâce aux packages rstac et gdalcubes. 
 
+Voir la documentation pour [IO]("../io/io_intro.qmd"), pour voir l'infrastructure logicielle et l'interaction avec le catalogue. 
 
 Les couches disponibles dans le catalogue peuvent être [visualisées ici](https://acer.biodiversite-quebec.ca/viewer/). 
