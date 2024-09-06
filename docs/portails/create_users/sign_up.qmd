@@ -10,14 +10,16 @@ date: "`r Sys.Date()`"
 
 ![Image](img/login.png)
 
-2. Aller à la page [signup](https://biodiversite-quebec.ca/fr/signup)
+2. Aller à la page [Connexion](https://biodiversite-quebec.ca/fr/signup)
 
 ![Image](img/signup.png)
 
 3. Remplir les champs et cliquer sur *Créer utilisateur* pour créer le nouveau compte utilisateur
 
 > Les utilisateurs *Administrateur* peuvent accéder à l'ensemble des données ainsi qu'à la création de comptes. Ne pas attribuer ce privilège à la légère
+
 > Les utilisateurs *Utilisateur* peuvent accéder à l'ensemble des données
+
 > Les utilisateurs *Lecteur* peuvent accéder aux tables de données *simplifiées* (sans accès aux tables de type gabarit)
 
 
