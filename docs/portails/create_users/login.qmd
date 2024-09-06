@@ -6,15 +6,15 @@ date: "`r Sys.Date()`"
 
 Cette section détaille la procédure de connection au [portail web](https://biodiversite-quebec.ca/) qui donne accès à l'information sensible. Par exemple, aux tableaux de données des inventaires terrain.
 
-1 - Accéder la [page de connection](https://biodiversite-quebec.ca/fr/login) accessible depuis le menu hamburger sous la rubrique *Se connecter*
+1. Accéder la [page de connection](https://biodiversite-quebec.ca/fr/login) accessible depuis le menu hamburger sous la rubrique *Se connecter*
 
-2 - Entrer ses inforamtions de connection (les comptes de l'ancienne application coleo ont été maintenus)
-    - `nom d'utilisateur` Saisir son adresse courrielle
-    - `mot de passe` Saisir son mot de passe
+2. Entrer ses informations de connection (les comptes de l'ancienne application coleo ont été maintenus)
+    
+- `nom d'utilisateur` Saisir son adresse courriel
+    
+- `mot de passe` Saisir son mot de passe
 
-```
 Note: Le nom d'utilisateur et le mot de passe sont stockés dans la base de données coleo
-```
 
  ![Image](img/login.png)
 
