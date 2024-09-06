@@ -7,6 +7,6 @@ eval: false
 ---
 IO est un catalogue de couches de données environnementales en format raster pouvant servir dans le contexte de modélisations en lien avec la biodiversité. Cette ressource est sous forme de catalogue [STAC](https://stacspec.org/), qui est accessible via différentes méthodes, notamment sous R grâce aux packages rstac et gdalcubes. 
 
-Les couches disponibles dans le catalogue peuvent être [visualisées ici](https://coleo.biodiversite-quebec.ca/apps/io-layers/). 
+Les couches disponibles dans le catalogue peuvent être [visualisées ici](https://io.biodiversite-quebec.ca/viewer/). 
 
 Les couches de données dans IO sont sous format COG (Cloud Optimized Geotiff), qui est un format permettant un accès optimal avec des requêtes à distance. Par exemple, il est possible d'extraire seulement une petite région d'un fichier global et de transformer sa résolution et son système de coordonnées de référence, sans jamais avoir à le télécharger en entier. 
