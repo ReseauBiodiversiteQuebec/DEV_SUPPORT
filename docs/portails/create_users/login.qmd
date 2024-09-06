@@ -1,14 +1,14 @@
 ---
-title: Connection au portail web de Biodiversité Québec
+title: Connexion au portail web de Biodiversité Québec
 author: Will & Victor
 date: "`r Sys.Date()`"
 ---
 
-Cette section détaille la procédure de connection au [portail web](https://biodiversite-quebec.ca/) qui donne accès à l'information sensible. Par exemple, aux tableaux de données des inventaires terrain.
+Cette section détaille la procédure de connexion au [portail web](https://biodiversite-quebec.ca/) qui donne accès à l'information sensible. Par exemple, aux tableaux de données des inventaires terrain.
 
 1. Accéder la [page de connection](https://biodiversite-quebec.ca/fr/login) accessible depuis le menu hamburger sous la rubrique *Se connecter*
 
-2. Entrer ses informations de connection (les comptes de l'ancienne application coleo ont été maintenus)
+2. Entrer ses informations de connexion (les comptes de l'ancienne application coleo ont été maintenus)
     
 - `nom d'utilisateur` Saisir son adresse courriel
     
