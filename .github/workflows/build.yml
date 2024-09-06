@@ -25,6 +25,9 @@ jobs:
       - name: Install R deps
         run: R -e 'install.packages(c("rmarkdown", "knitr"))'
 
+      - name: Install Jupyter
+        run: python3 -m pip install jupyter
+
       - name: Render Quarto Project
         run: quarto render
 
