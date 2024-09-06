@@ -6,7 +6,7 @@ output: html_document
 eval: false
 ---
 
-# io-data
+# bq-stac
 
 Basic tools for creating STAC items and catalogs for IO repository of geospatial data in Biodiversité Québec
 
