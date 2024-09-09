@@ -25,7 +25,7 @@ date: "`r Sys.Date()`"
 4. Une fois le compte utilisateur créé, le message suivant s'affiche.
 ![Image](img/signup_success.png)
 
-Important Note !!!!!:  Si vous essayez d'ouvrir la page d'inscription sans vous connecter au préalable avec un compte administrateur, vous obtiendrez un message d'erreur.
+ Note Importante !!!!!:  Si vous essayez d'ouvrir la page d'inscription sans vous connecter au préalable avec un compte administrateur, vous obtiendrez un message d'erreur.
 
 ![Image](img/signup_error.png)
 
