@@ -3,7 +3,7 @@ title: Sign up in the Web Portal
 ---
 
 
-1 - To create a new user you must first login as admin to the [login page](https://biodiversite-quebec.ca/fr/login)
+1 - To create a new user you must first login as admin to the [login page](https://biodiversite-quebec.ca/fr/login). IMPORTANT!!!!: You must have an admin account to be able to create others accounts.
 
 2 - Enter the user and password. Note: The user and password  store in the coleo database. (used to access to coleo App) 
 
