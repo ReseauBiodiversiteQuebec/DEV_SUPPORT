@@ -1,13 +1,20 @@
 ---
-title: Login in the Web Portal
+title: Connexion au portail web de Biodiversité Québec
+author: Will & Victor
+date: "`r Sys.Date()`"
 ---
 
+Cette section détaille la procédure de connexion au [portail web](https://biodiversite-quebec.ca/) qui donne accès à l'information sensible. Par exemple, aux tableaux de données des inventaires terrain.
 
-In this section we show how to login in the [web portal](https://biodiversite-quebec.ca/) so you could access to restricted information.
+1. Accéder la [page de connection](https://biodiversite-quebec.ca/fr/login) accessible depuis le menu hamburger sous la rubrique *Se connecter*
 
-1 - Go to the [login page](https://biodiversite-quebec.ca/fr/login)
+2. Entrer ses informations de connexion (les comptes de l'ancienne application coleo ont été maintenus)
+    
+- `nom d'utilisateur` Saisir son adresse courriel
+    
+- `mot de passe` Saisir son mot de passe
 
-2 - Enter the user and password. Note: The user and password  store in the coleo database. (used to access to coleo App) 
+Note: Le nom d'utilisateur et le mot de passe sont stockés dans la base de données coleo
 
  ![Image](img/login.png)
 

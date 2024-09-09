@@ -1,20 +1,33 @@
 ---
-title: Sign up in the Web Portal
+title: Créer un nouvel utilisateur
+autheur: Will & Victor
+date: "`r Sys.Date()`"
 ---
 
+> Note: Il faut détenir un compte aux privilèges *Administrateur* pour pouvoir créer de nouveaux utilisateurs
 
-1 - To create a new user you must first login as admin to the [login page](https://biodiversite-quebec.ca/fr/login). IMPORTANT!!!!: You must have an admin account to be able to create others accounts.
-
-2 - Enter the user and password. Note: The user and password  store in the coleo database. (used to access to coleo App) 
+1. Se connecter à la [page de connection](https://biodiversite-quebec.ca/fr/login) à l'aide d'un compte détenant les privilèges Administrateur
 
 ![Image](img/login.png)
 
-3 - Go to the [signup page](https://biodiversite-quebec.ca/fr/signup)
+2. Aller à la page [Connexion](https://biodiversite-quebec.ca/fr/signup)
 
 ![Image](img/signup.png)
 
-4 - Fill all the fields and click create user button. 
+3. Remplir les champs et cliquer sur *Créer utilisateur* pour créer le nouveau compte utilisateur
 
+> Les utilisateurs *Administrateur* peuvent accéder à l'ensemble des données ainsi qu'à la création de comptes. Ne pas attribuer ce privilège à la légère
+
+> Les utilisateurs *Utilisateur* peuvent accéder à l'ensemble des données
+
+> Les utilisateurs *Lecteur* peuvent accéder aux tables de données *simplifiées* (sans accès aux tables de type gabarit)
+
+4. Une fois le compte utilisateur créé, le message suivant s'affiche.
+![Image](img/signup_success.png)
+
+Important Note !!!!!:  Si vous essayez d'ouvrir la page d'inscription sans vous connecter au préalable avec un compte administrateur, vous obtiendrez un message d'erreur.
+
+![Image](img/signup_error.png)
 
 
 

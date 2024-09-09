@@ -6,14 +6,14 @@ output: html_document
 eval: false
 ---
 
-# io-data
+# bq-stac
 
 Basic tools for creating STAC items and catalogs for IO repository of geospatial data in Biodiversité Québec
 
-The Github [repository](https://github.com/BiodiversiteQuebec/io-data) contains:
+The Github [repository](https://github.com/BiodiversiteQuebec/bq-stac) contains:
 
 1. A Python library in `/bqio` for loading raster data into the STAC catalog and sending it to the Stac FastAPI library. 
-2. A StacFastAPI library for serving the catalogue. 
+2. A StacFastAPI library for serving the catalogues for IO and Acer. 
 3. A NodeJS app for securing the StacFastAPI requests. 
 4. An experimental stacItem Pipeline API for sending rasters directly to an API endpoint for automated ingestion into the STAC catalog.
 
@@ -26,13 +26,36 @@ The Python library located in `/bqio` is used to
 3. Extract information from the COGs to populate the information for the STAC items.
 4. Create collections and items using the `pystac` Python library and send them through POST requests to STAC FASTAPI.
 
-There are a number of example ingestion scripts located in `/bqio/datasets/`. Note that older scripts were using an older version of the library. These scripts were run in a Docker container on a virtual machine with sufficient resources for the COG conversion and data download/upload to proceed. **Some of theses scripts take several days to run**.
+There are a number of example ingestion scripts located in `/datasets/`. Note that older scripts were using an older version of the library. These scripts were run in a Docker container on a virtual machine with sufficient resources for the COG conversion and data download/upload to proceed. **Some of theses scripts take several days to run**.
+
+# Example query for updating a collection
+
+```
+docker compose run --rm gdal-python python
+```
+
+```{python}
+import sys
+sys.path.append('./bqio/lib/')
+from pipelinelib import StacCatalog
+from utils import push_to_api
+
+cat = StacCatalog.client()
+#for Acer, use cat = StacCatalog.client(url="https://acer.biodiversite-quebec.ca/stac")
+sg = cat.get_collection('soilgrids')
+sg.description='SoilGrids aggregated datasets at 1km resolution, from https://www.isric.org/explore/soilgrids'
+p=push_to_api(sg,'https://io.biodiversite-quebec.ca/stac')
+```
+
+
 
 ## STAC-FASTAPI
 
 At the moment, the [STAC API](https://github.com/ReseauBiodiversiteQuebec/stac-fastapi) is generated from the generic STAC-FASTAPI/PGSTAC Docker image. A functioning nginx configuration section is in `nginx-stac-endpoint.txt`
 
 The `db-backup.sh` file contains the script to backup the database through regular CRON jobs.
+
+
 
 ## EXPERIMENTAL stacItem Pipeline API
 
