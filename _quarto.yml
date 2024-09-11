@@ -71,6 +71,7 @@ website:
           contents:
             - docs/portails/create_users/login.qmd
             - docs/portails/create_users/sign_up.qmd
+            - docs/portails/create_users/change_password.qmd
 
     ### section packages ###
     - title: "Packages"
