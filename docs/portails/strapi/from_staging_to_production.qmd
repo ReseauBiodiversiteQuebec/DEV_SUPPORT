@@ -1,0 +1,15 @@
+---
+title:  Staging vers Production
+---
+
+Tous les utilisateurs effectueront les modifications dans un environnement d'essai afin d'éviter les erreurs qui pourraient faire planter l'environnement de production. Ainsi, pour effectuer une modification, il faut d'abord se rendre sur le [Portail Strapi].(https://portail.biodiversite-quebec.ca/admin). Les changements s'appliqueront immédiatement au portail de Biodiversité Québec staging. Chaque nuit, les portails de production de strapi et de biodiversite quebec seront mis à jour via un script cronjob. 
+
+IMPORTANT!!!: Si une mise à jour de production doit être effectuée rapidement, veuillez contacter les administrateurs car ils peuvent déclencher manuellement le processus de mise à jour.
+
+TRIGGER SWAP MANUALLY (FOR ADMINS):
+
+- tapez dans le prompt`sudo su` être sudoer (PAS COLEO, sudo su sous votre propre utilisateur).
+- allez dans le dossier `/var/www/strapi-backend-portail-staging` (s'assurer d'être dans le dossier staging).
+- executer la commande suivante: `sh swap_staging_to_prod.sh`.
+
+

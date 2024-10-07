@@ -67,6 +67,7 @@ website:
             - docs/portails/strapi/article.qmd
             - docs/portails/strapi/media.qmd
             - docs/portails/strapi/webhooks.qmd
+            - docs/portails/strapi/from_staging_to_production.qmd
         - section: "Create user accounts"
           contents:
             - docs/portails/create_users/login.qmd
