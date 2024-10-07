@@ -132,7 +132,6 @@ website:
     - title: "Tableaux de bord"
       contents:
         - docs/tableaux_bord/tableaux_bord_intro.qmd
-        - docs/tableaux_bord/tableaux_bord_liste.qmd
         - docs/tableaux_bord/tableaux_bord_docker.qmd
         - docs/tableaux_bord/tableaux_bord_liste_archive.qmd
 
