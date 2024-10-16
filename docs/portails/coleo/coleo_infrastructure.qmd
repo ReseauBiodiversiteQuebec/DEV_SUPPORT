@@ -1,6 +1,6 @@
  
 ---
-title:  Infrastructure Atlas (Staging et Production)
+title:  Infrastructure Coleo (Staging et Production)
 ---
 
  
