@@ -1,0 +1,28 @@
+ 
+---
+title:  Infrastructure Atlas (Staging et Production)
+---
+
+ 
+ La figure suivante montre comment le portail de l'atlas est structuré, y compris l'API du backend  et la base de données.
+
+ ![Image](images/infra.png)
+
+ Server: `coleo-api`
+
+ Postgres est utilisé pour stocker la base de données à l'intérieur d'un conteneur docker et pour l'API nous utilisons postgRest qui génère l'API automatiquement à partir des schémas et des tables de la base de données. Pour ce service, nous utilisons également un conteneur Docker.
+
+ Chaque service est divisé en deux catégories, la mise en scène et la production. Dans la phase d'essai, les données sont écrites pour éviter les erreurs dans la production. Une fois les modifications validées, elles sont migrées vers la production à l'aide du script : `atlas_staging_to_main_swap.sh`. 
+ 
+ IMPORTANT!!!: La migration est exécutée manuellement et seulement lorsque les modifications dans staging sont validées. 
+
+
+
+ TRIGGER SWAP MANUALLY (FOR ADMINS):
+
+- tapez dans le prompt`sudo su` être sudoer (PAS COLEO, sudo su sous votre propre utilisateur).
+- allez dans le dossier `/var/www/bq-db-container`.
+- executer la commande suivante: `sh atlas_staging_to_main_swap.sh`.
+
+
+ 

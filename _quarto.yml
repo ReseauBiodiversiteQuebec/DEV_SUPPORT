@@ -51,6 +51,7 @@ website:
             - docs/portails/coleo/coleo_structure.qmd
             - docs/portails/coleo/coleo_taxonomie.qmd
             - docs/portails/coleo/coleo_API_endpoints.qmd
+            - docs/portails/coleo/coleo_infrastructure.qmd
         - section: "Atlas"
           contents:
             - docs/portails/atlas/atlas_intro.qmd
@@ -59,6 +60,7 @@ website:
             - docs/portails/atlas/atlas_datasets.qmd
             - docs/portails/atlas/atlas_geoparquet.qmd
             - docs/portails/atlas/atlas_injection.qmd
+            - docs/portails/atlas/atlas_infrastructure.qmd
         - section: "Indicateurs"
           contents:
             - docs/portails/indicateurs/indicateurs_intro.qmd
