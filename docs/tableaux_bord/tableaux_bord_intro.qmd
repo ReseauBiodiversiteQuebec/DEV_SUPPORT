@@ -3,380 +3,47 @@ title: Tableaux de bord
 author: "Claire-Cécile Juhasz"
 date: "`r Sys.Date()`"
 ---
-# Tableaux de bord en cours de développement 
 
-- Explorateur COLEO 
-- Explorateur ATLAS
-- Explorateur IO
-- Composition des communautés 
-- Combien d'espèces au Québec ?
-- Les espèces rares du Québec
-- Indice planète vivante
-- Indice de distribution de la biodiversité 
-- La biodiversité en mouvement 
-- Phénologie des chauve-souris
- 
-# Tableaux de bord actuels
+## Tableaux de bords actuels
+
+- [Explorateur IO](https://io.biodiversite-quebec.ca/viewer): explorateur des couches environnementales contenues dans le STAC catalogue
+- [Explorateur Acer](https://acer.biodiversite-quebec.ca/viewer): explorateur des produits de Biodiversité Québec (incluant les SDMs, EBV, etc.)
+- [Explorateur SDM/paramètres](https://coleo.biodiversite-quebec.ca/apps/tableau-comparateur_sdm/): comparaison des méthodes SDMs en fonction des paramètres
+- [Explorateur paramètres/SDM](https://coleo.biodiversite-quebec.ca/apps/SDM_benchmark_species/): comparaison des paramètres au sein des méthodes SDMs
+- [Niches climatiques](https://staging.biodiversite-quebec.ca/envelop): tableau de bord des niches climatiques (ce tableau est dans un docker)
+
+## Liste des tableaux de bord fonctionnels
 Les [tableaux suivants](https://coleo.biodiversite-quebec.ca/apps/) sont actuellement déployés sur le serveur [rweb](../serveurs/rweb/rweb_intro.qmd):
-  
-## cog-react  
-Responsable : Guillaume Larocque  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-à_definir-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/cog-react/cog-react/"><img src=https://img.shields.io/badge/View-cogReact-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a>
 
-## cog-test  
-Responsable : Guillaume Larocque  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-à_definir-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/cog-test/"><img src=https://img.shields.io/badge/View-cogTest-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a>  
+- [cog-react](https://coleo.biodiversite-quebec.ca/apps/cog-react/cog-react/)
+- [cog-test](https://coleo.biodiversite-quebec.ca/apps/cog-test/)
+- [data](https://coleo.biodiversite-quebec.ca/apps/data/)
+- [io-layers](https://coleo.biodiversite-quebec.ca/apps/io-layers/)
+- [QC_in_a_CUBE_Species_richness](https://coleo.biodiversite-quebec.ca/apps/QC_in_a_CUBE_Species_richness/)
+- [rayshader-test](https://coleo.biodiversite-quebec.ca/apps/rayshader-test/)
+- [SDM_benchmark_species](https://coleo.biodiversite-quebec.ca/apps/SDM_benchmark_species/)
+- [sdms](https://coleo.biodiversite-quebec.ca/apps/sdms/)
+- [shiny-src](https://coleo.biodiversite-quebec.ca/apps/shiny-src/)
+- [tableau_atlas_couverture](https://coleo.biodiversite-quebec.ca/apps/tableau_atlas_couverture/)
+- [tableau-atlas-react](https://coleo.biodiversite-quebec.ca/apps/tableau-atlas-react/)
+- [tableau-atlas-vue](https://coleo.biodiversite-quebec.ca/apps/tableau-atlas-vue/)
+- [tableau-btsl](https://coleo.biodiversite-quebec.ca/apps/tableau-btsl/)
+- [tableau-coleo-react](https://coleo.biodiversite-quebec.ca/apps/tableau-coleo-react/)
+- [tableau-comparateur_sdm](https://coleo.biodiversite-quebec.ca/apps/tableau-comparateur_sdm/)
+- [tableau-enveloppe](https://coleo.biodiversite-quebec.ca/apps/tableau-enveloppe/)
+- [tableau-forets](https://coleo.biodiversite-quebec.ca/apps/tableau-forets/)
+- [tableau-gbif](https://coleo.biodiversite-quebec.ca/apps/tableau-gbif/)
+- [tableau-validation](https://coleo.biodiversite-quebec.ca/apps/tableau-validation/)
+- [tableaubdi](https://coleo.biodiversite-quebec.ca/apps/tableaubdi/)
+- [tableauchangementstemporels](https://coleo.biodiversite-quebec.ca/apps/tableauchangementstemporels/)
+- [tableaucoleo](https://coleo.biodiversite-quebec.ca/apps/tableaucoleo/)
+- [tableaucomposition](https://coleo.biodiversite-quebec.ca/apps/tableaucomposition/)
+- [tableauexplosites](https://coleo.biodiversite-quebec.ca/apps/tableauexplosites/)
+- [tableaulpi](https://coleo.biodiversite-quebec.ca/apps/tableaulpi/)
+- [tableaurarefaction](https://coleo.biodiversite-quebec.ca/apps/tableaurarefaction/)
 
-## data
-Responsable : Sarah?  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-à_definir-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/data/"><img src=https://img.shields.io/badge/View-data-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a> 
 
-## io-layers
-Responsable : Guillaume Larocque  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-IO-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/io-layers/"><img src=https://img.shields.io/badge/View-IOLayers-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/io-layers-react"><img src=../../assets/img/github-mark-white.png width="20"></a> 
-
-## QC_in_a_CUBE_Species_richness
-Responsable : Claire-Cécile Juhasz  
-<!-- dev status & repo github -->
-<a href="https://github.com/BiodiversiteQuebec/QC_in_a_CUBE_Species_richness"><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/QC_in_a_CUBE_Species_richness/"><img src=https://img.shields.io/badge/View-speciesRichness-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/QC_in_a_CUBE_Species_richness"><img src=../../assets/img/github-mark-white.png width="20"></a> 
-
-## rayshader-test
-Responsable :Guillaume?  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-à_definir-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/rayshader-test/"><img src=https://img.shields.io/badge/View-rayshaderTest-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a> 
-
-## SDM_benchmark_species
-Responsable : Claire-Cécile Juhasz  
-<!-- dev status & repo github -->
-<a href="https://github.com/BiodiversiteQuebec/SDM_benchmark_species"><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/SDM_benchmark_species/"><img src=https://img.shields.io/badge/View-SDMBenchmark-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/SDM_benchmark_species"><img src=../../assets/img/github-mark-white.png width="20"></a>
-
-## sdms
-Responsable : François Rousseu  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-à_definir-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/sdms/"><img src=https://img.shields.io/badge/View-sdms-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a>
-
-## shiny-src
-Responsable : ?   
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-à_definir-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/shiny-src/"><img src=https://img.shields.io/badge/View-shinySrc-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a>  
-
-[Readme](https://coleo.biodiversite-quebec.ca/apps/shiny-src/README.md)
-
-## tableau_atlas_couverture
-Responsable : Victor Cameron  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableau_atlas_couverture/"><img src=https://img.shields.io/badge/View-couvertureAtlas-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/tableau_atlas_couverture"><img src=../../assets/img/github-mark-white.png width="20"></a>
-
-## tableau-atlas-react
-Responsable : Guillaume Larocque & William Cabrera  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableau-atlas-react/"><img src=https://img.shields.io/badge/View-atlasReact-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/tableau-atlas-react"><img src=../../assets/img/github-mark-white.png width="20"></a>  
-
-[Readme](https://github.com/BiodiversiteQuebec/tableau-atlas-react/blob/master/README.md)
-
-## tableau-atlas-vue
-Responsable : Guillaume Larocque & William Cabrera  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableau-atlas-vue/"><img src=https://img.shields.io/badge/View-atlasVue-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a>
-
-## tableau-btsl
-Responsable : Guillaume Larocque & William Cabrera  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-à_definir-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableau-btsl/"><img src=https://img.shields.io/badge/View-btsl-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/tableau-btsl"><img src=../../assets/img/github-mark-white.png width="20"></a>
-
-## tableau-coleo-react
-Responsable : Guillaume Larocque & William Cabrera  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-COLEO-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableau-coleo-react/"><img src=https://img.shields.io/badge/View-coleoReact-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/tableau-coleo-react"><img src=../../assets/img/github-mark-white.png width="20"></a>  
-
-[Readme](https://github.com/BiodiversiteQuebec/tableau-coleo-react/blob/main/README.md)
-
-## tableau-comparateur_sdm
-Responsable : Claire-Cécile Juhasz  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableau-comparateur_sdm/"><img src=https://img.shields.io/badge/View-comparateurSdm-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/SDM_benchmark_remote"><img src=../../assets/img/github-mark-white.png width="20"></a>  
-
-[Readme](https://github.com/BiodiversiteQuebec/SDM_benchmark_remote/blob/main/README.md)
-
-## tableau-enveloppe
-Responsable : William Cabrera 
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-en cours-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableau-enveloppe/"><img src=https://img.shields.io/badge/View-enveloppe-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a>  
-
-[Readme](https://github.com/BiodiversiteQuebec/tableau-envelopes/blob/master/README.md)
-
-## tableau-forets
-Responsable : Guillaume Larocque & Guillaume Cabrera  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableau-forets/"><img src=https://img.shields.io/badge/View-forets-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/tableau-forets"><img src=../../assets/img/github-mark-white.png width="20"></a>  
-
-[Readme](https://github.com/BiodiversiteQuebec/tableau-forets/blob/master/README.md)
-
-## tableau-gbif
-Responsable : Guillaume Larocque  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-à_definir-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableau-gbif/"><img src=https://img.shields.io/badge/View-gbif-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a>
-
-## tableau-validation
-Responsable : Victor Cameron  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-COLEO-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableau-validation/"><img src=https://img.shields.io/badge/View-validationDataColeo-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a>
-
-## tableaubdi
-Responsable : Vincent Bellavance?  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-à_definir-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableaubdi/"><img src=https://img.shields.io/badge/View-bdi-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/tableau-lpi-bdi"><img src=../../assets/img/github-mark-white.png width="20"></a>  
-
-[Readme](https://github.com/BiodiversiteQuebec/tableau-lpi-bdi/blob/main/README.md)
-
-## tableauchangementstemporels
-Responsable :?  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-à_definir-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableauchangementstemporels/"><img src=https://img.shields.io/badge/View-changementsTemporels-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a>
-
-## tableaucoleo
-Responsable : Guillaume Larocque & Andrew MacDonald  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-archive-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableaucoleo/"><img src=https://img.shields.io/badge/View-tableauColeo-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/tableaucoleo/blob/main/README.md"><img src=../../assets/img/github-mark-white.png width="20"></a>  
-
-[Readme](https://github.com/BiodiversiteQuebec/tableaucoleo/blob/main/README.md)
-
-## tableaucomposition
-Responsable : Guillaume Larocque & Andrew MacDonald  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-archive-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableaucomposition/"><img src=https://img.shields.io/badge/View-composition-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/tableaucomposition"><img src=../../assets/img/github-mark-white.png width="20"></a>  
-
-[Readme](https://github.com/BiodiversiteQuebec/tableaucomposition/blob/main/README.md)
-
-## tableauexplosites
-Responsable :  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableauexplosites/"><img src=https://img.shields.io/badge/View-exploSitesColeo-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a>
-
-## tableaulpi
-Responsable : Katherine Hébert 
-
-<a href="https://github.com/BiodiversiteQuebec/tableaulpi"><img src="https://img.shields.io/badge/Status-final-FF9933"></a>
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableaulpi/"><img src=https://img.shields.io/badge/View-TableauLPI-brightgreen.svg?colorA=grey></a>
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href=""><img src=../../assets/img/github-mark-white.png width="20"></a>  
-
-[Readme](https://github.com/BiodiversiteQuebec/tableaulpi/blob/main/README.md)
-
-## tableaurarefaction
-Responsable : Guillaume Larocque & Claire-Cécile Juhasz  
-<!-- dev status & repo github -->
-<a href=""><img src="https://img.shields.io/badge/Status-archive-FF9933"></a>
-<!-- categorie base de donnees -->
-<a href=""><img src="https://img.shields.io/badge/Category-ATLAS-FF33FF"></a>
-<!-- lien vers tableau de bord -->
-<a href="https://coleo.biodiversite-quebec.ca/apps/tableaurarefaction/"><img src=https://img.shields.io/badge/View-rarefaction-brightgreen.svg?colorA=grey></a>
-<!-- license -->
-<a href="https://opensource.org/licenses/MIT/"><img src=https://img.shields.io/badge/License-MIT-blue.svg?colorA=grey]></a>
-<!-- code -->
-<a href="https://github.com/BiodiversiteQuebec/tableau-rarefaction"><img src=../../assets/img/github-mark-white.png width="20"></a>  
-
-[Readme](https://github.com/BiodiversiteQuebec/tableau-rarefaction/blob/master/README.md)
-
-# Anciens tableaux de bord
+## Anciens tableaux de bord
 Les tableaux de bords archivés sont accessibles en suivant ce [lien](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/).
 
 - [tableau-atlas](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-atlas/)
@@ -386,3 +53,13 @@ Les tableaux de bords archivés sont accessibles en suivant ce [lien](https://co
 - [tableau-move](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-move/)
 - [tableau-rarefaction](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableau-rarefaction/)
 - [tableauatlas](https://coleo.biodiversite-quebec.ca/apps/vieux_tableaux/tableauatlas/)
+
+## Tableaux de bord en cours de développement 
+
+- Composition des communautés 
+- Combien d'espèces au Québec ?
+- Les espèces rares du Québec
+- Indice planète vivante
+- Indice de distribution de la biodiversité 
+- La biodiversité en mouvement 
+- Phénologie des chauve-souris
