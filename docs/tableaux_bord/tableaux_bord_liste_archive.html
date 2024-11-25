@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Claire-Cécile Juhasz">
+
+<title>Liste des tableaux de bord archivés – Support technique</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-43df0d6f53b733b42d37fa7808e17715.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-eaae3773edbe84ed77ea85018a3d2c28.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-6fbf2ccbc5865dc5fcf19631084d01e6.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script><script src="../../js-pass.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/img/logo3.png" alt="BQ logo" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/portails/portails_intro.html"> 
+<span class="menu-text">Portails</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/packages/packages_intro.html"> 
+<span class="menu-text">Packages</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/catalogues/catalogues_intro.html"> 
+<span class="menu-text">Catalogues</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/serveurs/serveurs_intro.html"> 
+<span class="menu-text">Serveurs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../docs/tableaux_bord/tableaux_bord_intro.html" aria-current="page"> 
+<span class="menu-text">Tableaux de bord</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/recherche/recherche_intro.html"> 
+<span class="menu-text">Recherche</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/design/design_intro.html"> 
+<span class="menu-text">Design</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">À propos</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/BiodiversiteQuebec" title="dev_support GitHub" class="quarto-navigation-tool px-1" aria-label="dev_support GitHub"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/tableaux_bord/tableaux_bord_liste_archive.html">Liste des tableaux de bord archivés</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/tableaux_bord/tableaux_bord_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tableaux de bord</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/tableaux_bord/tableaux_bord_docker.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mettre un tableau dans un docker</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/tableaux_bord/tableaux_bord_liste_archive.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Liste des tableaux de bord archivés</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#explorateur-coleo" id="toc-explorateur-coleo" class="nav-link active" data-scroll-target="#explorateur-coleo">Explorateur COLEO</a>
+  <ul class="collapse">
+  <li><a href="#objectif" id="toc-objectif" class="nav-link" data-scroll-target="#objectif">Objectif</a></li>
+  <li><a href="#message-à-communiquer" id="toc-message-à-communiquer" class="nav-link" data-scroll-target="#message-à-communiquer">Message à communiquer</a></li>
+  <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a></li>
+  <li><a href="#accessibilité-des-données" id="toc-accessibilité-des-données" class="nav-link" data-scroll-target="#accessibilité-des-données">Accessibilité des données</a></li>
+  <li><a href="#traitement-des-données" id="toc-traitement-des-données" class="nav-link" data-scroll-target="#traitement-des-données">Traitement des données</a></li>
+  <li><a href="#description-sommaire-de-la-représentation" id="toc-description-sommaire-de-la-représentation" class="nav-link" data-scroll-target="#description-sommaire-de-la-représentation">Description sommaire de la représentation</a></li>
+  </ul></li>
+  <li><a href="#explorateur-atlas" id="toc-explorateur-atlas" class="nav-link" data-scroll-target="#explorateur-atlas">Explorateur ATLAS</a>
+  <ul class="collapse">
+  <li><a href="#objectif-1" id="toc-objectif-1" class="nav-link" data-scroll-target="#objectif-1">Objectif</a></li>
+  <li><a href="#message-à-communiquer-1" id="toc-message-à-communiquer-1" class="nav-link" data-scroll-target="#message-à-communiquer-1">Message à communiquer</a></li>
+  <li><a href="#données-1" id="toc-données-1" class="nav-link" data-scroll-target="#données-1">Données</a></li>
+  <li><a href="#accessibilité-des-données-1" id="toc-accessibilité-des-données-1" class="nav-link" data-scroll-target="#accessibilité-des-données-1">Accessibilité des données</a></li>
+  <li><a href="#traitement-des-données-1" id="toc-traitement-des-données-1" class="nav-link" data-scroll-target="#traitement-des-données-1">Traitement des données</a></li>
+  <li><a href="#description-sommaire-de-la-représentation-1" id="toc-description-sommaire-de-la-représentation-1" class="nav-link" data-scroll-target="#description-sommaire-de-la-représentation-1">Description sommaire de la représentation</a></li>
+  </ul></li>
+  <li><a href="#explorateur-io" id="toc-explorateur-io" class="nav-link" data-scroll-target="#explorateur-io">Explorateur IO</a>
+  <ul class="collapse">
+  <li><a href="#objectif-2" id="toc-objectif-2" class="nav-link" data-scroll-target="#objectif-2">Objectif</a></li>
+  <li><a href="#message-à-communiquer-2" id="toc-message-à-communiquer-2" class="nav-link" data-scroll-target="#message-à-communiquer-2">Message à communiquer</a></li>
+  <li><a href="#données-2" id="toc-données-2" class="nav-link" data-scroll-target="#données-2">Données</a></li>
+  <li><a href="#accessibilité-des-données-2" id="toc-accessibilité-des-données-2" class="nav-link" data-scroll-target="#accessibilité-des-données-2">Accessibilité des données</a></li>
+  <li><a href="#traitement-des-données-2" id="toc-traitement-des-données-2" class="nav-link" data-scroll-target="#traitement-des-données-2">Traitement des données</a></li>
+  <li><a href="#description-sommaire-de-la-représentation-2" id="toc-description-sommaire-de-la-représentation-2" class="nav-link" data-scroll-target="#description-sommaire-de-la-représentation-2">Description sommaire de la représentation</a></li>
+  </ul></li>
+  <li><a href="#composition-des-communautés" id="toc-composition-des-communautés" class="nav-link" data-scroll-target="#composition-des-communautés">Composition des communautés</a>
+  <ul class="collapse">
+  <li><a href="#objectif-3" id="toc-objectif-3" class="nav-link" data-scroll-target="#objectif-3">Objectif</a></li>
+  <li><a href="#message-à-communiquer-3" id="toc-message-à-communiquer-3" class="nav-link" data-scroll-target="#message-à-communiquer-3">Message à communiquer</a></li>
+  <li><a href="#données-3" id="toc-données-3" class="nav-link" data-scroll-target="#données-3">Données</a></li>
+  <li><a href="#accessibilité-des-données-3" id="toc-accessibilité-des-données-3" class="nav-link" data-scroll-target="#accessibilité-des-données-3">Accessibilité des données</a></li>
+  <li><a href="#traitement-des-données-3" id="toc-traitement-des-données-3" class="nav-link" data-scroll-target="#traitement-des-données-3">Traitement des données</a></li>
+  <li><a href="#description-sommaire-de-la-représentation-3" id="toc-description-sommaire-de-la-représentation-3" class="nav-link" data-scroll-target="#description-sommaire-de-la-représentation-3">Description sommaire de la représentation</a></li>
+  </ul></li>
+  <li><a href="#indice-planète-vivante-lpi" id="toc-indice-planète-vivante-lpi" class="nav-link" data-scroll-target="#indice-planète-vivante-lpi">Indice planète vivante (LPI)</a>
+  <ul class="collapse">
+  <li><a href="#objectif-4" id="toc-objectif-4" class="nav-link" data-scroll-target="#objectif-4">Objectif</a></li>
+  <li><a href="#message-à-communiquer-4" id="toc-message-à-communiquer-4" class="nav-link" data-scroll-target="#message-à-communiquer-4">Message à communiquer</a></li>
+  <li><a href="#données-4" id="toc-données-4" class="nav-link" data-scroll-target="#données-4">Données</a></li>
+  <li><a href="#accessibilité-des-données-4" id="toc-accessibilité-des-données-4" class="nav-link" data-scroll-target="#accessibilité-des-données-4">Accessibilité des données</a></li>
+  <li><a href="#traitement-des-données-4" id="toc-traitement-des-données-4" class="nav-link" data-scroll-target="#traitement-des-données-4">Traitement des données</a></li>
+  <li><a href="#description-sommaire-de-la-représentation-envisagée-ou-réalisée" id="toc-description-sommaire-de-la-représentation-envisagée-ou-réalisée" class="nav-link" data-scroll-target="#description-sommaire-de-la-représentation-envisagée-ou-réalisée">Description sommaire de la représentation envisagée ou réalisée</a></li>
+  </ul></li>
+  <li><a href="#quel-rôle-pour-les-espèces-rares" id="toc-quel-rôle-pour-les-espèces-rares" class="nav-link" data-scroll-target="#quel-rôle-pour-les-espèces-rares">Quel rôle pour les espèces rares</a>
+  <ul class="collapse">
+  <li><a href="#objectif-5" id="toc-objectif-5" class="nav-link" data-scroll-target="#objectif-5">Objectif</a></li>
+  <li><a href="#message-à-communiquer-5" id="toc-message-à-communiquer-5" class="nav-link" data-scroll-target="#message-à-communiquer-5">Message à communiquer</a></li>
+  <li><a href="#données-5" id="toc-données-5" class="nav-link" data-scroll-target="#données-5">Données</a></li>
+  <li><a href="#accessibilité-des-données-5" id="toc-accessibilité-des-données-5" class="nav-link" data-scroll-target="#accessibilité-des-données-5">Accessibilité des données</a></li>
+  <li><a href="#traitement-des-données-5" id="toc-traitement-des-données-5" class="nav-link" data-scroll-target="#traitement-des-données-5">Traitement des données</a></li>
+  <li><a href="#description-sommaire-de-la-représentation-4" id="toc-description-sommaire-de-la-représentation-4" class="nav-link" data-scroll-target="#description-sommaire-de-la-représentation-4">Description sommaire de la représentation</a></li>
+  </ul></li>
+  <li><a href="#combien-despèces-au-québec" id="toc-combien-despèces-au-québec" class="nav-link" data-scroll-target="#combien-despèces-au-québec">Combien d’espèces au Québec ?</a>
+  <ul class="collapse">
+  <li><a href="#objectif-6" id="toc-objectif-6" class="nav-link" data-scroll-target="#objectif-6">Objectif</a></li>
+  <li><a href="#message-à-communiquer-6" id="toc-message-à-communiquer-6" class="nav-link" data-scroll-target="#message-à-communiquer-6">Message à communiquer</a></li>
+  <li><a href="#données-6" id="toc-données-6" class="nav-link" data-scroll-target="#données-6">Données</a></li>
+  <li><a href="#accessibilité-des-données-6" id="toc-accessibilité-des-données-6" class="nav-link" data-scroll-target="#accessibilité-des-données-6">Accessibilité des données</a></li>
+  <li><a href="#traitement-des-données-6" id="toc-traitement-des-données-6" class="nav-link" data-scroll-target="#traitement-des-données-6">Traitement des données</a></li>
+  <li><a href="#description-sommaire-de-la-représentation-5" id="toc-description-sommaire-de-la-représentation-5" class="nav-link" data-scroll-target="#description-sommaire-de-la-représentation-5">Description sommaire de la représentation</a></li>
+  </ul></li>
+  <li><a href="#phénologie-des-chauves-souris" id="toc-phénologie-des-chauves-souris" class="nav-link" data-scroll-target="#phénologie-des-chauves-souris">Phénologie des chauves-souris</a>
+  <ul class="collapse">
+  <li><a href="#objectif-7" id="toc-objectif-7" class="nav-link" data-scroll-target="#objectif-7">Objectif</a></li>
+  <li><a href="#message-à-communiquer-7" id="toc-message-à-communiquer-7" class="nav-link" data-scroll-target="#message-à-communiquer-7">Message à communiquer</a></li>
+  <li><a href="#données-7" id="toc-données-7" class="nav-link" data-scroll-target="#données-7">Données</a></li>
+  <li><a href="#accessibilité-des-données-7" id="toc-accessibilité-des-données-7" class="nav-link" data-scroll-target="#accessibilité-des-données-7">Accessibilité des données</a></li>
+  <li><a href="#traitement-des-données-7" id="toc-traitement-des-données-7" class="nav-link" data-scroll-target="#traitement-des-données-7">Traitement des données</a></li>
+  <li><a href="#description-sommaire-de-la-représentation-6" id="toc-description-sommaire-de-la-représentation-6" class="nav-link" data-scroll-target="#description-sommaire-de-la-représentation-6">Description sommaire de la représentation</a></li>
+  </ul></li>
+  <li><a href="#espèces-en-mouvement" id="toc-espèces-en-mouvement" class="nav-link" data-scroll-target="#espèces-en-mouvement">Espèces en mouvement</a>
+  <ul class="collapse">
+  <li><a href="#objectif-8" id="toc-objectif-8" class="nav-link" data-scroll-target="#objectif-8">Objectif</a></li>
+  <li><a href="#message-à-communiquer-8" id="toc-message-à-communiquer-8" class="nav-link" data-scroll-target="#message-à-communiquer-8">Message à communiquer</a></li>
+  <li><a href="#données-8" id="toc-données-8" class="nav-link" data-scroll-target="#données-8">Données</a></li>
+  <li><a href="#accessibilité-des-données-8" id="toc-accessibilité-des-données-8" class="nav-link" data-scroll-target="#accessibilité-des-données-8">Accessibilité des données</a></li>
+  <li><a href="#traitement-des-données-8" id="toc-traitement-des-données-8" class="nav-link" data-scroll-target="#traitement-des-données-8">Traitement des données</a></li>
+  <li><a href="#description-sommaire-de-la-représentation-7" id="toc-description-sommaire-de-la-représentation-7" class="nav-link" data-scroll-target="#description-sommaire-de-la-représentation-7">Description sommaire de la représentation</a></li>
+  </ul></li>
+  <li><a href="#indice-de-la-distribution-de-la-biodiversité-des-oiseaux-et-des-papillons" id="toc-indice-de-la-distribution-de-la-biodiversité-des-oiseaux-et-des-papillons" class="nav-link" data-scroll-target="#indice-de-la-distribution-de-la-biodiversité-des-oiseaux-et-des-papillons">Indice de la distribution de la biodiversité des oiseaux et des papillons</a>
+  <ul class="collapse">
+  <li><a href="#objectif-9" id="toc-objectif-9" class="nav-link" data-scroll-target="#objectif-9">Objectif</a></li>
+  <li><a href="#message-à-communiquer-9" id="toc-message-à-communiquer-9" class="nav-link" data-scroll-target="#message-à-communiquer-9">Message à communiquer</a></li>
+  <li><a href="#données-9" id="toc-données-9" class="nav-link" data-scroll-target="#données-9">Données</a></li>
+  <li><a href="#accessibilité-des-données-9" id="toc-accessibilité-des-données-9" class="nav-link" data-scroll-target="#accessibilité-des-données-9">Accessibilité des données</a></li>
+  <li><a href="#traitement-des-données-9" id="toc-traitement-des-données-9" class="nav-link" data-scroll-target="#traitement-des-données-9">Traitement des données</a></li>
+  <li><a href="#description-sommaire-de-la-représentation-envisagée-ou-réalisée-1" id="toc-description-sommaire-de-la-représentation-envisagée-ou-réalisée-1" class="nav-link" data-scroll-target="#description-sommaire-de-la-représentation-envisagée-ou-réalisée-1">Description sommaire de la représentation envisagée ou réalisée</a></li>
+  </ul></li>
+  <li><a href="#tendances-à-long-terme" id="toc-tendances-à-long-terme" class="nav-link" data-scroll-target="#tendances-à-long-terme">Tendances à long terme</a>
+  <ul class="collapse">
+  <li><a href="#message-à-communiquer-10" id="toc-message-à-communiquer-10" class="nav-link" data-scroll-target="#message-à-communiquer-10">Message à communiquer</a></li>
+  <li><a href="#données-10" id="toc-données-10" class="nav-link" data-scroll-target="#données-10">Données</a></li>
+  <li><a href="#assemblage-du-tableau-de-bord" id="toc-assemblage-du-tableau-de-bord" class="nav-link" data-scroll-target="#assemblage-du-tableau-de-bord">Assemblage du tableau de bord</a></li>
+  <li><a href="#amélioration-visuelle-possible" id="toc-amélioration-visuelle-possible" class="nav-link" data-scroll-target="#amélioration-visuelle-possible">Amélioration visuelle possible</a></li>
+  <li><a href="#histoire-de-biodiversité-associée" id="toc-histoire-de-biodiversité-associée" class="nav-link" data-scroll-target="#histoire-de-biodiversité-associée">Histoire de biodiversité associée</a></li>
+  </ul></li>
+  <li><a href="#raréfaction" id="toc-raréfaction" class="nav-link" data-scroll-target="#raréfaction">Raréfaction</a>
+  <ul class="collapse">
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
+  <li><a href="#les-données-incluent" id="toc-les-données-incluent" class="nav-link" data-scroll-target="#les-données-incluent">Les données incluent</a></li>
+  <li><a href="#description-des-scripts" id="toc-description-des-scripts" class="nav-link" data-scroll-target="#description-des-scripts">Description des scripts</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Liste des tableaux de bord archivés</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Claire-Cécile Juhasz </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="explorateur-coleo" class="level1">
+<h1>Explorateur COLEO</h1>
+<p>Responsable : Guillaume Larocque<br>
+Catégorie : <code>COLEO</code><br>
+Prototype : <a href="https://coleo.biodiversite-quebec.ca/apps/tableauexplosites/">lien</a></p>
+<section id="objectif" class="level2">
+<h2 class="anchored" data-anchor-id="objectif">Objectif</h2>
+<p>Visualisation des sites d’échantillonnage du réseau de suivi de la biodiversité du Québec avec emphase sur les informatiques descriptives de l’échantillonnage</p>
+</section>
+<section id="message-à-communiquer" class="level2">
+<h2 class="anchored" data-anchor-id="message-à-communiquer">Message à communiquer</h2>
+<p>Le Gouvernement du Québec réalise un programme ambitieux de suivi de la biodiversité sur un territoire qui est vaste et extrêmement hétérogène.</p>
+</section>
+<section id="données" class="level2">
+<h2 class="anchored" data-anchor-id="données">Données</h2>
+<ul>
+<li>Coordonnées de localisation des sites</li>
+<li>Catégories d’organismes inventoriés (indicateurs)</li>
+<li>Informations sur le protocole d’échantillonnage (e.g.&nbsp;nom du partenaire, propriétaire du terrain, type de milieu)</li>
+<li>Date de visite</li>
+<li>Données météorologiques</li>
+<li>Donnée de température de l’eau (aquatique)</li>
+<li>Utilisation du territoire (e.g.&nbsp;agricole, forestier, urbain)*</li>
+<li>Projections de changements climatiques*</li>
+<li>Indice d’empreinte humaine*</li>
+<li>Densité de routes*</li>
+<li>Densité de population*</li>
+<li>Photos par les camera traps*</li>
+<li>Enregistrements sonores d’oiseaux*</li>
+<li>Image des organismes inventoriés</li>
+</ul>
+</section>
+<section id="accessibilité-des-données" class="level2">
+<h2 class="anchored" data-anchor-id="accessibilité-des-données">Accessibilité des données</h2>
+<ul>
+<li>Accès direct par API Coléo</li>
+<li>Données environnementales à suppléer</li>
+<li>Accès à des images d’espèces à partir de l’API iNaturalist</li>
+<li>marque les données qui pourraient être accessibles mais qui ne le sont pas pour le moment</li>
+</ul>
+</section>
+<section id="traitement-des-données" class="level2">
+<h2 class="anchored" data-anchor-id="traitement-des-données">Traitement des données</h2>
+<ul>
+<li>Les données brutes sont présentées</li>
+</ul>
+</section>
+<section id="description-sommaire-de-la-représentation" class="level2">
+<h2 class="anchored" data-anchor-id="description-sommaire-de-la-représentation">Description sommaire de la représentation</h2>
+<ul>
+<li>Carte de visualisation des sites avec pictogrammes décrivant les différentes campagnes d’inventaire</li>
+<li>Liste de “fun facts” sur le dispositif dans la marge de gauche du tableau de bord</li>
+<li>Cliquer sur un site fait apparaître une boite avec des onglets qui illustrent
+<ul>
+<li>liste des indicateurs qui ont été inventoriés ainsi que les informations descriptives du site</li>
+<li>figure qui illustre la variation au fil de l’année des précipitations et de la température</li>
+<li>figure qui illustre les projections de changement climatique pour le site</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="explorateur-atlas" class="level1">
+<h1>Explorateur ATLAS</h1>
+<p>Responsable : Guillaume Larocque<br>
+Catégorie : <code>ATLAS</code><br>
+Prototype : <a href="https://coleo.biodiversite-quebec.ca/apps/tableau-atlas-vue/">lien</a></p>
+<section id="objectif-1" class="level2">
+<h2 class="anchored" data-anchor-id="objectif-1">Objectif</h2>
+<p>Communiquer rapidement les données accessibles par la base de données ATLAS</p>
+</section>
+<section id="message-à-communiquer-1" class="level2">
+<h2 class="anchored" data-anchor-id="message-à-communiquer-1">Message à communiquer</h2>
+<p>La distribution des observations de biodiversité est très inégale à travers le Québec. Certaines régions sont plus diversifiées que d’autres, certains organismes sont mieux documentés que d’autres. La plupart des observations sont réalisées au sud du Québec là où la population est la plus dense et très peu d’observations sont faites dans l’extrême nord du Québec.</p>
+</section>
+<section id="données-1" class="level2">
+<h2 class="anchored" data-anchor-id="données-1">Données</h2>
+<ul>
+<li>Extraction de ATLAS qui permet d’avoir, pour une grille avec un maillage mobile, une densité d’observations et un nombre d’espèces.</li>
+<li>Extraction de ATLAS qui permet d’avoir la liste des données disponibles dans ATLAS</li>
+</ul>
+</section>
+<section id="accessibilité-des-données-1" class="level2">
+<h2 class="anchored" data-anchor-id="accessibilité-des-données-1">Accessibilité des données</h2>
+<ul>
+<li>Accès direct par l’API ATLAS</li>
+</ul>
+</section>
+<section id="traitement-des-données-1" class="level2">
+<h2 class="anchored" data-anchor-id="traitement-des-données-1">Traitement des données</h2>
+<ul>
+<li>Les données sont pré-traitées dans l’API pour maximiser la performance des requêtes</li>
+</ul>
+</section>
+<section id="description-sommaire-de-la-représentation-1" class="level2">
+<h2 class="anchored" data-anchor-id="description-sommaire-de-la-représentation-1">Description sommaire de la représentation</h2>
+<ul>
+<li>Une carte illustre les observations disponibles dans ATLAS.</li>
+<li>Le menu permet de sélectionner le type d’organisme d’intérêt</li>
+<li>Un compteur en haut à droite résume les données</li>
+<li>Un histogramme au bas permet de sélectionner la plage temporelle couverte.</li>
+<li>Un onglet permet d’accéder à la liste des données disponibles dans ATLAS.</li>
+</ul>
+</section>
+</section>
+<section id="explorateur-io" class="level1">
+<h1>Explorateur IO</h1>
+<p>Responsable : Vincent Beauregard<br>
+Catégorie : <code>IO</code><br>
+Prototype : aucun</p>
+<section id="objectif-2" class="level2">
+<h2 class="anchored" data-anchor-id="objectif-2">Objectif</h2>
+<p>Communiquer rapidement les données accessibles par la base de données IO. Cette base de données rassemble les couches géomatiques de données environnementales (e.g.&nbsp;climat, qualité des sols, productivité primaire), utilisation du territoire (e.g.&nbsp;empreinte humaine, densité de population, densité des routes) et scénarios de changements climatiques.</p>
+</section>
+<section id="message-à-communiquer-2" class="level2">
+<h2 class="anchored" data-anchor-id="message-à-communiquer-2">Message à communiquer</h2>
+<p>Comprendre les changements de biodiversité requiert une connaissance des variables susceptibles de l’affecter. Les représentations au sein des différents tableaux de bord sollicitent pour la plupart des données qui sont synthétisées dans la base de données IO et représentées au moyen de ce tableau de bord.</p>
+</section>
+<section id="données-2" class="level2">
+<h2 class="anchored" data-anchor-id="données-2">Données</h2>
+<ul>
+<li>Extraction de IO qui permet d’avoir de l’information cartographique pour des couches de toutes natures.</li>
+</ul>
+</section>
+<section id="accessibilité-des-données-2" class="level2">
+<h2 class="anchored" data-anchor-id="accessibilité-des-données-2">Accessibilité des données</h2>
+<ul>
+<li>Accès direct par l’API IO</li>
+</ul>
+</section>
+<section id="traitement-des-données-2" class="level2">
+<h2 class="anchored" data-anchor-id="traitement-des-données-2">Traitement des données</h2>
+<ul>
+<li>Les données sont pré-traitées dans l’API pour maximiser la performance des requêtes</li>
+</ul>
+</section>
+<section id="description-sommaire-de-la-représentation-2" class="level2">
+<h2 class="anchored" data-anchor-id="description-sommaire-de-la-représentation-2">Description sommaire de la représentation</h2>
+<ul>
+<li>Une carte illustre les différentes couches stockées dans IO. Un menu déroulant permet d’illustrer la couche à illustrer.</li>
+<li>La transparence permet de superposer plusieurs couches pour apprécier l’occurrence de stresseurs multiples.</li>
+</ul>
+</section>
+</section>
+<section id="composition-des-communautés" class="level1">
+<h1>Composition des communautés</h1>
+<p>Responsable : Guillaume Larocque<br>
+Catégorie : <code>COLEO</code><br>
+Prototype : <a href="https://coleo.biodiversite-quebec.ca/apps/tableaucomposition/">lien</a></p>
+<p>Ce tableau de bord est la principale vitrine vers COLÉO et les données du réseau de suivi du Gouvernement du Québec. La diversité des informations qui peuvent être représentée est immense et il peut être décliné en plusieurs tableaux de bord, plus spéciques aux indicateurs étudiés. Les données comprennent : végétation, oiseaux, chauve-souris, poissons, libellules, papillons, arthropodes du sol, mammifères, indice de décomposition des sols. Chacun de ces indicateurs peut apporter une information unique. L’exemple présenté ici n’est qu’une synthèse de l’information disponible.</p>
+<section id="objectif-3" class="level2">
+<h2 class="anchored" data-anchor-id="objectif-3">Objectif</h2>
+<p>Accéder rapidement à une description simplifiée de la richesse en espèces au sein du réseau de suivi du Gouvernement du Québec.</p>
+</section>
+<section id="message-à-communiquer-3" class="level2">
+<h2 class="anchored" data-anchor-id="message-à-communiquer-3">Message à communiquer</h2>
+<p>Découvrir la diversité des espèces échantillonnées par le programme.</p>
+</section>
+<section id="données-3" class="level2">
+<h2 class="anchored" data-anchor-id="données-3">Données</h2>
+<ul>
+<li>Les données sont regroupées par campagne / indicateur. Pour chaque site, une liste des espèces observées</li>
+<li>Localisation des sites d’échantillonnage</li>
+<li>Image des organismes inventoriés</li>
+</ul>
+</section>
+<section id="accessibilité-des-données-3" class="level2">
+<h2 class="anchored" data-anchor-id="accessibilité-des-données-3">Accessibilité des données</h2>
+<ul>
+<li>Accès direct par API Coléo</li>
+<li>Données environnementales à suppléer</li>
+<li>Accès à des images d’espèces à partir de l’API iNaturalist</li>
+</ul>
+</section>
+<section id="traitement-des-données-3" class="level2">
+<h2 class="anchored" data-anchor-id="traitement-des-données-3">Traitement des données</h2>
+<ul>
+<li>Un décompte du nombre d’espèces par campagne / indicateur est réalisé</li>
+</ul>
+</section>
+<section id="description-sommaire-de-la-représentation-3" class="level2">
+<h2 class="anchored" data-anchor-id="description-sommaire-de-la-représentation-3">Description sommaire de la représentation</h2>
+<ul>
+<li>Une carte donne accès aux différents sites échantillonnés. On peut filtrer les sites par catégorie d’échantillonnage. La sélection du type d’icone permet de visualiser la richesse en espèces.</li>
+<li>La sélection d’un site fait apparaître une fenêtre où est résumé le nombre d’espèces par campagne / indicateur. Des images des espèces les plus abondantes apparaissent pour illustrer cette diversité.</li>
+<li>Certains partenaires du projet ont exprimé le souhait de comparer plusieurs sites.</li>
+</ul>
+</section>
+</section>
+<section id="indice-planète-vivante-lpi" class="level1">
+<h1>Indice planète vivante (LPI)</h1>
+<p>Responsable : Katherine Hébert<br>
+Catégorie : <code>ATLAS</code><br>
+Prototype : <a href="https://coleo.biodiversite-quebec.ca/apps/tableaulpi/">lien</a></p>
+<section id="objectif-4" class="level2">
+<h2 class="anchored" data-anchor-id="objectif-4">Objectif</h2>
+<p>Illuster le changement dans l’indice planète vivante pour des populations qui font l’objet d’un suivi à long terme au Québec.</p>
+</section>
+<section id="message-à-communiquer-4" class="level2">
+<h2 class="anchored" data-anchor-id="message-à-communiquer-4">Message à communiquer</h2>
+<p>L’indice planète vivante est un standard établit par le World Wildlife Fund pour rapporter les tendances dans les populations animales et végétales. Découvrez l’indice et ses variantes dans cette première étude pour le Québec.</p>
+</section>
+<section id="données-4" class="level2">
+<h2 class="anchored" data-anchor-id="données-4">Données</h2>
+<ul>
+<li>Séries temporelles de populations stockées dans ATLAS</li>
+<li>Coordonnées spatiales des populations</li>
+<li>Image des organismes inventoriés</li>
+<li>Séries temporelles du climat pour chaque site</li>
+</ul>
+</section>
+<section id="accessibilité-des-données-4" class="level2">
+<h2 class="anchored" data-anchor-id="accessibilité-des-données-4">Accessibilité des données</h2>
+<ul>
+<li>Accès direct par API Coléo</li>
+<li>Données environnementales à suppléer</li>
+<li>Accès à des images d’espèces à partir de l’API iNaturalist</li>
+</ul>
+</section>
+<section id="traitement-des-données-4" class="level2">
+<h2 class="anchored" data-anchor-id="traitement-des-données-4">Traitement des données</h2>
+<ul>
+<li>L’indice planète vivant est le résultat d’un calcul assez complexe qui transforme les données et aggrège plusieurs modèles</li>
+</ul>
+</section>
+<section id="description-sommaire-de-la-représentation-envisagée-ou-réalisée" class="level2">
+<h2 class="anchored" data-anchor-id="description-sommaire-de-la-représentation-envisagée-ou-réalisée">Description sommaire de la représentation envisagée ou réalisée</h2>
+<ul>
+<li>Une carte localise les populations étudiées</li>
+<li>Sélectionner une population sur la carte permet d’illustrer la tendance temporelle</li>
+<li>Un bouton dans la marge de gauche permet d’illuster l’indice pour l’ensemble du territoire. Des options permettent d’afficher la moyenne ou les courbes individuelles. Des filtres permettent de distinguer les différents groupes d’espèces</li>
+</ul>
+</section>
+</section>
+<section id="quel-rôle-pour-les-espèces-rares" class="level1">
+<h1>Quel rôle pour les espèces rares</h1>
+<p>Responsable : Dominique Gravel / Guillaume Larocque<br>
+Catégorie : <code>COLEO</code><br>
+Prototype : <a href="https://coleo.biodiversite-quebec.ca/apps/tableau-composition/">lien</a></p>
+<section id="objectif-5" class="level2">
+<h2 class="anchored" data-anchor-id="objectif-5">Objectif</h2>
+<p>Mettre en valeur les espèces les plus rares échantillonnées dans le réseau de suivi.</p>
+</section>
+<section id="message-à-communiquer-5" class="level2">
+<h2 class="anchored" data-anchor-id="message-à-communiquer-5">Message à communiquer</h2>
+<p>Les espèces emblématiques attirent d’abord notre attention, alors que les espèces rares contribuent davantage à la biodiversité. Découvrez dans ce module le rôle que ces espèces peuvent avoir pour comprendre les changements climatiques. Les écosystèmes sont habituellement composés d’une série d’espèces abondates, communes, mais aussi d’espèces rares que l’on ne retrouve que très occasionnellement. Ces espèces contribuent exceptionnellement à la diversité avec des caractéristiques exceptionnelles et une histoire évolutive unique.</p>
+</section>
+<section id="données-5" class="level2">
+<h2 class="anchored" data-anchor-id="données-5">Données</h2>
+<ul>
+<li>Les données sont regroupées par campagne / indicateur. Pour chaque site, une liste des espèces observées</li>
+<li>Localisation des sites d’échantillonnage</li>
+<li>Image des organismes inventoriés</li>
+</ul>
+</section>
+<section id="accessibilité-des-données-5" class="level2">
+<h2 class="anchored" data-anchor-id="accessibilité-des-données-5">Accessibilité des données</h2>
+<ul>
+<li>Accès direct par API Coléo</li>
+<li>Données environnementales à suppléer (climat, indice empreinte humaine)</li>
+<li>Accès à des images d’espèces à partir de l’API iNaturalist</li>
+<li>Arborescence taxonomique pour chaque espèce</li>
+</ul>
+</section>
+<section id="traitement-des-données-5" class="level2">
+<h2 class="anchored" data-anchor-id="traitement-des-données-5">Traitement des données</h2>
+<ul>
+<li>Analyse de l’abondance régionale des espèces</li>
+<li>Analyse de la position phylogénétique des espèces</li>
+</ul>
+</section>
+<section id="description-sommaire-de-la-représentation-4" class="level2">
+<h2 class="anchored" data-anchor-id="description-sommaire-de-la-représentation-4">Description sommaire de la représentation</h2>
+<ul>
+<li>Une carte donne accès aux différents sites échantillonnés. On peut filtrer les sites par catégorie d’échantillonnage. La sélection du type d’icone permet de visualiser la richesse en espèces.</li>
+<li>La sélection d’un site fait apparaître une fenêtre où se trouvent plusieurs onglets qui soulignent les observations exceptionnelles :
+<ul>
+<li>Distribution d’abondance des espèces sur l’ensemble des données avec identification des espèces pour le site en particulier</li>
+<li>Présentation d’une rosette taxonomique qui décrit l’originalité phylogénétique des espèces observées sur le site</li>
+<li>Possibilité d’ajouter des images pour illustrer ces espèces</li>
+<li>Une figure représente les préférences des espèces trouvées à ce site pour le climat (de chaud à froid) et pour les perturbations anthropiques (indice empreinte humaine)</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="combien-despèces-au-québec" class="level1">
+<h1>Combien d’espèces au Québec ?</h1>
+<p>Responsable : Dominique Gravel / Guillaume Larocque<br>
+Catégorie : <code>COLEO</code> <code>ATLAS</code><br>
+Prototype : <a href="https://coleo.biodiversite-quebec.ca/apps/tableaurarefaction/">lien</a></p>
+<section id="objectif-6" class="level2">
+<h2 class="anchored" data-anchor-id="objectif-6">Objectif</h2>
+<p>Comptabiliser le nombre d’espèces qui se trouvent au Québec, par région et ainsi que pour les sites du réseau de suivi.</p>
+</section>
+<section id="message-à-communiquer-6" class="level2">
+<h2 class="anchored" data-anchor-id="message-à-communiquer-6">Message à communiquer</h2>
+<p>Le nombre d’espèces qui se trouve dans une région peut être difficile à évaluer. Des inventaires sont réalisés et on peut aisément calculer le nombre d’espèces observées. Certaines espèces sont cependant rares, cryptiques, et elles échappent à l’inventaire. Les scientifiques font appel à une technique dite de “raréfaction” pour estimer la diversité en espèces d’une région et procurer un degré de confiance dans cette estimation.</p>
+</section>
+<section id="données-6" class="level2">
+<h2 class="anchored" data-anchor-id="données-6">Données</h2>
+<ul>
+<li>Distribution des espèces dans ATLAS</li>
+<li>Distribution des espèces dans COLEO</li>
+<li>Localisation des sites du suivi</li>
+<li>Fond de carte avec les régions écologiques du Québec</li>
+</ul>
+</section>
+<section id="accessibilité-des-données-6" class="level2">
+<h2 class="anchored" data-anchor-id="accessibilité-des-données-6">Accessibilité des données</h2>
+<ul>
+<li>Toutes les données sont accessibles par les APIs de ATLAS et COLEO</li>
+</ul>
+</section>
+<section id="traitement-des-données-6" class="level2">
+<h2 class="anchored" data-anchor-id="traitement-des-données-6">Traitement des données</h2>
+<ul>
+<li>Une librairie de R est utilisée pour comptabiliser le nombre d’espèces observées à partir d’une liste d’espèces observées, le nombre d’espèces au total et l’incertiture de cette estimation.</li>
+</ul>
+</section>
+<section id="description-sommaire-de-la-représentation-5" class="level2">
+<h2 class="anchored" data-anchor-id="description-sommaire-de-la-représentation-5">Description sommaire de la représentation</h2>
+<ul>
+<li>Une carte principale offre la possibilité d’illustrer le nombre d’espèces observées dans ATLAS par région écologique ou la localisation des sites d’échantillonnage dans COLÉO.</li>
+<li>Le menu de la marge de gauche permet de sélectionner le groupe taxonomique d’intérêt.</li>
+<li>Les onglets de la carte permettent de consulter la diversité totale par groupe taxonomique.</li>
+<li>La sélection d’une région ou d’une site fait apparaître une fenêtre où est illustrée la richesse en espèce par groupe taxonomique pour la sélection.</li>
+<li>Un onglet permet d’obtenir la liste des espèces observées pour la sélection.</li>
+</ul>
+</section>
+</section>
+<section id="phénologie-des-chauves-souris" class="level1">
+<h1>Phénologie des chauves-souris</h1>
+<p>Responsable : Andrew MacDonald<br>
+Catégorie : <code>COLEO</code><br>
+Prototype : <a href="https://coleo.biodiversite-quebec.ca/apps/tableauchangementstemporels/">lien</a></p>
+<section id="objectif-7" class="level2">
+<h2 class="anchored" data-anchor-id="objectif-7">Objectif</h2>
+<p>Présenter la succession temporelle des chauves-souris sur les sites d’échantillonnage.</p>
+</section>
+<section id="message-à-communiquer-7" class="level2">
+<h2 class="anchored" data-anchor-id="message-à-communiquer-7">Message à communiquer</h2>
+<p>Le changement des saisons provoque une succession d’événements marquants pour la biodiversité, comme le développement de la végétation, l’arrivée des premiers passereaux ou encore le chant des grillons. Explorez comment les changements de biodiversité affecteront la phénologie des espèces et en particulier des chauves-souris.</p>
+</section>
+<section id="données-7" class="level2">
+<h2 class="anchored" data-anchor-id="données-7">Données</h2>
+<ul>
+<li>Données d’observation des chauves souris à chaque site du réseau de suivi. La donnée est constituée du nombre d’observation par espèce par jour, pour chaque site d’échantillonnage</li>
+<li>Données météorologiques à suppléer</li>
+</ul>
+</section>
+<section id="accessibilité-des-données-7" class="level2">
+<h2 class="anchored" data-anchor-id="accessibilité-des-données-7">Accessibilité des données</h2>
+<ul>
+<li>Accès direct par API Coléo</li>
+<li>Données environnementales à suppléer</li>
+</ul>
+</section>
+<section id="traitement-des-données-7" class="level2">
+<h2 class="anchored" data-anchor-id="traitement-des-données-7">Traitement des données</h2>
+<ul>
+<li>Aucun traitement n’est nécessaire</li>
+<li>Possibilité d’ajouter un modèle qui décrit les conditions d’arrivée et de départ</li>
+</ul>
+</section>
+<section id="description-sommaire-de-la-représentation-6" class="level2">
+<h2 class="anchored" data-anchor-id="description-sommaire-de-la-représentation-6">Description sommaire de la représentation</h2>
+<ul>
+<li>La carte permet de représenter les sites du réseau de suivi</li>
+<li>Possibilité d’ajouter un onglet pour présenter la variation de la séquence temporelle pour l’ensemble du territoire</li>
+<li>La sélection d’un site permet d’illustrer la séquence d’arrivée et de départ des différentes espèces documentées</li>
+<li>Il serait possible d’ajouter une série temporelle des conditions météorologiques pour illustrer les conditions d’arrivées et de départ des différentes espèces.</li>
+</ul>
+</section>
+</section>
+<section id="espèces-en-mouvement" class="level1">
+<h1>Espèces en mouvement</h1>
+<p>Responsable : Dominique Gravel<br>
+Catégorie : <code>ATLAS</code><br>
+Prototype : aucun</p>
+<section id="objectif-8" class="level2">
+<h2 class="anchored" data-anchor-id="objectif-8">Objectif</h2>
+<p>Communiquer l’impact des changements climatiques sur la distribution des espèces et leur capacité à soutenir les changements climatiques.</p>
+</section>
+<section id="message-à-communiquer-8" class="level2">
+<h2 class="anchored" data-anchor-id="message-à-communiquer-8">Message à communiquer</h2>
+<p>Certaines espèces peinent à suivre le rythme des changements climatiques et sont déjà maladaptées avec le climat actuel. D’autres le seront dans un futur proche. Explorer cet indice qui illustre la difficulté de certaines espèces à suivre les conditions climatiques qui leurs sont favorables.</p>
+</section>
+<section id="données-8" class="level2">
+<h2 class="anchored" data-anchor-id="données-8">Données</h2>
+<ul>
+<li>Données de distribution de ATLAS</li>
+<li>Données environnementales*</li>
+<li>Données de pression humaine</li>
+<li>Scénarios de changements climatiques</li>
+</ul>
+</section>
+<section id="accessibilité-des-données-8" class="level2">
+<h2 class="anchored" data-anchor-id="accessibilité-des-données-8">Accessibilité des données</h2>
+<ul>
+<li>Accès direct par API ATLAS</li>
+<li>Données environnementales à suppléer</li>
+</ul>
+</section>
+<section id="traitement-des-données-8" class="level2">
+<h2 class="anchored" data-anchor-id="traitement-des-données-8">Traitement des données</h2>
+<ul>
+<li>Les données d’observations seront analysées par une librairie spécialisée appelée mapSpecies.</li>
+<li>Les modèles seront utilisés pour créer des cartes, une par espèce, de la localisation actuelle de l’espèce.</li>
+<li>Les modèles pourront également être interrogés pour évaluer si pour chaque endroit l’impact du changement climatique sur la performance des espèces</li>
+<li>Les modèles pourront également être interrogés pour projeter la répartition future de chaque espèce</li>
+</ul>
+</section>
+<section id="description-sommaire-de-la-représentation-7" class="level2">
+<h2 class="anchored" data-anchor-id="description-sommaire-de-la-représentation-7">Description sommaire de la représentation</h2>
+<ul>
+<li>La conceptualisation de ce tableau de bord doit être refaite. Plusieurs options sont envisagées
+<ul>
+<li>Le calcul d’un indice de “maladaptation” sur une grille qui peut être représentée sur la carte. Cet indice rapporte le nombre d’espèces susceptible de disparaître dans un horizon spécifié par l’utilisateur sous le changement climatique</li>
+<li>Une animation peut être réalisée pour illustrer le déplacement possible sur une carte des aires de répartition d’une espèce sélectionnée dans le menu déroulant.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="indice-de-la-distribution-de-la-biodiversité-des-oiseaux-et-des-papillons" class="level1">
+<h1>Indice de la distribution de la biodiversité des oiseaux et des papillons</h1>
+<p>Responsable : Vincent Bellavance et Clara Casabona<br>
+Catégorie : <code>ATLAS</code><br>
+Prototype : <a href="https://coleo.biodiversite-quebec.ca/apps/tableaubdi/">lien</a></p>
+<section id="objectif-9" class="level2">
+<h2 class="anchored" data-anchor-id="objectif-9">Objectif</h2>
+<p>Illuster le changement dans l’indice de la distribution de la biodiversité pour les oiseaux et les papillons.</p>
+</section>
+<section id="message-à-communiquer-9" class="level2">
+<h2 class="anchored" data-anchor-id="message-à-communiquer-9">Message à communiquer</h2>
+<p>L’indice de distribution de biodiversité est un nouvel indicateur de changements de biodiveristé utilisé pour rapporter les changements d’aire de répartition, les extinctions et les introductions de nouvelles espèces. Similaire au LPI, il rapporte le bilan des accroissements et diminutions d’aires de répartition au fil du temps.</p>
+</section>
+<section id="données-9" class="level2">
+<h2 class="anchored" data-anchor-id="données-9">Données</h2>
+<ul>
+<li>Données de distribution de ATLAS.</li>
+</ul>
+</section>
+<section id="accessibilité-des-données-9" class="level2">
+<h2 class="anchored" data-anchor-id="accessibilité-des-données-9">Accessibilité des données</h2>
+<ul>
+<li>Accès direct par API ATLAS</li>
+</ul>
+</section>
+<section id="traitement-des-données-9" class="level2">
+<h2 class="anchored" data-anchor-id="traitement-des-données-9">Traitement des données</h2>
+<ul>
+<li>Les données d’observations seront analysées par une librairie spécialisée appelée mapSpecies.</li>
+</ul>
+</section>
+<section id="description-sommaire-de-la-représentation-envisagée-ou-réalisée-1" class="level2">
+<h2 class="anchored" data-anchor-id="description-sommaire-de-la-représentation-envisagée-ou-réalisée-1">Description sommaire de la représentation envisagée ou réalisée</h2>
+<ul>
+<li>Une carte représente le résultat sommaire des changements de diversité pour l’ensemble du Québec.</li>
+<li>L’indice est illustré par défaut, un filtre permet d’illustrer les extinctions locales ou les colonisations.</li>
+<li>Un bouton dans la marge de gauche permet d’accéder à la tendance globale de l’indice sur l’ensemble du territoire. Un filtre permet de distinguer les groupes (e.g.&nbsp;rapaces, passeraux, sauvagine, limicoles)</li>
+</ul>
+</section>
+</section>
+<section id="tendances-à-long-terme" class="level1">
+<h1>Tendances à long terme</h1>
+<p>Responsable : Vincent Bellavance et Katherine Hébert<br>
+Catégorie : <code>ATLAS</code><br>
+Prototype : cf ci-dessous Repo : <a href="https://github.com/BiodiversiteQuebec/fiches_synthese/tree/master/tendancesLongTerme">lien</a><br>
+Statut repo : <code>actif</code></p>
+<section id="message-à-communiquer-10" class="level2">
+<h2 class="anchored" data-anchor-id="message-à-communiquer-10">Message à communiquer</h2>
+<p>Les changements de biodiversité ne sont pas seulement la diminution d’abondance et la perte d’espèce indigène et l’arrivée d’espèce exotique, c’est aussi les changements (positifs et négatifs).</p>
+</section>
+<section id="données-10" class="level2">
+<h2 class="anchored" data-anchor-id="données-10">Données</h2>
+<ul>
+<li>Séries temporelles de population dans Living Planet Database</li>
+<li>Séries temporelles de population dans BioTIME</li>
+<li>Les modèles de distribution d’espèces (SDM) provenant des données d’Atlas</li>
+</ul>
+</section>
+<section id="assemblage-du-tableau-de-bord" class="level2">
+<h2 class="anchored" data-anchor-id="assemblage-du-tableau-de-bord">Assemblage du tableau de bord</h2>
+<p><object data="tendancesLongTerme.pdf" type="application/pdf" width="100%" height="600"><a href="tendancesLongTerme.pdf" download="">Download PDF file.</a></object></p>
+<p>Onglet de sélection: chaque groupe taxonomique (plantes, mammifères, vue d’ensemble)</p>
+<p><strong>Panneau 1</strong> : Carte illustrant les extinctions et les colonisations sur l’ensemble du Québec au fil des années depuis l’année de référence du BDI. Ces extinctions et colonisations peuvent être visualisées par espèces (e.g.&nbsp;érable à sucre), par groupe d’espèce (e.g.&nbsp;oiseaux), par région ou pour l’ensemble du Québec.</p>
+<p><strong>Panneau 2</strong> : Tendance moyenne du Biodiversity Distribution Index (BDI), animée pour montrer la tendance progressivement (voir panneau 3)</p>
+<p><strong>Panneau 3</strong> : Tendance moyenne de l’indice Planète Vivante*, animée pour montrer la tendance progressivement (e.g.&nbsp;<a href="https://www.r-graph-gallery.com/287-smooth-animation-with-tweenr.html" class="uri">https://www.r-graph-gallery.com/287-smooth-animation-with-tweenr.html</a>)</p>
+<p><strong>Panneau 4</strong> : Diagramme waffle interactif avec 1 case par espèce, où chaque case est colorée selon un gradient vert-blanc-rouge: populations en croissance sont en vert, les populations stables sont en blanc, et les populations en déclin sont en rouge. En passant sur chaque case avec le curseur, un pop-up montre le nom de l’espèce, une photo, et un graphique de la tendance de son indice Planète Vivante en fonction du temps. Au-dessus du graphique, on affichera les pourcentages de populations en croissance / stables / en déclin, et la tendance moyenne de ces sous-groupes (e.g.&nbsp;5% en déclin, et sont maintenant 20% plus petits qu’en xxxx (l’année de référence)).</p>
+</section>
+<section id="amélioration-visuelle-possible" class="level2">
+<h2 class="anchored" data-anchor-id="amélioration-visuelle-possible">Amélioration visuelle possible</h2>
+<p>Les animations des panneaux 1, 2, et 3 mettraient l’emphase sur la progression des tendances avec le temps.</p>
+</section>
+<section id="histoire-de-biodiversité-associée" class="level2">
+<h2 class="anchored" data-anchor-id="histoire-de-biodiversité-associée">Histoire de biodiversité associée</h2>
+<ol type="1">
+<li><p>Pour le BDI, parler d’une espèce qui a colonisé un endroit quelconque et parler des facteurs qui semblent expliquer cette colonisation. Même chose pour l’extinction. Idéalement, ce serait des espèces que les gens connaissent bien ou à lesquelles les gens ont peut-être un attachement (e.g.oiseau charismatique, l’érable à sucre)</p></li>
+<li><p>Pour le mêmes espèces qu’en 1, il pourrait y avoir des projections pour voir à quoi ressemblera l’aire de répartition de celles-ci dans le futur selon différents scénarios.</p></li>
+<li><p>Pour le LPI, parler d’une espèce en croissance et d’une espèce en déclin, et expliquer pourquoi elles montrent cette tendance. Idéalement, les espèces devraient être charismatiques.</p></li>
+</ol>
+</section>
+</section>
+<section id="raréfaction" class="level1">
+<h1>Raréfaction</h1>
+<p>Responsable : Claire-Cécile Juhasz Catégorie : <code>ATLAS</code><br>
+Prototype : <a href="https://coleo.biodiversite-quebec.ca/apps/tableaurarefaction/">lien</a></p>
+<section id="description" class="level2">
+<h2 class="anchored" data-anchor-id="description">Description</h2>
+<p>Tableau de bord qui illustre la richesse spécifique par groupe taxonomique et par région au Québec</p>
+</section>
+<section id="les-données-incluent" class="level2">
+<h2 class="anchored" data-anchor-id="les-données-incluent">Les données incluent</h2>
+<ul>
+<li>Occurences des espèces issues d’<code>ATLAS</code></li>
+<li>Analyses de raréfaction (logiciel R; package <code>iNEXT</code>)</li>
+<li>Provinces naturelles définies selon https://www.donneesquebec.ca/recherche/fr/dataset/cadre-ecologique-de-reference</li>
+</ul>
+</section>
+<section id="description-des-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="description-des-scripts">Description des scripts</h2>
+<p>La ségrégation des occurences par régions québécoises et les analyses de raréfaction sont exécutées par le script <code>make_local_data.R</code>.</p>
+<p>L’application Shiny est lancée avec le script <code>app.R</code>. Plusieurs dépendances sont chargées automatiquement.</p>
+<p>L’exécution du script requiert plusieurs librairies R, celles-ci peuvent être installées avec le lancement de <code>script_installation.r</code>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

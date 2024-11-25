@@ -1,0 +1,2727 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Guillaume Larocque &amp; Victor Cameron">
+
+<title>Structure – Support technique</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-43df0d6f53b733b42d37fa7808e17715.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-eaae3773edbe84ed77ea85018a3d2c28.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-6fbf2ccbc5865dc5fcf19631084d01e6.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script><script src="../../../js-pass.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets/img/logo3.png" alt="BQ logo" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../docs/portails/portails_intro.html" aria-current="page"> 
+<span class="menu-text">Portails</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/packages/packages_intro.html"> 
+<span class="menu-text">Packages</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/catalogues/catalogues_intro.html"> 
+<span class="menu-text">Catalogues</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/serveurs/serveurs_intro.html"> 
+<span class="menu-text">Serveurs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/tableaux_bord/tableaux_bord_intro.html"> 
+<span class="menu-text">Tableaux de bord</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/recherche/recherche_intro.html"> 
+<span class="menu-text">Recherche</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/design/design_intro.html"> 
+<span class="menu-text">Design</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">À propos</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/BiodiversiteQuebec" title="dev_support GitHub" class="quarto-navigation-tool px-1" aria-label="dev_support GitHub"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/portails/coleo/coleo_intro.html">Coleo</a></li><li class="breadcrumb-item"><a href="../../../docs/portails/coleo/coleo_structure.html">Structure</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/portails_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portails</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Coleo</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/coleo/coleo_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Base de données Coleo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/coleo/coleo_structure.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/coleo/coleo_taxonomie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taxonomie</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/coleo/coleo_API_endpoints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Endpoints &amp; CRON jobs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/coleo/coleo_infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infrastructure Coleo (Staging et Production)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Atlas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/atlas/atlas_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Base de données Atlas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/atlas/atlas_description.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Description schéma public</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/atlas/atlas_schema.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/atlas/atlas_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jeu de données Atlas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/atlas/atlas_geoparquet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connexion à distance au fichier GeoParquet.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/atlas/atlas_injection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Injection Atlas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/atlas/atlas_infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infrastructure Atlas (Staging et Production)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Indicateurs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/indicateurs/indicateurs_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Indicateurs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Strapi</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/strapi/article.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Create Articles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/strapi/media.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Media files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/strapi/webhooks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Webhooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/strapi/from_staging_to_production.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Staging vers Production</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Create user accounts</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/create_users/login.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connexion au portail web de Biodiversité Québec</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/create_users/sign_up.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Créer un nouvel utilisateur</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/portails/create_users/change_password.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Changer le mot de passe d’utilisateur</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#champs-communs-à-la-plupart-des-tables" id="toc-champs-communs-à-la-plupart-des-tables" class="nav-link active" data-scroll-target="#champs-communs-à-la-plupart-des-tables">Champs communs à la plupart des tables</a></li>
+  <li><a href="#cellules" id="toc-cellules" class="nav-link" data-scroll-target="#cellules">Cellules</a></li>
+  <li><a href="#sites" id="toc-sites" class="nav-link" data-scroll-target="#sites">Sites</a></li>
+  <li><a href="#campagnes" id="toc-campagnes" class="nav-link" data-scroll-target="#campagnes">Campagnes</a></li>
+  <li><a href="#efforts" id="toc-efforts" class="nav-link" data-scroll-target="#efforts">Efforts</a></li>
+  <li><a href="#environnements" id="toc-environnements" class="nav-link" data-scroll-target="#environnements">Environnements</a></li>
+  <li><a href="#appareils" id="toc-appareils" class="nav-link" data-scroll-target="#appareils">Appareils</a></li>
+  <li><a href="#appâts" id="toc-appâts" class="nav-link" data-scroll-target="#appâts">Appâts</a></li>
+  <li><a href="#pièges" id="toc-pièges" class="nav-link" data-scroll-target="#pièges">Pièges</a></li>
+  <li><a href="#repères" id="toc-repères" class="nav-link" data-scroll-target="#repères">Repères</a></li>
+  <li><a href="#échantillons" id="toc-échantillons" class="nav-link" data-scroll-target="#échantillons">Échantillons</a></li>
+  <li><a href="#thermographes" id="toc-thermographes" class="nav-link" data-scroll-target="#thermographes">Thermographes</a></li>
+  <li><a href="#observations" id="toc-observations" class="nav-link" data-scroll-target="#observations">Observations</a></li>
+  <li><a href="#correspondance-observation-effort" id="toc-correspondance-observation-effort" class="nav-link" data-scroll-target="#correspondance-observation-effort">Correspondance observation-effort</a></li>
+  <li><a href="#correspondance-observation-repère" id="toc-correspondance-observation-repère" class="nav-link" data-scroll-target="#correspondance-observation-repère">Correspondance observation-repère</a></li>
+  <li><a href="#observations-despèces" id="toc-observations-despèces" class="nav-link" data-scroll-target="#observations-despèces">Observations d’espèces</a></li>
+  <li><a href="#attributs" id="toc-attributs" class="nav-link" data-scroll-target="#attributs">Attributs</a></li>
+  <li><a href="#table-de-référence-des-noms-despèces" id="toc-table-de-référence-des-noms-despèces" class="nav-link" data-scroll-target="#table-de-référence-des-noms-despèces">Table de référence des noms d’espèces</a></li>
+  <li><a href="#observations-de-la-décomposition-du-sol-sacs-de-thé" id="toc-observations-de-la-décomposition-du-sol-sacs-de-thé" class="nav-link" data-scroll-target="#observations-de-la-décomposition-du-sol-sacs-de-thé">Observations de la décomposition du sol (sacs de thé)</a></li>
+  <li><a href="#observations-dadn-environnemental" id="toc-observations-dadn-environnemental" class="nav-link" data-scroll-target="#observations-dadn-environnemental">Observations d’ADN Environnemental</a></li>
+  <li><a href="#observations-des-condtitions-physico-chimiques-en-lac" id="toc-observations-des-condtitions-physico-chimiques-en-lac" class="nav-link" data-scroll-target="#observations-des-condtitions-physico-chimiques-en-lac">Observations des condtitions physico-chimiques en lac</a></li>
+  <li><a href="#observations-de-profil-du-sol" id="toc-observations-de-profil-du-sol" class="nav-link" data-scroll-target="#observations-de-profil-du-sol">Observations de profil du sol</a></li>
+  <li><a href="#observations-de-thermographes" id="toc-observations-de-thermographes" class="nav-link" data-scroll-target="#observations-de-thermographes">Observations de thermographes</a></li>
+  <li><a href="#media" id="toc-media" class="nav-link" data-scroll-target="#media">Media</a></li>
+  <li><a href="#table-de-correspondance---observation-media" id="toc-table-de-correspondance---observation-media" class="nav-link" data-scroll-target="#table-de-correspondance---observation-media">Table de correspondance - Observation-media</a></li>
+  <li><a href="#points-daccès-particuliers" id="toc-points-daccès-particuliers" class="nav-link" data-scroll-target="#points-daccès-particuliers">Points d’accès particuliers</a>
+  <ul class="collapse">
+  <li><a href="#table---colonnes" id="toc-table---colonnes" class="nav-link" data-scroll-target="#table---colonnes">Table - colonnes</a></li>
+  <li><a href="#options-des-colonnes" id="toc-options-des-colonnes" class="nav-link" data-scroll-target="#options-des-colonnes">Options des colonnes</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/portails/coleo/coleo_intro.html">Coleo</a></li><li class="breadcrumb-item"><a href="../../../docs/portails/coleo/coleo_structure.html">Structure</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Structure</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Guillaume Larocque &amp; Victor Cameron </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://github.com/BiodiversiteQuebec/Coleo_DB/blob/master/API-coleo.md">Repo Github</a></p>
+<p><img src="../../../assets/img/coleo_public.png" width="100%" height="100%" align="center"></p>
+<section id="champs-communs-à-la-plupart-des-tables" class="level2">
+<h2 class="anchored" data-anchor-id="champs-communs-à-la-plupart-des-tables">Champs communs à la plupart des tables</h2>
+<p>Les champs en gras sont obligatoires</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>id</strong></td>
+<td>nombre entier</td>
+<td>Identifiant unique</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>created_at</td>
+<td>date-heure</td>
+<td>Date et heure de création</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>updated_at</td>
+<td>date-heure</td>
+<td>Date et heure de mise à jour</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cellules" class="level2">
+<h2 class="anchored" data-anchor-id="cellules">Cellules</h2>
+<p><strong>Nom de la table</strong> : cells</p>
+<p><strong>Point d’accès</strong> : /api/v1/cells</p>
+<p><strong>Inclus dans les résultats</strong> : sites</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>name</td>
+<td>texte</td>
+<td>Nom de la cellule</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>cell_code</strong></td>
+<td>texte</td>
+<td>Code de la cellule</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>geom</strong></td>
+<td>geometry</td>
+<td>Localisation de la cellule</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="sites" class="level2">
+<h2 class="anchored" data-anchor-id="sites">Sites</h2>
+<p><strong>Nom de la table</strong> : sites</p>
+<p><strong>Point d’accès</strong> : /api/v1/sites</p>
+<p><strong>Inclus dans les résultats</strong> : campaigns, cells</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 8%">
+<col style="width: 25%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>cell_id</strong></td>
+<td>nombre entier</td>
+<td>Identifiant de la cellule</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>off_station_code_id</td>
+<td>texte</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>site_code</strong></td>
+<td>texte</td>
+<td>Identifiant unique du site</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>site_name</strong></td>
+<td>texte</td>
+<td>Nom du site. Par exemple, le nom du lac.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>type</strong></td>
+<td>choix</td>
+<td>Type d’inventaire réalisé sur le site</td>
+<td>‘lac’, ‘rivière’, ‘forestier’, ‘marais’, ‘milieu humide côtier’, ‘toundrique’, ‘tourbière’</td>
+</tr>
+<tr class="even">
+<td><strong>opened_at</strong></td>
+<td>date</td>
+<td>Date de l’ouverture du site</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>geom</strong></td>
+<td>geometry</td>
+<td>Localisation du site</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>notes</td>
+<td>texte</td>
+<td>Commentaires</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="campagnes" class="level2">
+<h2 class="anchored" data-anchor-id="campagnes">Campagnes</h2>
+<p><strong>Nom de la table</strong> : campaigns</p>
+<p><strong>Point d’accès</strong> : /api/v1/campaings</p>
+<p><strong>Inclus dans le résultat</strong> : efforts, environments, devices, lures, landmarks(+thermographs), traps</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 3%">
+<col style="width: 16%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>site_id</strong></td>
+<td>texte</td>
+<td>Identifiant unique du site attaché à la campagne d’échantillonnage</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>type</strong></td>
+<td>choix</td>
+<td>Le type campagne réalisé</td>
+<td>‘végétation’, ‘végétation_transect’, ‘sol’, ‘décomposition_sol’, ‘acoustique_chiroptères’,‘acoustique_oiseaux’,‘acoustique_anoures’,‘acoustique_orthoptères’, ‘phénologie’, ‘mammifères’, ‘papilionidés’, ‘odonates’, ‘insectes_sol’, ‘ADNe’,‘zooplancton’, ‘thermographe’</td>
+</tr>
+<tr class="odd">
+<td>technicians</td>
+<td>ARRAY(texte)</td>
+<td>Noms des technicien(ne)s</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>opened_at</td>
+<td>date</td>
+<td>Date d’ouverture de la campagne d’échantillonnage</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>closed_at</td>
+<td>date</td>
+<td>Date de fermeture de la campagne d’échantillonnage</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>notes</td>
+<td>texte</td>
+<td>Commentaires</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="efforts" class="level2">
+<h2 class="anchored" data-anchor-id="efforts">Efforts</h2>
+<p><strong>Nom de la table</strong> : efforts</p>
+<p><strong>Point d’accès</strong> : /api/v1/efforts</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 10%">
+<col style="width: 44%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>campaing_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro d’identification de la campagne</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>stratum</td>
+<td>choix</td>
+<td>Strate de végétation concernée par l’effort d’échantillonage</td>
+<td>‘arbres’, ‘arbustes/herbacées’, ‘bryophytes’</td>
+</tr>
+<tr class="odd">
+<td>time_start</td>
+<td>date et heure</td>
+<td>Date et heure de début de l’inventaire</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>time_finish</td>
+<td>date et heure</td>
+<td>Date et heure de fin de l’inventaire</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>samp_surf</td>
+<td>nombre décimal</td>
+<td>Taille de la surface d’échantillonage</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>samp_surf_unit</td>
+<td>choix</td>
+<td>Unité de mesure utilisé pour la surface d’échantillonnage</td>
+<td>‘cm2’, ‘m2’, ‘km2’</td>
+</tr>
+<tr class="odd">
+<td>recording_minutes</td>
+<td>nombre entier</td>
+<td>Nombre de minutes d’enregistrement</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>fraction_benthos</td>
+<td>nombre décimal</td>
+<td>Fraction de l’échantillon de benthos analysé</td>
+<td>0-1</td>
+</tr>
+<tr class="odd">
+<td>photo_count</td>
+<td>nombre entier</td>
+<td>Nombre de photos</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>notes</td>
+<td>texte</td>
+<td>Commentaires</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="environnements" class="level2">
+<h2 class="anchored" data-anchor-id="environnements">Environnements</h2>
+<p><strong>Nom de la table</strong> : environments</p>
+<p><strong>Point d’accès</strong> : /api/v1/environment</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 23%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>campaing_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro d’identification de la campagne</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>wind</td>
+<td>choix 1-5</td>
+<td>Vent en km/h</td>
+<td>‘1’=‘calme (moins de 1 km/h)’, ‘2’=‘très légère brise (1 à 5&nbsp;km/h)’, ‘3’=‘légère brise (6 à 11&nbsp;km/h)’, ‘4’=‘petite brise (12 à 19&nbsp;km/h)’, ‘5’=jolie brise (20 à 28 km/h)’</td>
+</tr>
+<tr class="odd">
+<td>sky</td>
+<td>choix 1-5</td>
+<td>Allure du ciel</td>
+<td>‘1’=‘dégagé (0 à 10 %)’, ‘2’=‘partiellement nuageux (10 à 50 %)’, ‘3’=‘nuageux (50 à 90 %)’, ‘4’=‘pluvieux’, ‘5’=‘orageux’</td>
+</tr>
+<tr class="even">
+<td>temp_c</td>
+<td>nombre décimal</td>
+<td>Température en celcius</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>extra</td>
+<td>json</td>
+<td>Autres valeurs pour des colonnes additionnelles en format json</td>
+<td>{“largeur_riviere”: { type: ‘double’, description: ‘Largeur de la rivière’, units: ‘m’, value: 7.12}}</td>
+</tr>
+<tr class="even">
+<td>notes</td>
+<td>texte</td>
+<td>Commentaires</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="appareils" class="level2">
+<h2 class="anchored" data-anchor-id="appareils">Appareils</h2>
+<p><strong>Nom de la table</strong> : devices</p>
+<p><strong>Point d’accès</strong> : /api/v1/devices</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 44%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>campaing_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro d’identification de la campagne</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>sd_card_codes</td>
+<td>ARRAY(texte)</td>
+<td>Numéro d’identification des cartes SD utilisées</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>cam_code</td>
+<td>ARRAY(texte)</td>
+<td>Numéro d’identification de la caméra utilisée</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>cam_h_cm</td>
+<td>nombre décimal</td>
+<td>Hauteur de la camera en centimètres</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>mic_logger_code</td>
+<td>texte</td>
+<td>Numéro d’identification du enregistreur utilisé</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>mic_acc_code</td>
+<td>texte</td>
+<td>Numéro d’identification du microphone accoustique utilisé</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>mic_h_cm_acc</td>
+<td>nombre décimal</td>
+<td>Hauteur du microphone ultrason utilisé en centimètres</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>mic_ultra_code</td>
+<td>texte</td>
+<td>Hauteur du microphone ultrason utilisé en centimètres</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>mic_orientation</td>
+<td>choix</td>
+<td>Orientation du dispositif</td>
+<td>‘n’, ‘s’, ‘e’, ‘o’, ‘ne’, ‘no’, ‘se’, ‘so’</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="appâts" class="level2">
+<h2 class="anchored" data-anchor-id="appâts">Appâts</h2>
+<p><strong>Nom de la table</strong> : lures</p>
+<p><strong>Point d’accès</strong> : /api/v1/lures</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 15%">
+<col style="width: 60%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>lure</td>
+<td>nombre entier</td>
+<td>Type de leurre ou appât utilisé pour le dispositif</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>campaign_id</td>
+<td>nombre entier</td>
+<td>Numéro d’identification de la campagne</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>installed_at</td>
+<td>date</td>
+<td>Date d’installation de l’appât/leurre</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="pièges" class="level2">
+<h2 class="anchored" data-anchor-id="pièges">Pièges</h2>
+<p><strong>Nom de la table</strong> : traps</p>
+<p><strong>Point d’accès</strong> : /api/v1/traps</p>
+<p><strong>Inclus dans le résultat</strong> : landmarks, samples.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>trap_code</td>
+<td>texte</td>
+<td>Code du piège</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>campaign_id</td>
+<td>texte</td>
+<td>Code d’identification de la campagne</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>notes</td>
+<td>texte</td>
+<td>Commentaires</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="repères" class="level2">
+<h2 class="anchored" data-anchor-id="repères">Repères</h2>
+<p><strong>Nom de la table</strong> : landmarks</p>
+<p><strong>Point d’accès</strong> : /api/v1/landmarks</p>
+<p><strong>Inclus dans le résultat</strong> : thermographs</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 47%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>campaing_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro d’identification de la campagne</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>tree_code</td>
+<td>texte</td>
+<td>Identifiant unique de l’arbre repère</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>taxa_name</td>
+<td>texte</td>
+<td>Espèce de l’arbre repère</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>dbh</td>
+<td>nombre entier</td>
+<td>DHP de l’arbre repère</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>dbh_unit</td>
+<td>choix</td>
+<td>Unité pour le DHP</td>
+<td>‘mm’,‘cm’,‘m’</td>
+</tr>
+<tr class="even">
+<td>axis</td>
+<td>choix</td>
+<td>L’axe du transect pour la végétation</td>
+<td>‘n’,‘se’,‘so’</td>
+</tr>
+<tr class="odd">
+<td>azimut</td>
+<td>nombre entier</td>
+<td>Azimut du dispositif/appât/borne depuis le repère (arbre ou borne), entre 0 et 360</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>distance</td>
+<td>nombre décimal</td>
+<td>Distance du dispositif/appât/borne depuis le repère (arbre ou borne)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>distance_unit</td>
+<td>choix</td>
+<td>Distance du dispositif/appât/borne depuis le repère (arbre ou borne)</td>
+<td>‘mm’,‘cm’,‘m’</td>
+</tr>
+<tr class="even">
+<td>geom</td>
+<td>geometry(POINT)</td>
+<td>Position du repère</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>type</td>
+<td>choix</td>
+<td>Type de repère</td>
+<td>‘gps’, ‘arbre’, ‘gps+arbre’, ‘borne_axe’, ‘thermographe’</td>
+</tr>
+<tr class="even">
+<td>thermograph_type</td>
+<td>choix</td>
+<td>Type de thermographe</td>
+<td>‘eau’, ‘eau_extérieur’, ‘sol’, ‘sol_extérieur’, ‘puit_marais’</td>
+</tr>
+<tr class="odd">
+<td>trap_id</td>
+<td>nombre entier</td>
+<td>Identifiant du piège</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>lure_id</td>
+<td>nombre entier</td>
+<td>Identifiant de l’appât</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>device_id</td>
+<td>nombre entier</td>
+<td>Identifiant de l’appareil</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>notes</td>
+<td>texte</td>
+<td>Commentaires</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="échantillons" class="level2">
+<h2 class="anchored" data-anchor-id="échantillons">Échantillons</h2>
+<p><strong>Nom de la table</strong> : samples</p>
+<p><strong>Point d’accès</strong> : /api/v1/samples</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 17%">
+<col style="width: 52%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>sample_code</strong></td>
+<td>texte</td>
+<td>Numéro de l’échantillon</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>date_samp</td>
+<td>date</td>
+<td>Date de collecte de l’échantillon</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>trap_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro d’identification unique du piège</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>notes</td>
+<td>texte</td>
+<td>Commentaires</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="thermographes" class="level2">
+<h2 class="anchored" data-anchor-id="thermographes">Thermographes</h2>
+<p>Cette table est utilisée pour faire la liste de thermographes pour la température de l’eau et du sol, ainsi que les appareils de profondeur d’eau et température utilisée dans les marais. Cette table est liée et à la table des repères et à la table des obs_thermograph, puisqu’il peut y avoir plusieurs thermographes à un même endroit, et des milliers d’observations pour un même thermographe.</p>
+<p><strong>Nom de la table</strong> : thermographs</p>
+<p><strong>Point d’accès</strong> : /api/v1/thermographs</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 14%">
+<col style="width: 58%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>landmark_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro du repère</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>thermograph_no</strong></td>
+<td>texte</td>
+<td>Numéro/code du thermographe</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>depth</td>
+<td>nombre décimal</td>
+<td>Profondeur dans l’eau ou dans le sol (cm)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>height</td>
+<td>nombre décimal</td>
+<td>Hauteur pour les thermographes extérieurs (cm)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>is_on_bag</td>
+<td>booléen 1/0</td>
+<td>Est-ce le dernier thermographe sur le sac de la chaîne?</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>shading</td>
+<td>nombre entier</td>
+<td>Ombrage de 1 (aucun ombrage) à 5 (complètement ombragé)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>notes</td>
+<td>texte</td>
+<td>Commentaires</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="observations" class="level2">
+<h2 class="anchored" data-anchor-id="observations">Observations</h2>
+<p><strong>Nom de la table</strong> : observations</p>
+<p><strong>Point d’accès</strong> : /api/v1/observations</p>
+<p><strong>Inclus dans le résultat</strong>: media, obs_soil, obs_species, obs_soil_decomposition</p>
+<p>Cette table est la table principale qui contient les informations communes à toutes les observations. Dépendamment du type de campagne, les informations complémentaires sont dans les tables obs_*</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 6%">
+<col style="width: 37%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>date_obs</strong></td>
+<td>date</td>
+<td>Date d’observation à l’intérieur de la campagne d’inventaire</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>time_obs</td>
+<td>heure HH:mm:ss</td>
+<td>Heure de l’observation à l’intérieur de la campagne d’inventaire</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>stratum</td>
+<td>choix</td>
+<td>Strate de végétation inventoriée (spécifique aux campagnes de type végétation)</td>
+<td>‘arborescente’, ‘arbustive’, ‘herbacées’, ‘bryophytes’</td>
+</tr>
+<tr class="even">
+<td>axis</td>
+<td>choix</td>
+<td>L'axe du transect pour la végétation</td>
+<td>‘n’,‘se’,‘so’</td>
+</tr>
+<tr class="odd">
+<td>distance</td>
+<td>nombre décimal</td>
+<td>La distance le long du transect pour la végétation</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>distance_unit</td>
+<td>choix</td>
+<td>Unité de mesure utilisé pour la distance le long du transect</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>depth</td>
+<td>nombre décimal</td>
+<td>Profondeur pour les observations de zooplancton</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>sample_id</td>
+<td>nombre entier</td>
+<td>numéro de l’échantillon</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>is_valid</strong></td>
+<td>booléen 1/0</td>
+<td>L’observation est-elle valide?</td>
+<td>par défaut: 1</td>
+</tr>
+<tr class="even">
+<td><strong>campaign_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro d’identification de la campagne</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>campaign_info</td>
+<td>champs virtuel</td>
+<td>Informations sur la campagne</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>thermograph_id</td>
+<td>nombre entier</td>
+<td>Numéro du thermographe</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>extra</td>
+<td>json</td>
+<td>Autres valeurs pour des colonnes additionnelles en format json</td>
+<td>{“longueur_poisson”: { type: ‘double’, description: ‘Longueur du poisson’, units: ‘cm’, value: 34.2}}</td>
+</tr>
+<tr class="even">
+<td>notes</td>
+<td>texte</td>
+<td>Commentaires</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="correspondance-observation-effort" class="level2">
+<h2 class="anchored" data-anchor-id="correspondance-observation-effort">Correspondance observation-effort</h2>
+<p><strong>Nom de la table</strong> : observations_efforts_lookup</p>
+<p><strong>Point d’accès</strong> : /api/v1/observations_efforts_lookup</p>
+<p><strong>Inclus dans le résultat</strong>: observations, efforts</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 15%">
+<col style="width: 56%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>observation_id</strong></td>
+<td>texte</td>
+<td>Numéro d’identification de l’observation</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>effort_id</strong></td>
+<td>texte</td>
+<td>Numéro d’identification de l’effort</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="correspondance-observation-repère" class="level2">
+<h2 class="anchored" data-anchor-id="correspondance-observation-repère">Correspondance observation-repère</h2>
+<p><strong>Nom de la table</strong> : observations_landmarks_lookup</p>
+<p><strong>Point d’accès</strong> : /api/v1/observations_landmarks_lookup</p>
+<p><strong>Inclus dans le résultat</strong>: observations, landmarks</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 15%">
+<col style="width: 56%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>observation_id</strong></td>
+<td>texte</td>
+<td>Numéro d’identification de l’observation</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>landmark_id</strong></td>
+<td>texte</td>
+<td>Numéro d’identification du repère</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="observations-despèces" class="level2">
+<h2 class="anchored" data-anchor-id="observations-despèces">Observations d’espèces</h2>
+<p><strong>Nom de la table</strong> : obs_species</p>
+<p><strong>Point d’accès</strong> : /api/v1/obs_species</p>
+<p><strong>Inclus dans le résultat</strong>: attributes, ref_species</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 15%">
+<col style="width: 56%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>taxa_name</strong></td>
+<td>texte</td>
+<td>Nom complet de l’espèce observée</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>variable</strong></td>
+<td>texte</td>
+<td>Référence vers la table d’attributs</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>value</td>
+<td>nombre décimal</td>
+<td>Valeur de l’attribut</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>value_string</td>
+<td>texte</td>
+<td>Valeur de l’attribut pour les campagnes végétation</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>observation_id</strong></td>
+<td>nombre entier</td>
+<td>Identifiant unique de la table d’observations</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="attributs" class="level2">
+<h2 class="anchored" data-anchor-id="attributs">Attributs</h2>
+<p><strong>Nom de la table</strong> : attributes</p>
+<p><strong>Point d’accès</strong> : /api/v1/attributes</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 7%">
+<col style="width: 57%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>variable</strong></td>
+<td>texte</td>
+<td>Nom de la variable attribuée</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>description</strong></td>
+<td>texte</td>
+<td>Description de la variable attribuée</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>unit</td>
+<td>texte</td>
+<td>Unité de la variable attribuée</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="table-de-référence-des-noms-despèces" class="level2">
+<h2 class="anchored" data-anchor-id="table-de-référence-des-noms-despèces">Table de référence des noms d’espèces</h2>
+<p><strong>Nom de la table</strong> : ref_species</p>
+<p><strong>Point d’accès</strong> : /api/v1/taxa</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 12%">
+<col style="width: 78%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>name</strong></td>
+<td>texte</td>
+<td>Nom scientifique du taxa</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>vernacular_fr</td>
+<td>texte</td>
+<td>Nom vernaculaire français de l’espèce</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>vernacular_en</td>
+<td>texte</td>
+<td>Nom vernaculaire anglais de l’espèce</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>rank</td>
+<td>choix</td>
+<td>Rang taxonomique</td>
+<td>‘sous-embranchement’, ‘embranchement’, ‘sous-classe’, ‘classe’, ‘sous-ordre’, ‘ordre’, ‘super-famille’, ‘famille’, ‘genre’, ‘espèce’,‘sous-espèce’,‘variété’, ‘complexe’,‘genre_hybride’, ‘espèce_hybride’,‘variété_hybride’,‘sous-espèce_hybride’</td>
+</tr>
+<tr class="odd">
+<td>category</td>
+<td>choix</td>
+<td>Catégorie d’organisme vivant</td>
+<td>‘poissons’,‘plantes’,‘oiseaux’,‘amphibiens’,‘arthropodes’,‘mammifères’,‘reptiles’,‘autres’,‘mollusques’</td>
+</tr>
+<tr class="even">
+<td>tsn</td>
+<td>nombre entier</td>
+<td>Identifiant ITS (TSN)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>vascan_id</td>
+<td>nombre entier</td>
+<td>Identifiant Vascand pour les plantes</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>bryoquel_id</td>
+<td>nombre entier</td>
+<td>Identifiant Bryoquel pour les bryphytes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="observations-de-la-décomposition-du-sol-sacs-de-thé" class="level2">
+<h2 class="anchored" data-anchor-id="observations-de-la-décomposition-du-sol-sacs-de-thé">Observations de la décomposition du sol (sacs de thé)</h2>
+<p><strong>Nom de la table</strong> : obs_soil_decomposition</p>
+<p><strong>Point d’accès</strong> : /api/v1/obs_soil_decomposition</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 8%">
+<col style="width: 56%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>observation_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro de l’observation dans la table observation</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>bag_no</strong></td>
+<td>texte</td>
+<td>Code du sachet de thé</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>type</td>
+<td>choix</td>
+<td>Type de sachet de thé</td>
+<td>‘thé vert’, ‘rooibos’</td>
+</tr>
+<tr class="even">
+<td>geom</td>
+<td>geometry(POINT)</td>
+<td>localisation du sachet</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>date_end</td>
+<td>date</td>
+<td>Date de la collecte du sachet de thé. La date de l’observation est la date de la mise en place.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>start_weight</strong></td>
+<td>nombre décimal</td>
+<td>Poids du sachet au départ</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>end_weight_with_bag</td>
+<td>nombre décimal</td>
+<td>Poids avec le sachet à la fin</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>end_weight_tea</td>
+<td>nombre décimal</td>
+<td>Poids sans le sachet à la fin</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>shading</td>
+<td>nombre entier</td>
+<td>Ombrage 1-5</td>
+<td>1=Aucun ombrage à 5=Complètement ombragé</td>
+</tr>
+<tr class="even">
+<td>human_impact</td>
+<td>nombre entier</td>
+<td>Impacts anthropique 1-5</td>
+<td>1=Aucun impact à 5=Beaucoup d’impacts</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="observations-dadn-environnemental" class="level2">
+<h2 class="anchored" data-anchor-id="observations-dadn-environnemental">Observations d’ADN Environnemental</h2>
+<p>Note: Le format des observations d’ADN environnemental est différent des autres observations puisqu’il inclut le numéro du repère, afin de permettre le traitement de multiples repères sur un même lac.</p>
+<p><strong>Nom de la table</strong> : obs_edna</p>
+<p><strong>Point d’accès</strong> : /api/v1/obs_edna</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 9%">
+<col style="width: 35%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>observation_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro de l’observation dans la table observation</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>landmark_id</td>
+<td>nombre entier</td>
+<td>Numéro du repère</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>taxa_name</strong></td>
+<td>texte</td>
+<td>Nom de l’espèce observée</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>sequence_count</td>
+<td>nombre réel</td>
+<td>Nombre de séquences</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>sequence_count_corrected</td>
+<td>nombre réel</td>
+<td>Nombre de séquences corrigé</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>type_edna</td>
+<td>choix</td>
+<td>Catégorie d’observation ADNe</td>
+<td>“confirmé”, “probable”, “improbable”, “non-poisson”</td>
+</tr>
+<tr class="odd">
+<td>notes</td>
+<td>Texte</td>
+<td>Notes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="observations-des-condtitions-physico-chimiques-en-lac" class="level2">
+<h2 class="anchored" data-anchor-id="observations-des-condtitions-physico-chimiques-en-lac">Observations des condtitions physico-chimiques en lac</h2>
+<p><strong>Nom de la table</strong> : obs_lake</p>
+<p><strong>Point d’accès</strong> : /api/v1/obs_lake</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 10%">
+<col style="width: 35%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>observation_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro de l’observation dans la table observation</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>water_transparency</td>
+<td>nombre décimal</td>
+<td>Transparence dans la colonne d’eau exprimée en mètres à l’aide d’un disque de Secchi</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>water_temp</td>
+<td>nombre décimal</td>
+<td>Température de l’eau en degrés Celsius</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>oxygen_concentration</td>
+<td>nombre décimal</td>
+<td>Concentration de l’oxygène dans l’eau (mg/L)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>ph</td>
+<td>nombre décimal</td>
+<td>Mesure du pH de l’eau</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>conductivity</td>
+<td>nombre décimal</td>
+<td>Conductivité de l’eau en mètres/seconde (m/s)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>turbidity</td>
+<td>nombre décimal</td>
+<td>Turbidité de l’eau en unités de turbidité néphalométriques (uNT)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>dissolved_organic_carbon</td>
+<td>nombre décimal</td>
+<td>Carbone organique dissous (filtré 0,45 µm)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>ammonia_nitrogen</td>
+<td>nombre décimal</td>
+<td>Azote ammonical (filtré ou non)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>nitrates_and_nitrites</td>
+<td>nombre décimal</td>
+<td>Nitrates et nitrites (filtré ou non)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>total_nitrogen</td>
+<td>nombre décimal</td>
+<td>Azote total (filtré ou non)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>total_phosphorus</td>
+<td>nombre décimal</td>
+<td>Phosphore total en trace lac 660 nm ou 660 nm verre</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>chlorophyl_a</td>
+<td>nombre décimal</td>
+<td>Chlorophyle A active</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>pheophytin_a</td>
+<td>nombre décimal</td>
+<td>Phéophytine A</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>notes</td>
+<td>Texte</td>
+<td>Notes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="observations-de-profil-du-sol" class="level2">
+<h2 class="anchored" data-anchor-id="observations-de-profil-du-sol">Observations de profil du sol</h2>
+<p><strong>Nom de la table</strong> : obs_soil</p>
+<p><strong>Point d’accès</strong> : /api/v1/obs_soil</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 2%">
+<col style="width: 8%">
+<col style="width: 85%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>observation_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro de l’observation dans la table observation</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>geom</td>
+<td>geometry(POINT)</td>
+<td>localisation du sachet</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>depth_tot</td>
+<td>nombre décimal</td>
+<td>Profondeur du pédon</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>depth_hummus</td>
+<td>nombre décimal</td>
+<td>Profondeur de la couche d’humus</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>depth_f</td>
+<td>nombre décimal</td>
+<td>Profondeur de la couche organique F</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>depth_m</td>
+<td>nombre décimal</td>
+<td>Profondeur de la couche organique M</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>depth_h</td>
+<td>nombre décimal</td>
+<td>Profondeur de la couche organique H</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>depth_a</td>
+<td>nombre décimal</td>
+<td>Profondeur de la couche minérale A</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>texture_a</td>
+<td>choix</td>
+<td>Texture de la couche A</td>
+<td>“Argile”,“Argile limoneuse”,“Argile lourd”,“Argile sableuse”,“Limon”,“Loam”,“Loam argileux”,“Loam limoneux”,“Loam limono-argileux”, “Loam sableux”,“Loam sableux très grossier”,“Loam sableux grossier”,“Loam sableux moyen”,“Loam sableux fin”,“Loam sableux très fin”,“Loam sablo-argileux”,“Sable”,“Sable très grossier”,“Sable grossier”,“Sable moyen”,“Sable fin”,“Sable très fin”,“Sable très grossier loameux”,“Sable moyen loameux”,“Sable fin loameux”,“Sable très fin loameux”,“Sable loameux”,“Autres”</td>
+</tr>
+<tr class="even">
+<td>depth_b</td>
+<td>nombre décimal</td>
+<td>Profondeur de la couche minérale b</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>texture_b</td>
+<td>choix</td>
+<td>Texture de la couche B</td>
+<td>Voir A</td>
+</tr>
+<tr class="even">
+<td>depth_c</td>
+<td>nombre décimal</td>
+<td>Profondeur de la couche minérale c</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>texture_c</td>
+<td>choix</td>
+<td>Texture de la couche C</td>
+<td>Voir A</td>
+</tr>
+<tr class="even">
+<td>depth_d</td>
+<td>nombre décimal</td>
+<td>Profondeur de la couche minérale d</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>texture_d</td>
+<td>choix</td>
+<td>Texture de la couche D</td>
+<td>Voir A</td>
+</tr>
+<tr class="even">
+<td>mottling</td>
+<td>Booléen 0/1</td>
+<td>Présence de moucheture</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>mottling_depth</td>
+<td>nombre décimal</td>
+<td>Profondeur de moucheture, si présente</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>drainage_class</td>
+<td>nombre entier</td>
+<td>Classe de drainage</td>
+<td>0,1,2,3,4,5 ou 6</td>
+</tr>
+<tr class="odd">
+<td>water_table_depth</td>
+<td>nombre décimal</td>
+<td>Profondeur de la nappe phréatique</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>reached_one_meter</td>
+<td>Booléen 0/1</td>
+<td>Est-ce que la profondeur de 1 m a été atteinte?</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>depth_reached</td>
+<td>nombre décimal</td>
+<td>Profondeur atteinte (si moins de 1 m)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>notes</td>
+<td>Texte</td>
+<td>Notes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="observations-de-thermographes" class="level2">
+<h2 class="anchored" data-anchor-id="observations-de-thermographes">Observations de thermographes</h2>
+<p><strong>Nom de la table</strong> : obs_thermograph</p>
+<p><strong>Point d’accès</strong> : /api/v1/obs_thermograph</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 13%">
+<col style="width: 62%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>campaign_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro de la campagne dans la table campaigns</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>thermograph_id</td>
+<td>nombre entier</td>
+<td>Numéro du thermographe dans la table thermographs</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>temperature</td>
+<td>nombre décimal</td>
+<td>Température (C)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>pressure</td>
+<td>nombre décimal</td>
+<td>Pression (psi)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>date_obs</strong></td>
+<td>date</td>
+<td>Date d’observation à l’intérieur de la campagne d’inventaire</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>time_obs</td>
+<td>heure HH:mm:ss</td>
+<td>Heure de l’observation à l’intérieur de la campagne d’inventaire</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="media" class="level2">
+<h2 class="anchored" data-anchor-id="media">Media</h2>
+<p><strong>Nom de la table</strong> : media</p>
+<p><strong>Point d’accès</strong> : /api/v1/media</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 13%">
+<col style="width: 43%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>type</strong></td>
+<td>choix</td>
+<td>Type de média</td>
+<td>‘image’, ‘audio’, ‘video’</td>
+</tr>
+<tr class="even">
+<td><strong>recorder</strong></td>
+<td>choix</td>
+<td>Type d’enregistreur</td>
+<td>‘ultrasound’, ‘audible’</td>
+</tr>
+<tr class="odd">
+<td><strong>og_format</strong></td>
+<td>texte</td>
+<td>Original format (jpeg, png, etc)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>og_extention</strong></td>
+<td>texte</td>
+<td>Original extension (.jpg, .png, etc.)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>uuid</strong></td>
+<td>texte</td>
+<td>UUID, Identifiant unique généré par Coléo</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>name</strong></td>
+<td>texte</td>
+<td>Nom du fichier original</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>site_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro d’identification du site</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>campaign_id</strong></td>
+<td>nombre entier</td>
+<td>Numéro d’identification de la campagne</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="table-de-correspondance---observation-media" class="level2">
+<h2 class="anchored" data-anchor-id="table-de-correspondance---observation-media">Table de correspondance - Observation-media</h2>
+<p><strong>Nom de la table</strong> : obs_media</p>
+<p><strong>Point d’accès</strong> : /api/v1/obs_media</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 46%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>obs_id</strong></td>
+<td>Nombre entier</td>
+<td>Identifiant de l’observation</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>media_id</strong></td>
+<td>Nombre entier</td>
+<td>Identifiant du média</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="points-daccès-particuliers" class="level1">
+<h1>Points d’accès particuliers</h1>
+<section id="table---colonnes" class="level2">
+<h2 class="anchored" data-anchor-id="table---colonnes">Table - colonnes</h2>
+<p><strong>Point d’accès</strong> : /api/v1/table_columns</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 8%">
+<col style="width: 65%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>table</strong></td>
+<td>Texte</td>
+<td>Nom de la table dans la base de données</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>** Retourne: la liste des colonnes que comporte cette table</p>
+<hr>
+</section>
+<section id="options-des-colonnes" class="level2">
+<h2 class="anchored" data-anchor-id="options-des-colonnes">Options des colonnes</h2>
+<p><strong>Point d’accès</strong> : /api/v1/enum_options</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Champs</th>
+<th>Type</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>enum</strong></td>
+<td>Texte</td>
+<td>Nom de l’enum</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>** Retourne: la liste des options pour cette colonne</p>
+<hr>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

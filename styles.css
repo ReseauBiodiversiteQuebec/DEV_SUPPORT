@@ -1,0 +1,36 @@
+/* css styles */
+.navbar {
+  background: #7bb5b1;
+  color: white !important;
+}
+
+.navbar .menu-text {
+  color: white;
+  font-weight: 600;
+}
+
+.navbar-logo {
+  max-height: 35px;
+}
+
+.quarto-dark #quarto-sidebar {
+  background-color: #343a40;
+}
+
+.quarto-dark #quarto-sidebar .menu-text {
+  color: #dfb658;
+}
+
+.quarto-dark .quarto-margin-sidebar {
+  background: transparent;
+}
+
+.quarto-dark p code,
+.quarto-dark code {
+  background-color: #21343c !important;
+  color: #ccc !important;
+}
+
+#quarto-document-content {
+  display: none;
+}
