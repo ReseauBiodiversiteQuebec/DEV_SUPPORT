@@ -4,7 +4,7 @@ author: "Claire-Cécile Juhasz"
 date: "`r Sys.Date()`"
 ---
 
-## Tableaux de bords actuels
+## Tableaux de bord actuels
 
 - [Explorateur IO](https://io.biodiversite-quebec.ca/viewer): explorateur des couches environnementales contenues dans le STAC catalogue
 - [Explorateur Acer](https://acer.biodiversite-quebec.ca/viewer): explorateur des produits de Biodiversité Québec (incluant les SDMs, EBV, etc.)
